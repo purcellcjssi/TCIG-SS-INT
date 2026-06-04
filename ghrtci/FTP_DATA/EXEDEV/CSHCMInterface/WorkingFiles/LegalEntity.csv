@@ -1,0 +1,16 @@
+LegalEntity,Description,HROrganization
+BANK,BANK Employer for SmartStream,BANK
+BRD BANK,Barbados Bank,BANK
+CAN BANK,Bank of Canada,BANK
+US - BANK,US - BANk,BANK
+BANK,SSI Bank (CSHCM Demo),GOG
+CAN-CO1,Canadian Company 1,GOG
+CAN-CO2,Canadian Company 2,GOG
+MOSD,Ministry of Social Development,GOG
+USA-CO1,USA Company 1,GOG
+USA-CO2,USA Company 2,GOG
+USA-CO3,USA Reporting Company,GOG
+USSG,US Sporting Goods,GOG
+061,Secondary & Tertiary Health Care Services,PAYR
+119,Respiratory Hospital,PAYR
+USA,USA,PAYR

@@ -1,0 +1,175 @@
+ParentUnit,HROrganizationUnit,Description,HROrganization,UnitType,ParentUnitShortDescriptionForSort,ShortDescription,Location
+0,1,SSI ABC Demo,ABC,,,ABC,
+0,1,SSI Bank (Demo),BANK,,,Bank of the US,
+28,3,"Bank of US - Boca Rotan, Florida",BANK,,US Operations,US / Boca Rotan,BOCA ROTAN FL
+28,4,"Bank of US - Deerfield, Florida",BANK,,US Operations,US / Deerfield,
+28,5,"Bank of US - Ft Lauderdale, Florida",BANK,,US Operations,US / Ft Lauderdale,
+29,6,"Bank of US - Toronto, Canada",BANK,,Canada Ops,CAN - Toronto,
+30,7,"Bank of US - Bridgetown, Barbados",BANK,,Caribbean Ops,CARIBB - Bridgetown,
+64,8,Bank of US Corporate - Executives,BANK,,Corporate Office,Corp - Executives,
+64,10,Bank of US Corporate - Finance,BANK,,Corporate Office,Corp - Finance,
+64,11,Bank of US Corporate - Branch Operations,BANK,,Corporate Office,Corp - Branch Oper,
+64,12,Bank of US Corporate - Client Services,BANK,,Corporate Office,Corp - Client Serv,
+64,13,Bank of US Corporate - Technology,BANK,,Corporate Office,Corp - Technology,
+3,14,Boca Rotan FL Branch - Operations,BANK,,US / Boca Rotan,Boca Rotan - Oper,
+3,15,Baco Raton FL Branch - Administration,BANK,,US / Boca Rotan,Boca Rotan - Admin,
+4,16,Deerfield FL Branch - Administration,BANK,,US / Deerfield,Deerfield - Admin,
+4,17,Deerfield FL Branch - Operations,BANK,,US / Deerfield,Deerfield - Oper,
+5,18,Ft Lauderdale FL Branch - Administration,BANK,,US / Ft Lauderdale,Ft Lauderdle - Admin,
+5,19,Ft Lauderdale FL Branch - Operations,BANK,,US / Ft Lauderdale,Ft Lauderdale - Oper,
+6,20,Toronto CAN Branch - Administration,BANK,,CAN - Toronto,Toronto - Admin,
+6,21,Toronto CAN Branch - Operations,BANK,,CAN - Toronto,Toronto - Operations,
+7,22,Bridgetown Barbados Branch - Administration,BANK,,CARIBB - Bridgetown,Bridgetown - Admin,
+7,23,Bridgetown Barbados Branch - Operations,BANK,,CARIBB - Bridgetown,Bridgetown - Oper,
+10,24,Accounting Division,BANK,,Corp - Finance,Accounting,CORPORATE OFFICE
+10,25,Treasury Division,BANK,,Corp - Finance,Treasury,CORPORATE OFFICE
+10,26,Budget Division,BANK,,Corp - Finance,Budget,CORPORATE OFFICE
+1,28,US Operations,BANK,,Bank of the US,US Operations,
+1,29,Canadian Operations,BANK,,Bank of the US,Canada Ops,
+1,30,Caribbean Operations,BANK,,Bank of the US,Caribbean Ops,
+10,31,Purchasing Division,BANK,,Corp - Finance,Purchasing,CORPORATE OFFICE
+24,32,Corp - General Accounting,BANK,,Accounting,General Accounting,CORPORATE OFFICE
+24,33,Corp - Accounts Payable,BANK,,Accounting,Accounts Payable,CORPORATE OFFICE
+24,34,Payroll,BANK,,Accounting,Payroll,CORPORATE OFFICE
+24,35,Corp - Accounts Receivable,BANK,,Accounting,Accounts Receivable,CORPORATE OFFICE
+25,36,Treasury and Investments,BANK,,Treasury,Treasury,CORPORATE OFFICE
+25,37,Corp - Collections,BANK,,Treasury,Collections,CORPORATE OFFICE
+13,38,Corp - Research and Development,BANK,,Corp - Technology,Research / Dev,CORPORATE OFFICE
+13,39,Internal Systems,BANK,,Corp - Technology,Internal Systems,CORPORATE OFFICE
+13,40,Corp - Cloud Operations,BANK,,Corp - Technology,Cloud Ops,CORPORATE OFFICE
+64,42,Bank of US Corporate - Legal Affairs,BANK,,Corporate Office,Corp - Legal Affairs,CORPORATE OFFICE
+25,43,Corp - Audit Division,BANK,,Treasury,Audit,CORPORATE OFFICE
+39,44,Corp - Operations,BANK,,Internal Systems,Operations,CORPORATE OFFICE
+40,45,Corp - Operations Center,BANK,,Cloud Ops,Ops Center,CORPORATE OFFICE
+25,46,Risk and Credit Management,BANK,,Treasury,Risk / Credit,CORPORATE OFFICE
+64,47,Bank of US Corporate - Human Resources,BANK,,Corporate Office,Corp - HR,
+47,48,Bank of US Corporate - Recruiting,BANK,,Corp - HR,Recruiting,
+47,49,Staff Development,BANK,,Corp - HR,Staff Dev,
+47,50,Pension Administration,BANK,,Corp - HR,Pension,
+47,51,Benefits,BANK,,Corp - HR,Benefits,
+47,52,Human Resource Operations,BANK,,Corp - HR,HR Ops,
+47,53,Human Resource Administration,BANK,,Corp - HR,HR Admin,
+10,54,Office of the Controller,BANK,,Corp - Finance,Controller,CORPORATE OFFICE
+10,56,Invoicing,BANK,,Corp - Finance,Payables,CORPORATE OFFICE
+10,57,Corporate Requisitions,BANK,,Corp - Finance,Requisitions,CORPORATE OFFICE
+10,58,Corporate Procurement,BANK,,Corp - Finance,Procurement,CORPORATE OFFICE
+10,59,Corporate Supplies & Services,BANK,,Corp - Finance,Corp Supplies & Serv,CORPORATE OFFICE
+54,60,Corporate Case Management,BANK,,Controller,Corp Cash Mgmt,CORPORATE OFFICE
+10,61,Corporate Strategic Sourcing,BANK,,Corp - Finance,Corp Strategic Sourc,CORPORATE OFFICE
+10,62,Corporate Assets,BANK,,Corp - Finance,Corp - Assets,CORPORATE OFFICE
+24,63,Corp - Assets,BANK,,Accounting,Assets,CORPORATE OFFICE
+1,64,Corporate - Bank of the US,BANK,,Bank of the US,Corporate Office,CORPORATE OFFICE
+1,65,Board of Directors,BANK,,Bank of the US,Board of Directors,CORPORATE OFFICE
+13,66,Technology - Security,BANK,,Corp - Technology,Security,CORPORATE OFFICE
+13,67,Technology - Support,BANK,,Corp - Technology,Support,CORPORATE OFFICE
+42,68,Corporate - Legal Services,BANK,,Corp - Legal Affairs,Legal Services,CORPORATE OFFICE
+42,69,Corporate - Compliance,BANK,,Corp - Legal Affairs,Compliance,CORPORATE OFFICE
+59,70,Supplies and Services,BANK,,Corp Supplies & Serv,Supplies and Svcs,CORPORATE OFFICE
+28,71,Contracts,BANK,,US Operations,Contracts,CORPORATE OFFICE
+10,72,Corporate Projects,BANK,,Corp - Finance,Projects,CORPORATE OFFICE
+10,73,Corporate Ledger,BANK,,Corp - Finance,Corp Ledger,CORPORATE OFFICE
+10,74,Corporate Receivables,BANK,,Corp - Finance,Receivables,CORPORATE OFFICE
+64,75,Corporate - Mergers & Acquisitions,BANK,,Corporate Office,Corp - Mergers & Acq,CORPORATE OFFICE
+64,76,Corporate Maintenance,BANK,,Corporate Office,Corp Maint,CORPORATE OFFICE
+0,1,SSI Corporate Demo,CORP,,,CORP,
+35,2,Finance Division,CORP,DIVISION,CORP,FINANCE,NEW YORK CORP
+35,3,Human Resources Division,CORP,DIVISION,CORP,HR,OPS CENTER
+2,4,Finance Department,CORP,DEPARTMENT,FINANCE,FINANCE,NEW YORK CORP
+2,5,Procurement Department,CORP,DEPARTMENT,FINANCE,PROCUREMENT,NEW YORK CORP
+2,6,Projects Department,CORP,DEPARTMENT,FINANCE,PROJECTS,NEW YORK CORP
+3,7,Recruitment,CORP,DEPARTMENT,HR,RECRUIT,OPS CENTER
+3,8,Training,CORP,DEPARTMENT,HR,TRAIN,OPS CENTER
+3,9,Benefits Department,CORP,,HR,BENEFITS,OPS CENTER
+2,10,Payroll Department,CORP,DEPARTMENT,FINANCE,PAYROLL,OPS CENTER
+35,11,Sales Division,CORP,DIVISION,CORP,SALES,OPS CENTER
+11,12,Northeast Sales Region,CORP,REGION,SALES,NE SALES,AKRON
+11,13,Southeast Sales Region,CORP,REGION,SALES,SE SALES,ATLANTA
+12,14,Sales Office,CORP,LOCAL,NE SALES,SALES,OPS CENTER
+12,15,Inventory and Warehouse,CORP,WAREHOUSE,NE SALES,INVENTORY,WAREHOUSE
+12,16,Orders and Tracking,CORP,,NE SALES,ORDER,OPS CENTER
+13,17,Sales Office,CORP,LOCAL,SE SALES,SALES,OPS CENTER
+13,18,Inventory and Warehouse,CORP,,SE SALES,INVENTORY,WAREHOUSE
+13,19,Orders and Tracking,CORP,,SE SALES,ORDER,WAREHOUSE
+13,20,SE Sales Warehouse,CORP,WAREHOUSE,SE SALES,SE Warehouse,WAREHOUSE
+3,21,HR Administration,CORP,CORP,HR,HR ADMIN,OPS CENTER
+11,22,Sales Administration,CORP,CORP,SALES,Sales Admin,OPS CENTER
+11,23,Warehouse,CORP,WAREHOUSE,SALES,Warehouse,WAREHOUSE
+4,24,Invoices,CORP,DEPARTMENT,FINANCE,Invoice,NEW YORK CORP
+2,25,Requisitions,CORP,DEPARTMENT,FINANCE,REQUISITIONS,NEW YORK CORP
+2,26,Assets,CORP,DEPARTMENT,FINANCE,ASSETS,OPS CENTER
+23,27,Shipping Department,CORP,DEPARTMENT,Warehouse,Shipping,WAREHOUSE
+23,28,Receiving Department,CORP,DEPARTMENT,Warehouse,Receiving,WAREHOUSE
+35,29,Information Technology,CORP,DIVISION,CORP,IT,OPS CENTER
+29,30,IT Operations,CORP,DEPARTMENT,IT,IT OPS,OPS CENTER
+29,31,IT Development,CORP,DEPARTMENT,IT,IT DEV,OPS CENTER
+2,32,Supplies Management,CORP,DEPARTMENT,FINANCE,Supplies Mgmt,OPS CENTER
+2,33,Contracts Management,CORP,DEPARTMENT,FINANCE,Contracts,OPS CENTER
+4,34,Cash Management,CORP,DEPARTMENT,FINANCE,CASH,OPS CENTER
+1,35,Corporate CEO,CORP,CORP,CORP,CORP,NEW YORK CORP
+0,1,Government of Grenada,GOG,,,GOG,
+1,2,Public Service Commission,GOG,,GOG,PSC,PSC
+30,3,Department of Public Administration,GOG,,MIN NATL SEC,180014000,DPA
+1,4,Ministry of Finance,GOG,,GOG,MinFin,MOF
+4,5,Accountant General Division,GOG,,MinFin,200054000,MOF
+20,6,Prison,GOG,,TEST,Prison,
+3,7,Human Resource Management Unit,GOG,,180014000,180014000,DPA
+3,8,Human Resource Development Unit,GOG,,180014000,HRD Unit,DPA
+3,9,Reform Management Unit,GOG,,180014000,RM Unit,DPA
+3,10,Administration / Support Unit,GOG,,180014000,180014000,DPA
+4,11,Statistics Division,GOG,,MinFin,200056000,MOF
+4,12,Customs and Excise Division,GOG,,MinFin,200049000,MOF
+4,13,Inland Revenue Division,GOG,,MinFin,200050000,MOF
+4,14,Printery,GOG,,MinFin,200051000,MOF
+4,15,Division of Economic Mgmt and Planning,GOG,,MinFin,200100000,MOF
+4,16,Division of Physical Development,GOG,,MinFin,200001000,MOF
+4,17,Division of Economic and Technical Corporation,GOG,,MinFin,Div Econ Tech,MOF
+4,18,Administration - Finance,GOG,,MinFin,200001000,MOF
+2,19,Administration,GOG,,PSC,Admin,PSC
+1,20,Test Area,GOG,,GOG,TEST,
+13,21,VAT Unit,GOG,,200050000,200050000,MOF
+15,22,Budget Unit,GOG,,200100000,200100000,MOF
+15,23,Debt Management Unit,GOG,,200100000,200100000,MOF
+5,24,IT Unit,GOG,,200054000,200054000,MOF
+18,25,Corporate Communications,GOG,,200001000,200001000,MOF
+18,26,Central Procurement Unit,GOG,,200001000,200001000,MOF
+15,27,Macro Econ Policy Unit,GOG,,200100000,200109000,MOF
+7,28,HRM Administration,GOG,,180014000,60001000,DPA
+15,29,Administration - Division of Economic & Planning,GOG,,200100000,ADMIN - ECON,MOF
+1,30,"Ministry of National Security, PA, HA and IT",GOG,,GOG,MIN NATL SEC,
+0,1,Government Sector (demo),GOV,,,GOV,
+24,2,Minister of Finance,GOV,MINISTRY,GOVERNMENT,MIN FINANCE,MIAMI
+24,3,Minister of Legal,GOV,,GOVERNMENT,MIN LEGAL,
+24,4,Minister of Security,GOV,,GOVERNMENT,MIN SECURITY,
+24,5,Minister of Technical Development,GOV,,GOVERNMENT,MIN TECHNICAL,
+3,6,Supreme Court,GOV,,MIN LEGAL,SUPREME CT,
+3,7,Magistrate,GOV,,MIN LEGAL,MAGISTRATE,
+2,8,Finance Accounting,GOV,,MIN FINANCE,FIN ACCTG,
+2,9,Payables,GOV,,MIN FINANCE,FIN PAYBLES,
+2,10,Procurement,GOV,,MIN FINANCE,PROCUREMNT,
+24,11,Minister of Education,GOV,,GOVERNMENT,MIN EDUC,
+2,12,Supply Management,GOV,,MIN FINANCE,SUPPLY MGMT,
+2,13,Cash,GOV,,MIN FINANCE,CASH,
+2,14,Supplier Portal,GOV,,MIN FINANCE,SUPPLR PORTL,
+2,15,Requisitions,GOV,,MIN FINANCE,REQUISTNS,
+2,16,Strategic Sourcing,GOV,,MIN FINANCE,STRATEGIC,
+8,17,FIN Invoicing,GOV,,FIN ACCTG,INVOICING,
+2,18,Inventory,GOV,,MIN FINANCE,INVENTORY,MIAMI
+2,19,Contracts Division,GOV,,MIN FINANCE,Contracts,MIAMI
+8,20,Projects,GOV,DEPT,FIN ACCTG,PROJECTS,
+8,21,Budgets,GOV,DEPT,FIN ACCTG,BUDGET,
+8,22,Finance Accounting,GOV,DEPT,FIN ACCTG,FINANCE,
+8,23,Assests,GOV,DEPT,FIN ACCTG,ASSETS,
+1,24,Governing Body,GOV,,GOV,GOVERNMENT,
+1,25,Parliament Body,GOV,,GOV,PARLIAMENT,
+0,1,Payroll Test Company,PAYR,,,PAYR,
+1,2,Accounting Department,PAYR,,PAYR,Accounting,
+1,3,Glenfarne Group,PAYR,,PAYR,GG,
+3,4,Glenfarne US,PAYR,,GG,Glenfarne,
+3,5,Columbia,PAYR,,GG,Columbia,
+3,6,Glenfarne - Chile,PAYR,,GG,CHILE,
+3,7,Glenfarne - Panama,PAYR,,GG,PANAMA,
+5,8,Plant 1,PAYR,,Columbia,PLANT 1,
+5,9,Plant 2,PAYR,,Columbia,PLANT 2,
+5,10,Corporate Office,PAYR,,Columbia,CORP,
+10,11,Columbia Treasury,PAYR,,CORP,TREASURY,
+10,12,Colombia Human Resources,PAYR,,CORP,COLOMBIA HR,

@@ -1,0 +1,1 @@
+Employee,SequenceNumber,EmployeeAllowance_CreateStamp.TimeStamp,EmployeeAllowance_CreateStamp.Actor,EmployeeAllowance_UpdateStamp.TimeStamp,EmployeeAllowance_UpdateStamp.Actor,EmployeeAllowance_AuditLog,AllowanceType,AllowanceAmount,DateRange.Begin,DateRange.End

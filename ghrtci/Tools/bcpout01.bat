@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\bcp.exe" [DBSosxp].[dbo].[psc_batch]  out C:\SSFAWS2\DBMS\ghrtci\Data\bcp0001.bcp -e C:\SSFAWS2\DBMS\ghrtci\Log\log001.txt -U sa -P FCloclT1 -S SSSERVER\TCIG -c 

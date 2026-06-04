@@ -1,0 +1,8 @@
+DBS                           +*	USP_BANKINFO_EVENTS           +*	SQLSRV2                       +*	DBShrpn                       +*	usp_bankinfo_events           +*	0  +*	 +*	 +*	C  +*	0  +!
+DBS                           +*	USP_BANK_CURRENT_DATA         +*	SQLSRV2                       +*	DBShrpn                       +*	usp_bank_current_data         +*	0  +*	C:\FTP_DATA\DATA\DEV\SS_BANK_C+*	 +*	T  +*	0  +!
+DBS                           +*	USP_BANK_VERIFICATION_RPT     +*	SQLSRV2                       +*	DBShrpn                       +*	usp_bank_verification_rpt     +*	0  +*	C:\MAILDIR\HCMBANK            +*	 +*	T  +*	3  +!
+DBS                           +*	USP_CURRENT_DATA              +*	SQLSRV2                       +*	DBShrpn                       +*	usp_current_data              +*	0  +*	C:\FTP_DATA\DATA\DEV\SS_CURR_D+*	 +*	T  +*	4  +!
+DBS                           +*	USP_CURR_PE_DATA              +*	SQLSRV2                       +*	DBShrpn                       +*	usp_curr_pe_data              +*	0  +*	C:\FTP_DATA\DATA\PRD\SS_CURR_P+*	 +*	T  +*	3  +!
+DBS                           +*	USP_SEL_EMPLOYEE_EVENTS       +*	SQLSRV2                       +*	DBShrpn                       +*	usp_sel_employee_events       +*	0  +*	 +*	 +*	C  +*	2  +!
+DBS                           +*	USP_SRV_TO_SRV_COPY           +*	SQLSRV2                       +*	DBSpscb                       +*	usp_srv_to_srv_copy           +*	0  +*	 +*	 +*	C  +*	1  +!
+DBS                           +*	USP_VERIFICATION_RPT          +*	SQLSRV2                       +*	DBShrpn                       +*	usp_verification_rpt          +*	0  +*	C:\Maildir\HCMRPT             +*	 +*	T  +*	4  +!

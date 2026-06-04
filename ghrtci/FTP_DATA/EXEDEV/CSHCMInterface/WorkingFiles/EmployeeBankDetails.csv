@@ -1,0 +1,3 @@
+BankName,Active,Employee,HROrganization,DateRange_Begin,BankIdentifier,AccountType,AccountNumber
+BANK1,true,3002,BANK,20240423,BANK1,2,0012345678
+Bank 1,true,1,GOG,20201101,,1,

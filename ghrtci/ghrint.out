@@ -1,0 +1,524 @@
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrint\
+File Prefix = ghrint
+Server = SQLSRV2
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS against server SQLSRV2 at Thu Oct 23 09:58:40 2025
+
+
+msg=prf00012
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES against server SQLSRV2 at Thu Oct 23 09:58:40 2025
+
+
+msg=prf00007
+ghrtblall.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES at Thu Oct 23 09:58:40 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA against server SQLSRV2 at Thu Oct 23 09:58:40 2025
+
+
+msg=prf00010
+ghrdel01.SQL
+ghrdel02.SQL
+ghrdel03.SQL
+ghrdel04.SQL
+ghrdel05.SQL
+ghrdel06.SQL
+ghrdel07.SQL
+ghrdel08.SQL
+ghrdel09.SQL
+ghrdel10.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA at Thu Oct 23 09:58:40 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB against server SQLSRV2 at Thu Oct 23 09:58:40 2025
+
+
+msg=prf00010
+bcp0001.bcp,psc_batch
+
+c:\ssfaws2\dbms\ghrint\bcp0001.bcp -> SQLSRV2
+SQL Server message 0, state 46454512, severity 11:
+     [Microsoft][SQL Server Native Client 10.0]Unable to open BCP error-file
+c:\ssfaws2\dbms\ghrint\bcp0001.bcp: bulk initialization failed
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB at Thu Oct 23 09:58:40 2025
+
+SQLSRV2: C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB 
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS at Thu Oct 23 09:58:40 2025
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrint\
+File Prefix = ghrint
+Server = SQLSRV2
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS against server SQLSRV2 at Thu Oct 23 10:04:08 2025
+
+
+msg=prf00012
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES against server SQLSRV2 at Thu Oct 23 10:04:08 2025
+
+
+msg=prf00007
+ghrtblall.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+ghrdel01.SQL
+ghrdel02.SQL
+ghrdel03.SQL
+ghrdel04.SQL
+ghrdel05.SQL
+ghrdel06.SQL
+ghrdel07.SQL
+ghrdel08.SQL
+ghrdel09.SQL
+ghrdel10.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+bcp0001.bcp,psc_batch
+   Table Load:  psc_batch                               11
+bcp0002.bcp,psc_step
+   Table Load:  psc_step                                30
+bcp0008.bcp,psc_program_alias
+   Table Load:  psc_program_alias                       11
+bcp0009.bcp,psc_program_alias_version
+   Table Load:  psc_program_alias_version               21
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+bcp0003.bcp,batch_parameters
+   Table Load:  batch_parameters                         2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+bcp0004.bcp,stored_proc_xref_1
+   Table Load:  stored_proc_xref_1                       6
+bcp0005.bcp,stored_proc_tbl_xref_1
+   Table Load:  stored_proc_tbl_xref_1                   6
+bcp0006.bcp,tbl_master_1
+   Table Load:  tbl_master_1                             2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+bcp0007.bcp,piq_storedproc
+   Table Load:  piq_storedproc                           8
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+msg=prf00010
+ghrmsg01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM at Thu Oct 23 10:04:09 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:04:09 2025
+
+
+ghrspall.sp
+ghrsp001.sp
+ghrsp002.sp
+ghrsp003.sp
+ghrsp004.sp
+ghrsp005.sp
+ghrsp006.sp
+ghrsp007.sp
+ghrsp008.sp
+ghrspnal.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES at Thu Oct 23 10:04:12 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:04:12 2025
+
+
+ghrsp005.sp
+ghrsp009.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES at Thu Oct 23 10:04:12 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE against server SQLSRV2 at Thu Oct 23 10:04:12 2025
+
+
+ghrupd01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE at Thu Oct 23 10:04:12 2025
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS at Thu Oct 23 10:04:12 2025
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrint\
+File Prefix = ghrint
+Server = SQLSRV2
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS against server SQLSRV2 at Thu Oct 23 10:04:55 2025
+
+
+msg=prf00012
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES against server SQLSRV2 at Thu Oct 23 10:04:55 2025
+
+
+msg=prf00007
+ghrtblall.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES at Thu Oct 23 10:04:55 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA against server SQLSRV2 at Thu Oct 23 10:04:55 2025
+
+
+msg=prf00010
+ghrdel01.SQL
+ghrdel02.SQL
+ghrdel03.SQL
+ghrdel04.SQL
+ghrdel05.SQL
+ghrdel06.SQL
+ghrdel07.SQL
+ghrdel08.SQL
+ghrdel09.SQL
+ghrdel10.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA at Thu Oct 23 10:04:55 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB against server SQLSRV2 at Thu Oct 23 10:04:55 2025
+
+
+msg=prf00010
+bcp0001.bcp,psc_batch
+   Table Load:  psc_batch                               11
+bcp0002.bcp,psc_step
+   Table Load:  psc_step                                30
+bcp0008.bcp,psc_program_alias
+   Table Load:  psc_program_alias                       11
+bcp0009.bcp,psc_program_alias_version
+   Table Load:  psc_program_alias_version               21
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB at Thu Oct 23 10:04:55 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP against server SQLSRV2 at Thu Oct 23 10:04:55 2025
+
+
+msg=prf00010
+bcp0003.bcp,batch_parameters
+   Table Load:  batch_parameters                         2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP at Thu Oct 23 10:04:56 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG against server SQLSRV2 at Thu Oct 23 10:04:56 2025
+
+
+msg=prf00010
+bcp0004.bcp,stored_proc_xref_1
+   Table Load:  stored_proc_xref_1                       6
+bcp0005.bcp,stored_proc_tbl_xref_1
+   Table Load:  stored_proc_tbl_xref_1                   6
+bcp0006.bcp,tbl_master_1
+   Table Load:  tbl_master_1                             2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG at Thu Oct 23 10:04:56 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD against server SQLSRV2 at Thu Oct 23 10:04:56 2025
+
+
+msg=prf00010
+bcp0007.bcp,piq_storedproc
+   Table Load:  piq_storedproc                           8
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD at Thu Oct 23 10:04:56 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM against server SQLSRV2 at Thu Oct 23 10:04:56 2025
+
+
+msg=prf00010
+ghrmsg01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM at Thu Oct 23 10:04:56 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:04:56 2025
+
+
+ghrspall.sp
+ghrsp001.sp
+ghrsp002.sp
+ghrsp003.sp
+ghrsp004.sp
+ghrsp005.sp
+ghrsp006.sp
+ghrsp007.sp
+ghrsp008.sp
+ghrspnal.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES at Thu Oct 23 10:04:58 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:04:58 2025
+
+
+ghrsp005.sp
+ghrsp009.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES at Thu Oct 23 10:04:58 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE against server SQLSRV2 at Thu Oct 23 10:04:58 2025
+
+
+ghrupd01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE at Thu Oct 23 10:04:58 2025
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS at Thu Oct 23 10:04:58 2025
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrint\
+File Prefix = ghrint
+Server = SQLSRV2
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00012
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00007
+ghrtblall.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_TABLES at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+ghrdel01.SQL
+ghrdel02.SQL
+ghrdel03.SQL
+ghrdel04.SQL
+ghrdel05.SQL
+ghrdel06.SQL
+ghrdel07.SQL
+ghrdel08.SQL
+ghrdel09.SQL
+ghrdel10.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:DELETE_MAPPING_DATA at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+bcp0001.bcp,psc_batch
+   Table Load:  psc_batch                               11
+bcp0002.bcp,psc_step
+   Table Load:  psc_step                                30
+bcp0008.bcp,psc_program_alias
+   Table Load:  psc_program_alias                       11
+bcp0009.bcp,psc_program_alias_version
+   Table Load:  psc_program_alias_version               21
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PSCB at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+bcp0003.bcp,batch_parameters
+   Table Load:  batch_parameters                         2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_ENTP at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+bcp0004.bcp,stored_proc_xref_1
+   Table Load:  stored_proc_xref_1                       6
+bcp0005.bcp,stored_proc_tbl_xref_1
+   Table Load:  stored_proc_tbl_xref_1                   6
+bcp0006.bcp,tbl_master_1
+   Table Load:  tbl_master_1                             2
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_CTLG at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+bcp0007.bcp,piq_storedproc
+   Table Load:  piq_storedproc                           8
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_PIQD at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+msg=prf00010
+ghrmsg01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:LOAD_MAPPING_MESM at Thu Oct 23 10:19:03 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:19:03 2025
+
+
+ghrspall.sp
+ghrsp001.sp
+ghrsp002.sp
+ghrsp003.sp
+ghrsp004.sp
+ghrsp005.sp
+ghrsp006.sp
+ghrsp007.sp
+ghrsp008.sp
+ghrspnal.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES at Thu Oct 23 10:19:06 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES against server SQLSRV2 at Thu Oct 23 10:19:06 2025
+
+
+ghrsp005.sp
+ghrsp009.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES at Thu Oct 23 10:19:06 2025
+
+exec[C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE]
+Starting Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE against server SQLSRV2 at Thu Oct 23 10:19:06 2025
+
+
+ghrupd01.SQL
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:UPDATE_DBSPIQD_TABLE at Thu Oct 23 10:19:06 2025
+
+Completed Section C:\SSFAWS2\DBMS\ghrInt\ghrint.prf:CREATE_OBJECTS at Thu Oct 23 10:19:06 2025
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrtci\
+File Prefix = ghrint
+Server = SSSERVER\TCIG
+
+ -> SSSERVER\TCIG
+SQL Server message 0, state 43349608, severity 11:
+     [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+Unable to connect to SQL Server
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrtci\
+File Prefix = ghrint
+Server = SSSERVER\TCIG
+
+ -> SSSERVER\TCIG
+SQL Server message 0, state 42497600, severity 11:
+     [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+Unable to connect to SQL Server
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrtci\
+File Prefix = ghrint
+Server = SSSERVER\TCIG
+
+ -> SSSERVER\TCIG
+SQL Server message 0, state 41121344, severity 11:
+     [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+Unable to connect to SQL Server
+
+Wjamit version: 8.0.0
+Option = 1
+Prf File Name = ghrint.prf
+Section Name = CREATE_OBJECTS
+Out Location = C:\SSFAWS2\DBMS\ghrtci\
+File Prefix = ghrint
+Server = TCIG
+Starting Section C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_OBJECTS against server TCIG at Thu Mar 12 13:46:37 2026
+
+
+msg=prf00012
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_TABLES]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:DELETE_MAPPING_DATA]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:LOAD_MAPPING_PSCB]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:LOAD_MAPPING_ENTP]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:LOAD_MAPPING_CTLG]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:LOAD_MAPPING_PIQD]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:LOAD_MAPPING_MESM]
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_DBSOSXP_STORED_PROCEDURES]
+exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES]
+Starting Section C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES against server TCIG at Thu Mar 12 13:46:37 2026
+
+
+ghrsp011.sp
+ghrsp012.sp
+
+Completed Section C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_DBSHRPN_STORED_PROCEDURES at Thu Mar 12 13:46:37 2026
+
+//exec[C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:UPDATE_DBSPIQD_TABLE]
+Completed Section C:\SSFAWS2\DBMS\ghrtci\ghrint.prf:CREATE_OBJECTS at Thu Mar 12 13:46:37 2026
+

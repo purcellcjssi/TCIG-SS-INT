@@ -1,0 +1,3 @@
+PayRate,WorkAssignment,LegalEntity,Position,PayRateType,Active,HROrganizationUnit,Employee,HROrganization,Location
+25800.000000,1,BANK,24,2,false,14,3007,BANK,BOCA ROTAN FL
+250000.000000,2,BANK,28,2,true,24,3007,BANK,CORPORATE OFFICE

@@ -1,0 +1,495 @@
+Description,HROrganization,Position,ShortDescription
+CEO / President - Bank of the US,BANK,1,CEO / President
+Chief Financial Officer,BANK,2,CFO
+Chief Technology Officer,BANK,3,CTO
+Chief Operations Officer,BANK,4,COO
+Chief Banking Officer,BANK,5,CBO
+Vice President - Finance,BANK,6,VP Finance
+Controller,BANK,7,Controller
+Vice President of Mergers and Acquisitions,BANK,8,VP Mergers & Acq
+Branch Manager - Boca Rotan Branch,BANK,9,BrMgr - Boca Rotan
+Branch Manager for Deerfield FL Branch,BANK,10,BrMgr - Deerfield
+Branch Manager for Ft Lauderdale FL Branch,BANK,11,BrMgr - FtLauderdale
+Branch Manager for Toronto CAN Branch,BANK,12,BrMgr - Toronto
+Test Position,BANK,13,zzTEST
+Manager - US  Accounting,BANK,14,MGR - US Acctg
+Senior Manager - Corporate Receivables,BANK,15,SrMGR - Corp Receivb
+Manager - Corporate Payables,BANK,16,MGR Corp A/P
+Vice President of US Operations,BANK,18,VP - US Operations
+Vice President of Caribbean Operations,BANK,19,VP - Caribbean Ops
+Vice President Canadian Operations,BANK,20,VP Canadian Ops
+Ft Lauderdale Branch Administrative Assistant,BANK,21,FtLaud  Admin Asst
+Ft Lauderdale Branch Senior Cashier,BANK,22,FtLaud Sr Cashier
+Ft Lauderdale Branch Cashier,BANK,23,FtLaud Cashier
+SR Cashier - Boca Raton Branch,BANK,24,BocaRtn Sr Cashier
+Cashier - Boca Raton Branch,BANK,25,BocaRt Cashier
+Deerfield FL Branch SR Cashier,BANK,26,Deerfld Sr Cashier
+Deerfield FL Branch Cashier/Teller,BANK,27,Deerfld Cashier/Tell
+Assets Accountant,BANK,28,Assets Accountant
+Manager Corporate Accounting,BANK,29,MGR Accounting
+Chairman of the Board of Directors,BANK,30,Board Chairman
+Member of the Board of Directors,BANK,31,Board Member
+Manager of Treasury,BANK,32,Mgr Treasury
+Supervisor - Treasury,BANK,33,Supv Treasury
+Treasury Analyst,BANK,34,Treasury Analyst
+Manager of Supplies and Services,BANK,35,MGR Supplies Svc
+Supervisory - Inventory,BANK,36,Supv Inventory
+Receiving Clerk,BANK,37,Receiving Clerk
+Manager of Contracts,BANK,38,MGR  Contracts
+Manager of Purchasing,BANK,39,Mgr Purchasing
+Supervisor - Purchasing,BANK,40,Supv Purchasing
+Purchasing Requestor,BANK,41,Requestor
+Senior Buyer,BANK,42,Sr Buyer
+Buyer,BANK,43,Buyer
+Manager of Internal Audit,BANK,44,MGR Internal Audit
+Supervisor of Internal Audit,BANK,45,SUPV Internal Audit
+Internal Auditor,BANK,46,Internal Auditor
+Manager of Corporate Assets,BANK,47,MGR Assets
+Supervisory of Corporate Assets,BANK,48,Supv Assets
+Supervisor of Accounts Payable,BANK,49,Supv Payables
+Clerk - Account Payables,BANK,50,Payables Clerk
+Accounts Payable Payment Processor,BANK,51,Processor
+Projects Accountant,BANK,52,Proj Accountant
+Manager of Corporate Projects,BANK,53,MGR Projects
+Manager of Corporate Budgets,BANK,54,MGR Budget
+Supervisor of Ledgers,BANK,55,SUPV Ledger
+Supervisor of Budgets,BANK,56,SUPV Budget
+Corporate Budget Accountant,BANK,57,Budget Accountant
+Corporate Ledger Accountant,BANK,58,Ledger Accountant
+Supervisor of Corporate Projects,BANK,59,SUPV Projects
+Staff Accountant - Finance,BANK,60,Staff Accountant
+Supervisor Corporate Accounts Receivables,BANK,61,SUPV Corp Receivable
+Corporate Accounts Receivable Clerk,BANK,62,Clerk - Corp A/R
+Janitor - Deerfield Branch,BANK,63,Janitor - Deerfld
+Janitor - Corporate,BANK,64,Janitor - Corp
+Janitor - Boca Rotan Branch,BANK,65,Janitor - BRotan
+Janitor - Ft Lauderdale Branch,BANK,66,Janitor - FtL
+Receiptionist - Deerfield Branch,BANK,67,Receptionist - Deerf
+Receiptionist - Corporate,BANK,68,Receptionist - Corp
+Receiptionist - Boca Rotan Branch,BANK,69,Receptionist - BRato
+Receptionist - Ft Lauderdale Branch,BANK,70,Receptionist - FtL
+Mailroom Attendant - Deerfield Branch,BANK,71,Mailroom Att - Deerf
+Mailroom Attendant - Corporate,BANK,72,Mailroom Att - Corp
+Mailroom Attendant - Boca Raton Branch,BANK,73,Mailroom Att - Brato
+Mailroom Attendant - Ft Lauderdale Branch,BANK,74,Mailroom Att - FtL
+Manager Corporate Operations,BANK,75,MGR Corp Ops
+Admin Assistant to the Controller,BANK,76,Admin Assistnt Cntlr
+Executive Secretary to VP Finance,BANK,77,ExecSec VP FIN
+Executive Secretary to VP Operations,BANK,78,ExecSec VP OPS
+Executive Secretary to CEO,BANK,79,ExecSec CEO
+Executive Secretary to CFO,BANK,80,ExecSec CFO
+Executive Secretary to COO,BANK,81,ExecSec COO
+Executive Secretary to CTO,BANK,82,ExecSec CTO
+Executive Secretary to CBO,BANK,83,ExecSec CBO
+Executive Branch Secretary - Boca Rotan,BANK,84,ExecSec BocaRotan
+Executive Branch Secretary - Ft Lauderdale,BANK,85,ExecSec FtLauderdale
+Executive Branch Secretary - Deerfield,BANK,86,ExecSec Deerfield
+Secretary - Corporate,BANK,87,Secretary Corp
+Vice President of US Technology,BANK,88,VP US Technology
+Manager IT Security,BANK,89,MGR IT Security
+Manager IT Systems,BANK,90,MGR IT Systems
+Manager IT Development,BANK,91,MGR IT Dev
+Manager IT Cloud,BANK,92,MGR IT Cloud
+HR Generalist - Deerfield Branch,BANK,93,HR Generalist DF
+Loan Officer - Deerfield Branch,BANK,94,DF Loan Off
+Customer Service Representative - Deerfield Branch,BANK,95,Customer Svc DF
+Personal Banker - Deerfield Branch,BANK,96,PersBanker DF
+Staff Accountant - Deerfield Branch,BANK,97,Staff Accnt DF
+Operations Supervisor - Deerfield,BANK,98,OPS Supv DF
+HR Generalist - Boca Raton,BANK,99,HR Generalist BR
+Operations Supervisor - Boca Raton,BANK,100,Ops Supv BR
+Customer Service Representative - Boca Raton,BANK,101,Cust Svc BR
+Personal Banker - Boca Raton,BANK,102,Pers Banker BR
+Staff Accountant - Boca Raton,BANK,103,Staff Acctnt BR
+Loan Officer - Boca Raton,BANK,104,Loan Off BR
+Dummy / Historical,BANK,105,Dummy / History
+Chief Executive Officer,CORP,1,CEO
+Chief Operating Officer,CORP,2,COO
+Vice President,CORP,3,VP
+VicePresident of Finance,CORP,4,VP Finance
+Manager,CORP,14,Manager
+Manager of Invoicing,CORP,15,MGR Invoicing
+Manager of Requisitions,CORP,16,MGR Requisitions
+Director,CORP,17,DIR
+Director of Benefits,CORP,18,DIR Benefits
+Director of Human Resources,CORP,19,DIR Human Resources
+Financial Staff,CORP,20,FIN Staff
+Human Resource Staff,CORP,21,HR Staff
+Procurement Staff,CORP,22,PROC Staff
+Payroll Staff,CORP,23,PAYROLL Staff
+Warehouse Staff,CORP,24,Warehouse Staff
+Requisitions Staff,CORP,25,REQ Staff
+Requestor,CORP,26,Requestor
+Requisitions Approver,CORP,27,REQ Approver
+Invoice Staff,CORP,28,Invoice Staff
+Invoice Clerk,CORP,29,Inv Clerk
+Invoice Approver,CORP,30,Invoice Approver
+Financial Approval Clerk,CORP,31,FIN Approver
+Manager of Finance,CORP,32,MGR Finance
+Finance Clerk,CORP,33,FIN Clerk
+Assets Staff,CORP,34,Assets Staff
+Assets Clerk,CORP,35,Assets Clerk
+Manager of Assets,CORP,36,MGR Assets
+Receiving Clerk,CORP,37,Receiving Clerk
+Manager of Payroll,CORP,38,MGR Payroll
+MGR Benefits,CORP,39,MGR Benefits
+VicePresident of Sales,CORP,40,VP Sales
+Director of NE Sales,CORP,41,DIR of NE Sales
+Director of SE Sales,CORP,42,DIR of SE Sales
+VicePresident of Human Resources,CORP,43,VP Human Resources
+Manager of Procurement,CORP,44,MGR Procurement
+Buyer,CORP,45,Buyer
+Manager of Cash Management,CORP,46,MGR Cash
+Chief Financial Officer,CORP,47,CFO
+VicePresident of Technology,CORP,48,VP Technology
+Payroll Clerk,CORP,49,Payroll Clerk
+Secretary - Executive Level,CORP,50,Secretary Exec
+Secretary - Management Level,CORP,51,Secretary Mgmt
+Secretary - CEO,CORP,52,Secretary CEO
+Secretary - Chief Operating Officer,CORP,53,Secretary - COO
+Secretary - VP HR,CORP,56,Secretary VP HR
+Prison Officer,GOG,1,PRISON OFFICER
+"Ministry of Finance, Economic Development, Physical Developm",GOG,2,MIN FIN
+Permanent Secretary with responsibility for Physical Develop,GOG,3,PS FIN
+Permanent Secretary (acting) with responsibility for Finance,GOG,4,PS FIN ACT
+Deputy Permanent Secretary,GOG,5,DEPUTY PS
+Permanent Secretary with responsibility for Public Administr,GOG,6,PS DPA
+Director of Trade,GOG,7,DIR OF TRADE
+Director of Economics & Trade Co-operation,GOG,8,DIR OF ECON
+Director of Energy & Sustainable Development,GOG,9,DIR ENERG SUS DEV
+Chief Budget Officer-Economic Affairs,GOG,10,CHIEF BDG OFFICER
+Chieft Economist,GOG,11,CHIEF ECON
+Valuation Officer,GOG,12,VAL OFFICER
+Budget Officer,GOG,13,BUDG OFFICER
+Budget Officer I,GOG,14,BUDG OFFICER I
+Collection Officer,GOG,15,COLL OFFICER
+Planning Officer I,GOG,16,PLN OFFICER
+"Trade Officer II, Economic Affairs",GOG,17,TRD OFFICER II
+"Physical Planner II, Physical Planning Unit",GOG,18,PHYS PLAN II
+Senior Energy Officer,GOG,19,SNR ENERG OFFICER
+Energy Officer,GOG,20,ENERG OFFICER
+Advisor On Trade & Investment,GOG,21,ADV TRD & INVST
+Chief Policy Advisor,GOG,22,CHIEF POLICY ADV
+Deputy Director of Audit,GOG,23,DEPUTY DIR OF AUD
+Internal Auditor,GOG,24,INTERNAL AUD
+Tax Auditor,GOG,25,TAX AUD
+Systems Analyst,GOG,26,SYS ANLST
+Systems Analyst I,GOG,27,SYS ANLST I
+Systems Analyst-Hardware Technician,GOG,28,SYS ANLST -HD TECH
+Data Analyst,GOG,29,DATA ANLST
+Programme Analyst,GOG,30,PROG ANLST
+Assistant Valuation Officer,GOG,31,ASST VAL OFFICER
+Senior Portfolio Analyst,GOG,32,SNR PORT ANLST
+Chief Policy Analyst,GOG,33,CHIEF POL ANLST
+Policy Analyst,GOG,34,POL ANLST
+Senior Policy Analyst,GOG,35,SNR POL ANLST
+Policy Analyst II,GOG,36,POL ANLST II
+Budget Analyst,GOG,37,BDG ANLST
+Revenue Analyst,GOG,38,REV ANLST
+Senior Debt Analyst,GOG,39,SNR DEBT ANLST
+Debt Analyst,GOG,40,DEBT ANLST
+Debt Management Analyst,GOG,41,DEBT MGMT ANLST
+Director of Statistics,GOG,42,DIR STATS
+Senior Economist,GOG,43,SNR ECONMST
+Economist,GOG,44,ECON
+Tax Officer I,GOG,45,TAX OFF I
+Tax Officer II,GOG,46,TAX OFF II
+Senior Tax Inspector,GOG,47,SNR TAX INSP
+Tax Inspector,GOG,48,TAX INSP
+Manager of Printery,GOG,49,MGR PRINT
+Government Printer,GOG,50,GOV PRINT
+Plant Superintendent,GOG,51,PLT SUPERINT
+Supervisor of Binder,GOG,52,SUPV BNDR
+Supervisor of Composing,GOG,53,SUPV COMPOS
+Computer Graphic Artist,GOG,54,COMP GA
+Offset Press Operator,GOG,55,OFFSET PRES OP
+Cameraman,GOG,56,CAM
+Printer,GOG,57,PNTR
+Systems Administrator,GOG,58,SYS ADMIN
+Senior Human Resource Management Officer,GOG,61,SNR HRM OFFICER
+Director of Learning and Development,GOG,62,DIR L&D
+Assistant System Administrator,GOG,63,ASST SYS ADMIN
+Network Administrator,GOG,64,NTWK ADMIN
+Head of Reform Management,GOG,65,HD REF MGMT
+Reform Management Officer,GOG,66,REF MGMT OFFICER
+Human Resource Business Partner,GOG,67,HR BUS PART
+Records Management Officer,GOG,68,REC MGMT OFFICER
+Management Information Officer,GOG,69,MGMT INFO OFFICER
+Chief Personnel Officer,GOG,70,CPO
+Senior Administrative Officer,GOG,71,SAO
+Administrative Officer,GOG,72,ADMIN OFFICER
+Office Manager,GOG,73,OFFI MGR
+Human Resource Management Officer,GOG,74,HRM OFFICER
+Human Resource Management Associate,GOG,75,HRM ASC
+Human Resource Development Officer,GOG,76,HRD OFFICER
+Front Line Associate,GOG,77,FRNT ASSOC
+Data Entry Clerk,GOG,78,DATA ENT CLERK
+Registry Clerk I,GOG,79,REG CLERK I
+Registry Clerk II,GOG,80,REG CLERK II
+Pensions Clerk I,GOG,81,PENS CLERK I
+Clerical Associate,GOG,82,CLER ASSOC
+Strategic Programme Manager,GOG,83,STRAT PROG MGR
+Strategic Programme Officer,GOG,84,STRAT PROG OFFICER
+Corporate Strategic Officer,GOG,85,CORP STRAT OFFICER
+Chief Corporate Communications Officer,GOG,86,CHIEF CC OFFICER
+Assistant Senior Administrative Officer,GOG,88,ASST SAO
+Administrative Officer,GOG,89,AO
+Executive Officer,GOG,90,EO
+Chief Procurement Officer,GOG,91,CHIEF PROC OFFICER
+Senior Procurement Officer,GOG,92,SNR PROC OFFICER
+Corporate Strategic Officer,GOG,93,CSO
+Procurement Officer II,GOG,94,PROC OFFICER II
+Procurement Officer,GOG,95,PROC OFFICER
+Clerk I,GOG,97,CLERK I
+Secretary,GOG,98,SEC
+Secretary II,GOG,100,SEC II
+Head Waste Reduction Officer,GOG,101,HEAD WASTE REDU OFFI
+Chauffeur/Assistant,GOG,102,CHAUFF/ASST
+Clerk/Typist,GOG,103,CLERK/TYP
+Statistical Clerk II,GOG,104,STATS CLERK I
+Clerk II,GOG,105,CLERK II
+PBX Operator,GOG,106,PBX OPS
+Office Attendant/Cleaner,GOG,107,OFFI ATTENDANT/CLNR
+Clerk II,GOG,108,CLERIK II
+Office Attendant/Cleaner,GOG,110,OFFI ATTN/CLEANER
+Administrative Secretary,GOG,112,ADMIN SEC
+Temporary Adminstrative Officer,GOG,113,TEMP ADMIN OFFICER
+Clerical Assistant,GOG,114,CLERC ASST
+Digital Strategist,GOG,116,DIG STRA
+IT Manager,GOG,117,IT MGR
+Information Technology Officer,GOG,118,IT OFFICER
+Infromation Technology Assistant,GOG,119,IT ASST
+Computer Operator,GOG,120,COMP OP
+Technical Assistant III,GOG,121,TECH ASST III
+System Programmer,GOG,122,SYS PROG
+System Developer,GOG,123,SYS DEV
+Building Inspector II,GOG,124,BUILD INSP II
+Junior Building Inspector,GOG,125,JR BUILD INSP
+Chief Draughtsman,GOG,126,CHIEF DRUGHTSMN
+Draughtsman,GOG,127,DRUGHTSMN
+Senior Planning Officer,GOG,128,SNR PLNG OFFICER
+Planning Officer I,GOG,129,PLNG OFFICER
+Physical Planner,GOG,131,PHYS PLNR
+Physical Planner II,GOG,132,PHYS PLNR II
+Senior Project Officer,GOG,133,SNR PROJ OFF - ECON
+"Project Officer, Economic and Technical Corporation",GOG,134,PROJ OFFICER
+Project Officer I,GOG,135,PROJ OFFICER I
+Project Specialist,GOG,136,PROJ SPC
+"Project Officer II, Economic Affairs",GOG,137,PROJ OFFICER II
+Monitoring and Evaluation Officer,GOG,139,M&E OFFICER
+Deputy Comptroller of Customs and Excise,GOG,140,DEPUTY COMP OF CUST
+Comptroller of Customs and Excise-Customs,GOG,141,COMP OF CUST
+Comptroller of Inland Revenue,GOG,142,COMP OF IRD
+Deputy Comptroller-Inland Revenue,GOG,143,DEPUTY COMP OF IRD
+Supervisor of Customs,GOG,144,SUPV OF CUST
+Senior Customs Officer,GOG,145,SNR CUST OFFICER
+Customs Clerk,GOG,146,CUST CLERK
+Customs Clerk I,GOG,147,CUST CLERK I
+Customs Clerk II,GOG,148,CUST CLERK II
+Preventative Guard,GOG,149,PREV GUARD
+Assistant Comptroller-Inland Revenue,GOG,150,ASST COMP IRD
+Staff Accountant,GOG,151,STAFF ACCT
+Senior Accounts Clerk I,GOG,152,SNR ACCT CLERK I
+Senior Accounts Clerk II,GOG,153,SNR ACCT CLERK II
+Accounts Clerk I,GOG,154,ACCT CLERK I
+Accounts Clerk II,GOG,155,ACCT CLERK II
+Clerk-Finalization of Accounts,GOG,156,CLERK FIN OF ACCTS
+Accountant General,GOG,157,ACCT GENERAL
+Deputy Accountant General,GOG,158,DEPUTY ACCT GNL
+Senior Accountant,GOG,159,SNR ACCT
+Chief Treasury Officer,GOG,160,CHIEF TREAS OFFICER
+"Head, Debt Management Unit",GOG,161,HEAD DEBT MGMT UNIT
+Statistician,GOG,162,STATS
+AG Statistician,GOG,163,AG STATS
+Statistical Officer I,GOG,164,STATS OFFICER I
+Senior Price and Consumer Affairs Officer,GOG,165,SNR PCA OFFICER
+Price and Consumer Affairs Officer,GOG,166,PCA OFFICER
+Deputy Director of Statistics,GOG,167,DEP DIR OF STATS
+Assistant IT Manager,GOG,168,ASST IT MGR
+Recruiter,GOG,169,RECRUITER
+HR Receptionist,GOG,170,HR Receptionist
+HR Benefits Analyst,GOG,171,HR Benefits Anlyst
+Inside Sales Representative,GOG,172,INSIDE SALES REP
+HR Benefits Director,GOG,173,HR BENEFITS DIR
+Controller,GOG,174,SRMGR-CONTROLLER
+Chief Executive Officer,GOG,175,EXEC-CEO
+Staff Accountant,GOG,176,STAFF ACCOUNTANT
+Senior Accountant,GOG,177,SNR ACCOUNTNT
+Staff Cost Accountant,GOG,178,STAFF COST ACCT
+Financial Analyst,GOG,179,FIN ANLYST
+Financial Planner,GOG,180,FIN PLNNER
+Financial Planner-EAP,GOG,181,FIN PLANNR EAP
+Budget Analyst,GOG,182,BUDGET ANLYST
+Accounting Clerk,GOG,183,ACCTNG CLERK
+Credit/Collection Clerk,GOG,184,CRED/COLL CLERK
+Payroll Clerk,GOG,185,PAYROLL CLERK
+Purchasing Agent,GOG,186,PURCHASING AGENT
+Purchasing Agent,GOG,187,PUR AGNT CNTRL
+Recruiter,GOG,188,INCTR RECRUIT
+Associate HR Representative,GOG,189,ASSOC HR REP
+Associate HR Representative  -Chicago,GOG,190,ASSOC HR REP-CHICAGO
+Staff HR Representative -HQ,GOG,191,STAFF HR REP -HQ
+Staff HR Representative -Chicago,GOG,192,STAFF HR REP -CHI
+Senior HR Representative,GOG,193,SR HR REP
+Senior HR Representative -Chicago,GOG,194,SR HR REP -CHI
+Training Specialist -HQ,GOG,195,TRAINING SPECI HQ
+Training Specialist -PLN02,GOG,196,TRAINING SPECI 2
+Instructor,GOG,197,INSTRUCTOR
+HR Assistant,GOG,198,HR ASSISTANT
+HRIS Analyst -MOF,GOG,199,HRIS ANALYST -MF
+HRIS Analyst -Chicago,GOG,200,HRIS ANALYST -CH
+HRIS Analyst -HQ,GOG,201,HRIS ANALYST -HQ
+Compensation Analyst,GOG,202,COMPENSATION ANALYST
+Salary Administrator,GOG,203,SALARY ADMIN
+Sales Representative -MoF,GOG,204,INCTR-SALES REP -MOF
+President Canadian Companies,GOG,205,EXEC- PRES CAN
+Senior Sales Representative -West,GOG,206,INCTR-SR SAL -WEST
+Sr Sales Representative -Central,GOG,207,INCTR-SR SAL -CNTRL
+Labor Negotiator,GOG,208,INCTR-LABOR NEGO
+Sales Representative -Central,GOG,209,INCTR-SALES RP -CNTL
+Customer Svc Representative,GOG,210,CUSTOMER SVC REP
+Regional Sales Manager -West,GOG,211,MGR-REGIONL SL-W
+Regional Sales Manager -Central,GOG,212,MGR-REGIONL SL-C
+Marketing Manager-Product 1,GOG,213,MGR-MARKETING 1
+Marketing Manager-Product 2,GOG,214,MGR-MARKETING 2
+Marketing Assistant-New Accountsts,GOG,215,MARKTNG AS-NACCTS
+Marketing Assistant,GOG,216,MARKETING ASST
+Strategic Marketing Planner,GOG,217,STRATEGIC MARKTNG PL
+Staff Project Planner,GOG,218,STAFF PROJ PLANNER
+Managing Director UK Companies,GOG,219,DIR-UK COMP
+Senior Project Planner,GOG,220,SR PROJECT PLANNER
+Employee Assistance Counselor,GOG,221,EMP ASSIST COUN
+Medical Assistant,GOG,222,MEDICAL ASSIST
+Registered Nurse,GOG,223,REG NURSE01
+Registered Nurse,GOG,224,REGI NURSE02
+Plant Manager II,GOG,225,SRMGR-PLANT2
+Shift 1 Supervisor,GOG,226,SUPV-SHIFT1 SUPVR
+Shift 2 Supervisor,GOG,227,SUPV-SHIFT2 SUPVR
+Production Supervisor,GOG,228,SUPV -PRODUCTION
+QC Manager,GOG,229,MGR-QC MANAGER
+QC Technician-02,GOG,230,QC TECHNICIAN2
+Corporate Council,GOG,231,SRMGR-CORP COUNCIL
+VP of Operations,GOG,232,EXEC-VP OPS1
+VP of Finance,GOG,233,EXEC-VP FINANCE
+VP of Sales & Marketing,GOG,234,EXEC-VP SALES/MARK
+VP of Information Systems,GOG,235,EXEC-VP INFO SYS
+Staff Attorney,GOG,236,INCTR-STAFF ATTORNEY
+Paralegal Assistant,GOG,237,PARALEGAL ASSISTANT
+Compensation Manager,GOG,238,MGR-COMPENSAT
+Training Manager,GOG,239,MGR-TRAINING
+Recruitment Manager,GOG,240,MGR-RECRUITMNT
+Employment Manager,GOG,241,MGR-EMPLOYMENT
+HRIS Manager,GOG,242,MGR-HRIS
+Benefits Manager,GOG,243,MGR-BENEFITS
+Labor Relations Manager,GOG,244,MGR-LABOUR REL
+Manager of R & D,GOG,245,MGR R&D
+Staff Admin Assistant,GOG,246,STAFF A. ASSIST -HQ
+Staff Admin Assistant,GOG,247,STAFF ADMIN ASSIST
+Staff Admin Assistant-Sales,GOG,248,STAFF A. ASSI-SALES
+Staff Admin Assistant,GOG,249,STAFF A. ASSIST -CHI
+Senior Admin Assistant,GOG,250,SR ADMIN ASSIST
+Senior Admin Assistant-Exec,GOG,251,SR ADMIN ASST-EXE
+Senior Admin Assistant-Sales,GOG,252,SR ADMIN ASST-SAL
+Senior Admin Assistant,GOG,253,SR ADMIN ASST-HQ
+Staff Word Processing Operator -HQ,GOG,254,STAFF WRD PROC -HQ
+Senior Admin Assistant -Chicago,GOG,255,SR ADMIN ASST -CHI
+Staff Word Processing Operator -Chicago,GOG,256,STAFF WRD PROC -CHI
+System Support Specialist,GOG,257,INCTR-SYS SUP SPEC
+Staff Programmer,GOG,258,INCTR-STAFF PROG
+Inventory Control Clerk,GOG,259,INVENTORY CTRL CLERK
+Forklift Operators,GOG,260,FORKLIFT OPS
+Truck Drivers,GOG,261,TRUCK DRIVERS
+Marketing Assistant,GOG,262,MARKETING ASSIST
+Dock Foreman,GOG,263,SUPV-DOCK FOREMAN
+Strategic Marketing Planner,GOG,264,STRAT MRKTG PLNNR
+Marketing Assistant -Central,GOG,265,MRKTNG ASST -CNTRL
+Marketing Manager,GOG,266,MGR-MARKETING
+Customer Svc Manager,GOG,267,MGR-CUSTOMR SVC
+Senior Sales Representative,GOG,268,SR SALES REP
+Sales Representative,GOG,269,SALES REP
+Equipment Technician,GOG,270,EQUIPMENT TECHNICIAN
+Electrician,GOG,271,ELECTRICIAN
+Janitor,GOG,272,JANITOR
+Sweeper,GOG,273,SWEEPER
+Plant Maintenance Manager,GOG,274,MGR-PLANT MAINT
+Assembly Line Operator,GOG,275,ASSEMBLY LINE OPS
+Mechanical Engineer,GOG,276,MECHANICAL ENGR
+Analog Design Engineer,GOG,277,ANALOG DESIGN ENGR
+Packaging Engineer,GOG,278,PACKAGING ENGR
+QC Manager,GOG,279,QC MANAGER
+QC Technician-01,GOG,280,QC TECHNICIAN1
+VP of Operations,GOG,281,EXEC-VP OPS2
+Plant Manager I,GOG,282,SRMGR-PLANT1
+Shift Supervisor,GOG,283,SUPV-SHIFT
+SmartStream Administrator,GOG,284,INCTR-SS ADMIN
+Sr PC Support Specialist,GOG,285,INCTR-SR PC SPPRT SP
+Sr Programmer,GOG,286,INCTR-SR PROGR
+Staff Programmer,GOG,287,INCTR-STAFF PROGR
+Systems Analyst,GOG,288,INCTR-SYSTEMS ANLYS
+Network Administrator,GOG,289,INCTR-NTWRK ADMIN
+Staff PC Support Specialist,GOG,290,INCTR-STF PC SPPT SP
+Human Resourses Generalist,GOG,291,STAFF-HR GNRLST
+Payroll Generalist,GOG,292,STAFF-PAYROLL GNRL
+President US Companies,GOG,293,EXEC-PRES US
+Controller,GOG,294,SRMGR-CONTROLLR
+Staff Cost Accountant -HQ,GOG,295,STAFF COST ACCT -HQ
+Staff Accountant -HQ,GOG,296,STAFF ACCT -HQ
+Senior Accountant,GOG,297,SR ACCOUNTANT
+Payoll Manager,GOG,298,MGR-PAYROLL
+Payroll Clerk -IRD,GOG,299,PAYROLL CLERK -IRD
+Purchasing Agent -HQ,GOG,300,PURCHASING AGENT -HQ
+Financial Planner,GOG,301,FINANCIAL PLNNR
+Financial Analyst,GOG,303,FINANCIAL ANLYST
+VP of Human Resources,GOG,304,EXEC-VP HR
+Recruitment Manager,GOG,305,MGR-RECRUITMENT
+Recruiter1,GOG,306,INCTR-RECRUITER1
+Senior HR Representative,GOG,307,SR HR REPRESENTATIVE
+Staff HR Representative,GOG,308,STAFF HR REP
+Associate HR Representative -Chicago,GOG,309,ASSOC HR REP -CHI
+Compensation Analyst,GOG,310,COMP ANALYST
+HRIS Analyst,GOG,311,HRIS ANALYST
+Training Manager -Chicago,GOG,312,MGR-TRAINING -CHI
+Sr PC Support Specialist,GOG,314,INCTR-SR PC SUPPORT
+Generic 999,GOG,315,GENERIC 999
+Administrative Assistant,GOG,316,STAFF-ADMIN ASSIST
+Default Position for HCM,GOG,317,DEFAULT HCM POST
+Sr Programmer,GOG,318,INCTR-SR PROGRAMMER
+Sr Programmer,GOG,319,INCTR-SR PROG
+Programmer/Analyst,GOG,320,INCTR-PROGR/ANLYST
+Programmer/Analyst,GOG,321,INCTR-PROG/ANALYST
+Systems Analyst,GOG,322,INCTR-SYS ANALYST
+Network Administrator  -HQ,GOG,323,INCTR-NET ADMIN -HQ
+Staff PC Support Specialist -HQ,GOG,324,INCTR-STFF PC SUPPRT
+Manager of Human Resources,GOG,325,MGR-HR
+Manager of Invoicing,GOV,1,MGR INVOICING
+Manager of Requisitions,GOV,2,MGR REQ
+Manager of Procurement,GOV,3,MGR PROCUREMT
+Manager of Contracts,GOV,4,MGR CONTRACTS
+Manager of Inventory,GOV,5,MGR INV
+Cash Manager,GOV,6,MGR CASH
+Manager of Strategic Sourcing,GOV,7,MGR STRAT SOURC
+Clerk - Invoicing,GOV,8,CLRK INV
+Invoice Approver,GOV,9,APPRVR INVOICE
+Requester - Requisitions,GOV,10,REQ REQUISITIONS
+Requisitions Approver,GOV,11,APPRVR REQ
+Buyer,GOV,12,BUYER
+Director of Supplies & Services,GOV,13,DIR SUPPL
+Receiver - Supply Management,GOV,14,RECEIVER
+Cash Processor,GOV,15,PROCSR CASH
+Supplier Portal Administrator,GOV,16,ADMIN SUPPLR PORTL
+Recall Administrator,GOV,17,ADMIN RECALL
+Minister of Finance,GOV,18,MIN FINANCE
+Manager of Finance Dept,GOV,19,MGR Finance
+Journal Entry Clerk,GOV,20,JE Clerk
+Budget Clerk,GOV,21,Budget Clerk
+Manager Budgets,GOV,22,MGR Budgets
+Manager Projects,GOV,23,MGR Projects
+Manager Fixed Assets,GOV,24,MGR Assets
+Projects Clerk,GOV,25,Projects Clerk
+Assets Clerk,GOV,26,Assets Clerk
+FIN General Approver,GOV,27,General Approver
+Manager - Accounting,PAYR,1,MGR ACCTG
+Supervisor - Accounting,PAYR,2,SUPV ACCTG
+Clerk1 - Accounting,PAYR,3,CLERK1 - ACCTG
+Clerk2 - Accounting,PAYR,4,CLERK2 - ACCTG
+Clerk3 - Accounting,PAYR,5,CLERK3 - ACCTG

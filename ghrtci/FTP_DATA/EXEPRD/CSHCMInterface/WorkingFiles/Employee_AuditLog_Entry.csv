@@ -1,0 +1,8 @@
+Employee, TimeStamp, Actor, Effective, Action, Type, Name, OV, NV
+3004, 2023072020411425, estephens, 20230701, Create, create, Name.GivenName, , Rose
+3004, 2023072020411425, estephens, 20230701, Create, create, Name.MiddleName, , A
+3004, 2023072020411425, estephens, 20230701, Create, create, Name.FamilyName, , Barr
+3004, 2023072020411425, estephens, 20230701, Create, create, PrimaryWorkAssignment, , 0
+3004, 2023072020411425, estephens, 20230701, Create, create, RelationshipStatus, , ACTIVE
+3004, 2023072020455536, estephens, 20230701, SetPrimaryWorkAssignment, update, PrimaryWorkAssignment, 0, 1
+3004, 2024042519450571, rprado, 20240101, SetPrimaryWorkAssignment, update, PrimaryWorkAssignment, 1, 2

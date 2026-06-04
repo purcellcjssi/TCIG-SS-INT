@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="CSHCMInterface.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <applicationSettings>
+    <CSHCMInterface.Properties.Settings>
+      <setting name="DBFile" serializeAs="String">
+        <value>CSHCMInterface.accdb</value>
+      </setting>
+      <setting name="CSFilesPath" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="SSFilesPath" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="AuditReportPath" serializeAs="String">
+        <value>-</value>
+      </setting>
+      <setting name="SftpHost" serializeAs="String">
+        <value>sftp.inforcloudsuite.com</value>
+      </setting>
+      <setting name="ClientId" serializeAs="String">
+        <value>GOVOFGRENADA_DEM~rz5t1hhthX0-YUpRXEQZQoDLyfUlDrz8hVpr9etmIAk</value>
+      </setting>
+      <setting name="ClientSecret" serializeAs="String">
+        <value>9pIvpWPbD5rvZDrg4xQFWeHaSqtJet7m5Mtz95ZvkNNnG003mPDSRvpjI7gtaCrWVA9HIoIkPkbi58lc7bCNSw</value>
+      </setting>
+      <setting name="Username" serializeAs="String">
+        <value>GOVOFGRENADA_DEM#U3RmhjG1KCV2eXPvsffKHhphHYQjdfWlgMnpYjnoaaV8GlCz95_EvqyX1D0HeOTO216-ZsnQXmbZ6vHpKnrDYQ</value>
+      </setting>
+      <setting name="Password" serializeAs="String">
+        <value>WUJsqI-SKsZ2-9nE3OlejSueE0AurCuxHT-9XfXrIXL5t5XjZXEpCob-EVrW3WmCdrZExTFeR6YclQdbYhzgFg</value>
+      </setting>
+	  <setting name="Tenant" serializeAs="String">
+        <value>GOVOFGRENADA_DEM</value>
+      </setting>      
+      <setting name="SftpUser" serializeAs="String">
+        <value>govofgrenada_dem_ftp</value>
+      </setting>
+      <setting name="SftpPassword" serializeAs="String">
+        <value>VxJXKfiftmAkRyr</value>
+      </setting>
+	  <setting name="SftpDirectory" serializeAs="String">
+        <value>/GHRTransfer/</value>
+      </setting>      
+    </CSHCMInterface.Properties.Settings>
+  </applicationSettings>
+</configuration>

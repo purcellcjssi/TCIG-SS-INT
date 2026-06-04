@@ -1,0 +1,1169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kros.Utils.MsAccess</name>
+    </assembly>
+    <members>
+        <member name="T:Kros.Data.BulkActions.MsAccess.CsvFileWriter">
+            <summary>
+            Class for generating CSV files for Microsoft Access bulk insert.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.#ctor(System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Creates an instance of writer with specified output file <paramref name="filePath" /> and encoding
+            <paramref name="encoding" />.
+            </summary>
+            <param name="filePath">Path to the output file.</param>
+            <param name="encoding">Encoding of the output file.</param>
+            <param name="append">Specifies if output file wil be ovrewritten (<see langword="false"/>), or appended to
+            (<see langword="true"/>) if it already exists.</param>
+            <exception cref="T:System.ArgumentException">The value of súboru <paramref name="filePath" /> is empty string, or string
+            containing whitespace characters only.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates an instance of writer with specified output file <paramref name="filePath" /> and UTF-8 encoding.
+            </summary>
+            <param name="filePath">Path to the output file.</param>
+            <param name="append">Specifies if output file wil be ovrewritten (<see langword="false"/>), or appended to
+            (<see langword="true"/>) if it already exists.</param>
+            <exception cref="T:System.ArgumentException">The value of súboru <paramref name="filePath" /> is empty string, or string
+            containing whitespace characters only.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.#ctor(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Creates an instance of writer with specified output file <paramref name="filePath" /> and encoding
+            <paramref name="codePage" />.
+            </summary>
+            <param name="filePath">Path to the output file.</param>
+            <param name="codePage">Code page number. For example value for Windows central europe is 1250</param>
+            <param name="append">Specifies if output file wil be ovrewritten (<see langword="false"/>), or appended to
+            (<see langword="true"/>) if it already exists.</param>
+            <exception cref="T:System.ArgumentException">The value of súboru <paramref name="filePath" /> is empty string, or string
+            containing whitespace characters only.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.#ctor">
+            <summary>
+            Creates an instance of writer where output file is random file in system's temporary folder.
+            </summary>
+            <remarks>Path to the generated output file is accessible in <see cref="P:Kros.Data.BulkActions.MsAccess.CsvFileWriter.FilePath" /> property.</remarks>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.CsvFileWriter.ValueDelimiter">
+            <summary>
+            Value separator in output file.
+            </summary>
+            <value>Default value is comma (<b>,</b>).</value>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.CsvFileWriter.StringQuote">
+            <summary>
+            Character for quoting strings.
+            </summary>
+            <value>Default value is quotation mark (<b>"</b>).</value>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.CsvFileWriter.FileEncoding">
+            <summary>
+            Text encoding of output file.
+            </summary>
+            <value>Some <see cref="T:System.Text.Encoding">Encoding</see>.</value>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.CsvFileWriter.FilePath">
+            <summary>
+            Path to the output file.
+            </summary>
+            <value>String.</value>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.Write(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Writes one record <paramref name="data"/> to the output file.
+            </summary>
+            <param name="data">List of data values.</param>
+            <remarks>
+            Whole one record/line is written to the output file. Individual values must be of correct .NET data type, because
+            data type determines how the value will be written. <b>So for example it is bad to write float values as strings.</b>
+            For conversion to correct string for output are used methods <c>ProcesXxxValue</c>.
+            </remarks>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.CsvFileWriter.WriteValue(System.Object)">
+            <summary>
+            Writes one value to the output file.
+            </summary>
+            <param name="value">Written data.</param>
+        </member>
+        <member name="T:Kros.Data.BulkActions.MsAccess.BulkInsertColumnType">
+            <summary>
+            Column type for bulk insert into Microsoft Access database from file.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.Undefined">
+            <summary>
+            Undefined (default) column type.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.Text">
+            <summary>
+            Text column type.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert">
+            <summary>
+            The calss for fast bulk insert big amount of data into Microsoft Access database.
+            </summary>
+            <remarks>
+            In the background, it creates a text CSV file with data which are inserted.
+            </remarks>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DefaultValueDelimiter">
+            <summary>
+            Default value separator for CSV file: comma (<b>,</b>).
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DefaultCodePage">
+            <summary>
+            Default code page: <see cref="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Utf8CodePage"/>.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Utf8CodePage">
+            <summary>
+            UTF-8 code page: 65001.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.WindowsCentralEuropeCodePage">
+            <summary>
+            Windows Central Europe code page: <b>1250</b>.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.AnsiCodePage">
+            <summary>
+            ANSI code page.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.OemCodePage">
+            <summary>
+            OEM code page.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.String)">
+            <summary>
+            Creates a new instance with database connection specifiend in <paramref name="connectionString"/>
+            and default settings for CSV file.
+            </summary>
+            <param name="connectionString">Connection string for the database connection where the data will be inserted.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Creates a new instance with database connection <paramref name="connection"/> and default settings for CSV file.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.</param>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction)">
+            <summary>
+            Creates a new instance with database connection <paramref name="connection"/>, transaction
+            <paramref name="externalTransaction"/> and default settings for CSV file.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.
+            If there already is running transaction in this connection, it must be specified in
+            <paramref name="externalTransaction"/>.</param>
+            <param name="externalTransaction">Transaction in which the bulk insert will be performed.</param>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Int32)">
+            <summary>
+            Creates a new instance with database connection <paramref name="connection"/>, transaction
+            <paramref name="externalTransaction"/> and CSV file code page <paramref name="csvFileCodePage"/>.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.
+            If there already is running transaction in this connection, it must be specified in
+            <paramref name="externalTransaction"/>.</param>
+            <param name="externalTransaction">Transaction in which the bulk insert will be performed.</param>
+            <param name="csvFileCodePage">Code page for generated CSV file.</param>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Int32,System.Char)">
+            <summary>
+            Creates a new instance with database connection <paramref name="connection"/>, transaction
+            <paramref name="externalTransaction"/> and CSV file settings <paramref name="csvFileCodePage"/>
+            and <paramref name="valueDelimiter"/>.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.
+            If there already is running transaction in this connection, it must be specified in
+            <paramref name="externalTransaction"/>.</param>
+            <param name="externalTransaction">Transaction in which the bulk insert will be performed.</param>
+            <param name="csvFileCodePage">Code page for generated CSV file.</param>
+            <param name="valueDelimiter">Value delimiter for generated CSV file.</param>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.CodePage">
+            <summary>
+            Code page used for CSV file and bulk insert. Default value is 65001 <see cref="F:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Utf8CodePage"/>.
+            </summary>
+            <value>Number of code page.</value>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ValueDelimiter">
+            <summary>
+            Value separator in generated CSV file.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ExternalTransaction">
+            <summary>
+            External transaction, in which bulk insert is executed.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BatchSize">
+            <summary>
+            This setting is not used.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BulkInsertTimeout">
+            <summary>
+            This setting is not used.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DestinationTableName">
+            <summary>
+            Destination table name in database.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ColumnMappings">
+            <inheritdoc cref="P:Kros.Data.BulkActions.IBulkInsert.ColumnMappings"/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(Kros.Data.BulkActions.IBulkActionDataReader)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(System.Data.IDataReader)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.IDataReader)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(System.Data.DataTable)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.DataTable)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.CreateInsertSql(System.String,System.String)">
+            <summary>
+            Creates SQL command for inserting data into table <paramref name="tableName"/>
+            from file <paramref name="sourceFilePath"/>.
+            </summary>
+            <param name="tableName">Destination table.</param>
+            <param name="sourceFilePath">Source file.</param>
+            <returns>Insert statement.</returns>
+        </member>
+        <member name="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory">
+            <summary>
+            Creates instances of <see cref="T:Kros.Data.BulkActions.IBulkInsert"/> for bulk inserting.
+            </summary>
+            <seealso cref="T:Kros.Data.BulkActions.IBulkActionFactory" />
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory"/> class.
+            </summary>
+            <param name="connection">The connection.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert">
+            <summary>
+            Gets the bulk insert.
+            </summary>
+            <returns>The bulk insert.</returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)">
+            <summary>
+            Gets the bulk insert.
+            </summary>
+            <param name="externalTransaction">The external transaction.</param>
+            <returns>The bulk insert.</returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32)">
+            <summary>
+            Gets the bulk insert.
+            </summary>
+            <param name="externalTransaction">The external transaction.</param>
+            <param name="csvFileCodePage">The CSV file code page.</param>
+            <returns>The bulk insert.</returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32,System.Char)">
+            <summary>
+            Gets the bulk insert.
+            </summary>
+            <param name="externalTransaction">The external transaction.</param>
+            <param name="csvFileCodePage">The CSV file code page.</param>
+            <param name="valueDelimiter">The value delimiter.</param>
+            <returns>The bulk insert.</returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate">
+            <summary>
+            Gets the bulk update.
+            </summary>
+            <returns>
+            The bulk update.
+            </returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)">
+            <summary>
+            Gets the bulk update.
+            </summary>
+            <param name="externalTransaction">The external transaction.</param>
+            <returns>The bulk update.</returns>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register">
+            <summary>
+            Registers factory methods for creation instances to <see cref="T:Kros.Data.BulkActions.BulkActionFactories"/>.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate">
+            <summary>
+            Class for fast bulk data update for Microsoft Access.
+            </summary>
+            <remarks>The bulk update uses a temporary database.</remarks>
+            <example>
+              <code source="..\..\..\..\Documentation\Examples\Kros.Utils.MsAccess\MsAccessExamples.cs" title="Bulk update" region="BulkUpdate" language="cs" />
+            </example>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.#ctor(System.String)">
+            <summary>
+            Creates new instance of <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate"/> for database <paramref name="connectionString"/>.
+            </summary>
+            <param name="connectionString">Connection string to the database where the data will be inserted.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.#ctor(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Creates new instance of <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate"/> for database <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction)">
+            <summary>
+            Creates new instance of <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate"/> for database <paramref name="connection"/>
+            and with transaction <paramref name="externalTransaction"/>.
+            </summary>
+            <param name="connection">Database connection where the data will be inserted. The connection mus be opened.
+            If there already is running transaction in this connection, it must be specified in
+            <paramref name="externalTransaction"/>.</param>
+            <param name="externalTransaction">Transaction in which the bulk insert will be performed.</param>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.CreateBulkInsert">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.InvokeAction(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.GetTempTableName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.CreateTempTableCore(System.Data.IDataReader,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.GetTempTableNameForBulkInsert(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.CreateCommandForPrimaryKey">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Kros.Data.MsAccess.Extensions">
+            <summary>
+            General extensions for Microsoft Access.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.MsAccess.Extensions.MsAccessErrorCode(System.Data.OleDb.OleDbException)">
+            <summary>
+            Returns Microsoft Access error code.
+            </summary>
+            <param name="ex">Exception, whose error code is checked.</param>
+            <returns>Returns error code as an enumeration <see cref="T:Kros.Data.MsAccess.MsAccessErrorCode" />. If the error code
+            is unknown, or not defined, value <see cref="T:Kros.Data.MsAccess.MsAccessErrorCode">MsAccess.MsAccessErrorCode</see> is returned.
+            </returns>
+            <remarks>
+            Method checks the value of <see cref="P:System.Data.OleDb.OleDbError.SQLState">SQLState</see> of the first error in the list
+            <see cref="P:System.Data.OleDb.OleDbException.Errors">OleDbException.Errors</see>.
+            </remarks>
+        </member>
+        <member name="M:Kros.Data.MsAccess.Extensions.MsAccessErrorCode(System.Data.OleDb.OleDbException,System.String@)">
+            <summary>
+            Returns Microsoft Access error code.
+            </summary>
+            <param name="ex">Exception, whose error code is checked.</param>
+            <param name="sqlState">Real value of <see cref="P:System.Data.OleDb.OleDbError.SQLState">SQLState</see>.</param>
+            <returns>Returns error code as an enumeration <see cref="T:Kros.Data.MsAccess.MsAccessErrorCode" />. If the error code
+            is unknown, or not defined, value <see cref="T:Kros.Data.MsAccess.MsAccessErrorCode">MsAccess.MsAccessErrorCode</see> is returned.
+            </returns>
+            <remarks>
+            Method checks the value of <see cref="P:System.Data.OleDb.OleDbError.SQLState">SQLState</see> of the first error in the list
+            <see cref="P:System.Data.OleDb.OleDbException.Errors">OleDbException.Errors</see>.
+            </remarks>
+        </member>
+        <member name="T:Kros.Data.MsAccess.MsAccessDataHelper">
+            <summary>
+            General helpers for work Microsoft Access.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessDataHelper.ClientId">
+            <summary>
+            Identification of Microsoft Access classes (used for example in <see cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory"/>,
+            <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory"/>).
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessDataHelper.AceProviderBase">
+            <summary>
+            Identification of Microsoft Access ACE provider: <c>Microsoft.ACE.OLEDB</c>.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessDataHelper.JetProviderBase">
+            <summary>
+            Identification of Microsoft Access JET provider: <c>Microsoft.Jet.OLEDB</c>.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.CreateEmptyDatabase(System.String,Kros.Data.MsAccess.ProviderType)">
+            <summary>
+            Creates an empty Microsoft Access database at location <paramref name="path"/>. Database type
+            (<c>.accdb</c>, <c>.mdb</c>) is specified with <paramref name="provider"/>.
+            </summary>
+            <param name="path">Path, where the database will be created. The path must be full, must contain also file name.
+            </param>
+            <param name="provider">Microsoft Access database type.</param>
+            <remarks>
+            <alert class="warning">
+            <para>If the file <paramref name="path"/> already exists, it will be overwritten.</para>
+            </alert>
+            <para>
+            Based on the value of <paramref name="provider"/> is created specified database type (<c>.accdb</c>, or older
+            <c>.mdb</c>). But nothing is done with the file extension, so the file name will be created as
+            <paramref name="path"/>. So it is possible to create a file with <c>.mdb</c> extension, which actually will be
+            database type <c>.accdb</c>. So the caller must provide correct file name.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Kros.Data.MsAccess.MsAccessDataHelper.MsAccessProvider">
+            <summary>
+            Returns installed provider for Microsoft Access. ACE provider is preferred over JET provider (if both are available).
+            If none provider is installed, empty string is returned.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.HasProvider(Kros.Data.MsAccess.ProviderType)">
+            <summary>
+            Returns is specified Microsoft Access provider <paramref name="provider"/> is available.
+            </summary>
+            <param name="provider">Checked provider type.</param>
+            <returns><see langword="true"/> if provider is available, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.GetProviderString(Kros.Data.MsAccess.ProviderType)">
+            <summary>
+            For specified provider type <paramref name="provider"/> returns string of the provider for use in connection string.
+            If there is no provider available, empty string is returned.
+            </summary>
+            <param name="provider">Provider type.</param>
+            <returns>
+            Method just returns the values of other properties:
+            <list type="table">
+            <item>
+              <term><see cref="F:Kros.Data.MsAccess.ProviderType.Ace">ProviderType.Ace</see></term>
+              <description><see cref="P:Kros.Data.MsAccess.MsAccessDataHelper.MsAccessAceProvider"/></description>
+            </item>
+            <item>
+              <term><see cref="F:Kros.Data.MsAccess.ProviderType.Jet">ProviderType.Jet</see></term>
+              <description><see cref="P:Kros.Data.MsAccess.MsAccessDataHelper.MsAccessJetProvider"/></description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="P:Kros.Data.MsAccess.MsAccessDataHelper.MsAccessAceProvider">
+            <summary>
+            Returns string for installed Microsoft Access ACE provider (for example <b>Microsoft.ACE.OLEDB.12.0</b>).
+            If ACE provider is not installed, empty string is returned.
+            </summary>
+            <remarks>
+            Provider is loaded from the system only once and the value is cached. So when no provider is found, this state is
+            returned for any subsequent reads of the property.
+            </remarks>
+        </member>
+        <member name="P:Kros.Data.MsAccess.MsAccessDataHelper.MsAccessJetProvider">
+            <summary>
+            Returns string for installed Microsoft Access ACE provider (for example <b>Microsoft.Jet.OLEDB.4.0</b>).
+            If JET provider is not installed, empty string is returned.
+            </summary>
+            <remarks>
+            Provider is loaded from the system only once and the value is cached. So when no provider is found, this state is
+            returned for any subsequent reads of the property.
+            </remarks>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.GetProviderType(System.Data.IDbConnection)">
+            <summary>
+            Returns Microsoft Access provider type used in connection <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>Provider type.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.GetProviderType(System.String)">
+            <summary>
+            Returns Microsoft Access provider type used in connection string <paramref name="connectionString"/>.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <returns>Provider type.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsMsAccessConnection(System.String)">
+            <summary>
+            Checks if database connection <paramref name="connectionString"/> is Microsoft Access.
+            </summary>
+            <param name="connectionString">Tested connection string.</param>
+            <returns><see langword="true"/> if connection is to Microsoft Access database, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsMsAccessConnection(System.Data.IDbConnection)">
+            <summary>
+            Checks if database connection <paramref name="connection"/> is Microsoft Access.
+            </summary>
+            <param name="connection">Tested connection.</param>
+            <returns><see langword="true"/> if connection is to Microsoft Access database, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsMsAccessAceProvider(System.String)">
+            <summary>
+            Checks if ACE provider is used in <paramref name="connectionString"/>.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <returns><see langword="true"/> if ACE provider is used, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsMsAccessJetProvider(System.String)">
+            <summary>
+            Checks if JET provider is used in <paramref name="connectionString"/>.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <returns><see langword="true"/> if JET provider is used, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsExclusiveMsAccessConnection(System.Data.IDbConnection)">
+            <summary>
+            Checks if connection <paramref name="connection"/> is an exclusive connection to the database.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns><see langword="true"/> if connection is exclusive, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.IsExclusiveMsAccessConnection(System.String)">
+            <summary>
+            Checks if connection <paramref name="connectionString"/> is an exclusive connection to the database.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <returns><see langword="true"/> if connection is exclusive, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessDataHelper.CreateConnectionString(System.String,Kros.Data.MsAccess.ProviderType)">
+            <summary>
+            Creates a connection string to the database <paramref name="databasePath"/> with provider type
+            <paramref name="provider"/>.
+            </summary>
+            <param name="databasePath">Path to the database.</param>
+            <param name="provider">Provider type, which will be usedProvider string is used for the current, installed provider,
+            so there is no need to care about provider version.</param>
+            <returns>Returns connection string to specified database. For example
+            <c>Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\data\database.accdb;</c>.</returns>
+        </member>
+        <member name="T:Kros.Data.MsAccess.MsAccessIdGenerator">
+            <summary>
+            The unique ID generator for Microsoft Access.
+            </summary>
+            <seealso cref="T:Kros.Data.IdGeneratorFactories" />
+            <seealso cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory" />
+            <remarks>In general, the generator should be created using <see cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory"/>.</remarks>
+            <example>
+            <code language="cs" source="..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"/>
+            </example>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates a generator for table <paramref name="tableName"/> in database <paramref name="connectionString"/>
+            with batch size <paramref name="batchSize"/>.
+            </summary>
+            <param name="connectionString">Connection string to the database.</param>
+            <param name="tableName">Table name, for which IDs are generated.</param>
+            <param name="batchSize">IDs batch size. Saves round trips to database for IDs.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Value of <paramref name="connectionString"/> or <paramref name="tableName"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException"><list type="bullet">
+            <item>Value of <paramref name="connectionString"/> is empty string, or string containing only
+            whitespace characters.</item>
+            <item>Value of <paramref name="batchSize"/> is less or equal than 0.</item>
+            </list></exception>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.#ctor(System.Data.OleDb.OleDbConnection,System.String,System.Int32)">
+            <summary>
+            Creates a generator for table <paramref name="tableName"/> in database <paramref name="connection"/>
+            with batch size <paramref name="batchSize"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="tableName">Table name, for which IDs are generated.</param>
+            <param name="batchSize">IDs batch size. Saves round trips to database for IDs.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Value of <paramref name="connection"/> or <paramref name="tableName"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">Value of <paramref name="batchSize"/> is less or equal than 0.</exception>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.CreateConnection(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.GetNewIdFromDbCore">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.GetIdStoreTableCreationScript">
+            <summary>
+            Returns SQL script for creating <c>IdStore</c> table.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGenerator.InitDatabaseForIdGenerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory">
+            <summary>
+            Creates an instances of <see cref="T:Kros.Data.MsAccess.MsAccessIdGenerator"/> for specified database.
+            </summary>
+            <seealso cref="T:Kros.Data.MsAccess.MsAccessIdGenerator"/>
+            <seealso cref="T:Kros.Data.IdGeneratorFactories"/>
+            <example>
+            <code language="cs" source="..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"/>
+            </example>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGeneratorFactory.#ctor(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory"/> class.
+            </summary>
+            <param name="connection">Connection, ktorá sa použije pre získavanie unikátnych identifikátorov.</param>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGeneratorFactory.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory"/> class.
+            </summary>
+            <param name="connectionString">
+            Connection string, ktorý sa použije na vytvorenie conenction pre získavanie unikátnych identifikátorov.
+            </param>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGeneratorFactory.GetGenerator(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGeneratorFactory.GetGenerator(System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.MsAccess.MsAccessIdGeneratorFactory.Register">
+            <summary>
+            Registers factory methods for creating an instance of factory into <see cref="T:Kros.Data.IdGeneratorFactories"/>.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.MsAccess.MsAccessErrorCode">
+            <summary>
+            Error codes for Microsoft Access database provider.
+            </summary>
+            <remarks>The error code is in the exception <see cref="T:System.Data.OleDb.OleDbException">OleDbException</see>
+            in the <see cref="P:System.Data.OleDb.OleDbError.SQLState">SqlState</see> property. The list of all error codes
+            is at <see href="https://msdn.microsoft.com/en-us/library/bb221208(v=office.12).aspx" />.</remarks>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.Unknown">
+            <summary>
+            Unknown error.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.KeyDuplicity">
+            <summary>
+            The changes you requested to the table were not successful because they would create duplicate values
+            in the index, primary key, or relationship. Change the data in the field or fields that contain
+            duplicate data, remove the index, or redefine the index to permit duplicate entries and try again.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CouldNotUseFileAlreadyInUse">
+            <summary>
+            Could not use &lt;name&gt;; file already in use.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CannotOpenDatabaseFileIsInvalid">
+            <summary>
+            Cannot open database 'name'. It may not be a database that your application recognizes,
+            or the file may be corrupt.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CannotOpenDatabaseIsLocked">
+            <summary>
+            The Microsoft Jet database engine cannot open the file 'name'. It is already opened exclusively
+            by another user, or you need permission to view its data.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CannotFindTableOrQuery">
+            <summary>
+            The Microsoft Jet database engine cannot find the input table or query 'name'.
+            Make sure it exists and that its name is spelled correctly.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.RelationshipViolation">
+            <summary>
+            You cannot add or change a record because a related record is required in table 'name'.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CouldNotUpdateCurrentlyLocked">
+            <summary>
+            Could not update; currently locked.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.DatabaseAlreadyOpenedExclusively">
+            <summary>
+            You attempted to open a database that is already opened exclusively by user 'userName'
+            on machine 'machineName'. Try again when the database is available.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.MsAccessErrorCode.CouldNotReadRecordIsLocked">
+            <summary>
+            Could not read the record; currently locked by another user.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.MsAccess.ProviderType">
+            <summary>
+            Type of Microsoft Access provider.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.ProviderType.Ace">
+            <summary>
+            ACE provider.
+            </summary>
+        </member>
+        <member name="F:Kros.Data.MsAccess.ProviderType.Jet">
+            <summary>
+            JET provider.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.Schema.MsAccess.MsAccessCacheKeyGenerator">
+            <summary>
+            Cache key generator for Microsoft Access used by <see cref="T:Kros.Data.Schema.DatabaseSchemaCache"/>.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessCacheKeyGenerator.GenerateKey(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Generates a cache key for <paramref name="connection"/>.
+            The generated key is a string "<c>MsAccess:database path</c>".
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>String.</returns>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessCacheKeyGenerator.Kros#Data#Schema#ISchemaCacheKeyGenerator#GenerateKey(System.Object)">
+            <inheritdoc cref="M:Kros.Data.Schema.MsAccess.MsAccessCacheKeyGenerator.GenerateKey(System.Data.OleDb.OleDbConnection)"/>
+        </member>
+        <member name="T:Kros.Data.Schema.MsAccess.MsAccessColumnSchema">
+            <summary>
+            Table's column schema for Microsoft Access.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.#ctor(System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.#ctor(System.String,System.Boolean,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.#ctor(System.String,System.Boolean,System.Object,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.OleDbType">
+            <summary>
+            Data type of the column.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.SetupParameter(System.Data.IDataParameter)">
+            <inheritdoc/>
+            <exception cref="T:System.ArgumentException">Hodnota <paramref name="param"/> nie je typu <see cref="T:System.Data.OleDb.OleDbParameter"/>.
+            </exception>
+        </member>
+        <member name="T:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs">
+            <summary>
+            Arguments for the event <see cref="E:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ParseDefaultValue"/>.
+            </summary>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.#ctor(System.String,System.String,System.Data.OleDb.OleDbType,System.String,System.Object)">
+            <summary>
+            Creates and initializes instance of arguments.
+            </summary>
+            <param name="tableName"><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.TableName"/></param>
+            <param name="columnName"><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.ColumnName"/></param>
+            <param name="oleDbType"><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.OleDbType"/></param>
+            <param name="defaultValueString"><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValueString"/></param>
+            <param name="defaultValue">Value, which was obtained by default parser.</param>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.TableName">
+            <summary>
+            Table which schema is being loaded.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.ColumnName">
+            <summary>
+            Column name which default value is being parsed.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.OleDbType">
+            <summary>
+            Data type of column which default value is being parsed.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValueString">
+            <summary>
+            Default value of a column. It is the string which is being parsed.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValue">
+            <summary>
+            Value, which was obtained by default parser. Set this value, when using custom logic for parsing default value
+            in event handler.
+            </summary>
+        </member>
+        <member name="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.Handled">
+            <summary>
+            Flag indicating if default value was parsed using custom logic in event handler. Set this to <see langword="true"/>
+            if you set your own default value in <see cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValue"/>.
+            </summary>
+        </member>
+        <member name="T:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader">
+            <summary>
+            The implementation of <see cref="T:Kros.Data.Schema.IDatabaseSchemaLoader`1"/> for Microsoft Access.
+            </summary>
+        </member>
+        <member name="E:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ParseDefaultValue">
+            <summary>
+            Event raised while parsing default value of a column. It is possible to use custom parsing logic in the event handler.
+            </summary>
+            <remarks>When custom logic for parsing column's default value is used, the parsed value is set in
+            <see cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValue"/> property and
+            <see cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.Handled"/> flag must be set to <see langword="true"/>.</remarks>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.OnParseDefaultValue(Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs)">
+            <summary>
+            Raises the <see cref="E:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ParseDefaultValue"/> event with arguments <paramref name="e"/>.
+            </summary>
+            <param name="e">Arguments for the event.</param>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#SupportsConnectionType(System.Object)">
+            <inheritdoc cref="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.SupportsConnectionType(System.Data.OleDb.OleDbConnection)"/>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadSchema(System.Object)">
+            <summary>
+            Loads database schema for <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>Database schema.</returns>
+            <remarks>By default, schema is loaded using new connection to the database, based on <paramref name="connection"/>.
+            But if <paramref name="connection"/> is an exclusive connection, it is used directly.</remarks>
+            <exception cref="T:System.ArgumentNullException">
+            The value of <paramref name="connection"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The connection <paramref name="connection"/> is not a connection to Microsoft Access database.
+            </exception>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadTableSchema(System.Object,System.String)">
+            <summary>
+            Loads table schema for table <paramref name="tableName"/> in database <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="tableName">Table name.</param>
+            <returns>Table schema, or value <see langword="null"/> if specified table does not exist.</returns>
+            <remarks>By default, schema is loaded using new connection to the database, based on <paramref name="connection"/>.
+            But if <paramref name="connection"/> is an exclusive connection, it is used directly.</remarks>
+            <exception cref="T:System.ArgumentNullException">The value of <paramref name="connection"/> or <paramref name="tableName"/>
+            is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <list>
+            <item>The connection <paramref name="connection"/> is not a connection to Microsoft Access database.</item>
+            <item>The value of <paramref name="tableName"/> is empty string, or string containing whitespace characters only.
+            </item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.SupportsConnectionType(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Checks if it is poosible to load database schema for <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns><see langword="false"/> if value of <paramref name="connection"/> is <see langword="null"/>, or it is not
+            a connection to Microsoft Access database. Otherwise <see langword="true"/>.</returns>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadSchema(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            Loads database schema for <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>Database schema.</returns>
+            <remarks>
+            Loading schema creates a new connection to database based on <paramref name="connection"/>. If loading with
+            new connection fails (for example input connection is exclusive), schema is loaded using input
+            <paramref name="connection"/> directly.</remarks>
+            <exception cref="T:System.ArgumentNullException">Value of <paramref name="connection"/> id <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">The connection <paramref name="connection"/> is not a connection
+            to Microsoft Access database.</exception>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadTableSchema(System.Data.OleDb.OleDbConnection,System.String)">
+            <summary>
+            Loads table schema for table <paramref name="tableName"/> in database <paramref name="connection"/>.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="tableName">Table name.</param>
+            <returns>Table schema, or value <see langword="null"/> if specified table does not exist.</returns>
+            <remarks>
+            Loading schema creates a new connection to database based on <paramref name="connection"/>. If loading with
+            new connection fails (for example input connection is exclusive), schema is loaded using input
+            <paramref name="connection"/> directly.</remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <list type="bullet">
+            <item>Value of <paramref name="connection"/> is <see langword="null"/>.</item>
+            <item>Value of <paramref name="tableName"/> is <see langword="null"/>.</item>
+            </list>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Value of <paramref name="tableName"/> is an empty string, or string containing whitespace characters only.
+            </exception>
+        </member>
+        <member name="M:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.GetDefaultValueString(System.String)">
+            <summary>
+            Adjusts the string <paramref name="rawDefaultValueString"/> so column's default value can be obtained from it.
+            </summary>
+            <param name="rawDefaultValueString">Default value string as it is stored in database.</param>
+            <returns>Adjusted string - trimmed of unneeded characters.</returns>
+        </member>
+        <member name="T:Kros.Utils.MsAccess.LibraryInitializer">
+            <summary>
+            Initialization of the library.
+            </summary>
+        </member>
+        <member name="M:Kros.Utils.MsAccess.LibraryInitializer.InitLibrary">
+            <summary>
+            Initializes the library. Method should be called once at a start of a program.
+            </summary>
+            <remarks>
+            The initialization will do:
+            <list type="bullet">
+            <item>Adds <see cref="T:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader"/> to the default static list
+            <see cref="P:Kros.Data.Schema.DatabaseSchemaLoader.Default">DatabaseSchemaLoader.Default</see>.</item>
+            <item>Adds <see cref="T:Kros.Data.Schema.MsAccess.MsAccessSchemaLoader"/> to the defaule schema cache
+            <see cref="P:Kros.Data.Schema.DatabaseSchemaCache.Default">DatabaseSchemaCache.Default</see>.</item>
+            <item>Registers <see cref="T:Kros.Data.MsAccess.MsAccessIdGeneratorFactory"/> to the <see cref="T:Kros.Data.IdGeneratorFactories"/>.</item>
+            <item>Registers <see cref="T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory"/> to the <see cref="T:Kros.Data.BulkActions.BulkActionFactories"/>.</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:Kros.MsAccess.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.BulkInsertColumnDoesNotExistInDestination">
+            <summary>
+              Looks up a localized string similar to Invalid column in data source. Column &quot;{0}&quot; does not exist in destination table..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.BulkInsertInvalidDestinationColumnMapping">
+            <summary>
+              Looks up a localized string similar to Invalid destination column mapping at index {0}..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.BulkInsertInvalidSourceColumnMapping">
+            <summary>
+              Looks up a localized string similar to Invalid source column mapping at index {0}..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.BulkInsertSourceColumnDoesNotExist">
+            <summary>
+              Looks up a localized string similar to Column &quot;{0}&quot; specified in column list does not exist in data source..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.ConnectionStringIsNotMsAccess">
+            <summary>
+              Looks up a localized string similar to Provided connection string is not a connection string for Microsoft Access database. Supported providers are Microsoft.ACE.OLEDB and Microsoft.Jet.OLEDB..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.CsvFileDoesNotExist">
+            <summary>
+              Looks up a localized string similar to Data cannot be inserted. Data file does not exist: {0}.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.DestinationColumnMappingNotSet">
+            <summary>
+              Looks up a localized string similar to The destination column name nor its ordinal is set..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.InvalidIndexInDestinationColumnMapping">
+            <summary>
+              Looks up a localized string similar to Destination table &quot;{0}&quot; does not contain column at index {1}..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.InvalidIndexInSourceColumnMapping">
+            <summary>
+              Looks up a localized string similar to Source data does not contain column at index {0}..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.InvalidNameInDestinationColumnMapping">
+            <summary>
+              Looks up a localized string similar to Destination table &quot;{0}&quot; does not contain column &quot;{1}&quot;..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.InvalidNameInSourceColumnMapping">
+            <summary>
+              Looks up a localized string similar to Source data does not contain column &quot;{0}&quot;..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.ProviderNotInstaller">
+            <summary>
+              Looks up a localized string similar to MS Access provider &quot;{0}&quot; is not installed..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.SourceColumnMappingNotSet">
+            <summary>
+              Looks up a localized string similar to The source column name nor its ordinal is set..
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.SqlIdGeneratorTableScript">
+             <summary>
+               Looks up a localized string similar to CREATE TABLE [IdStore] (
+            	[TableName] char(100) NOT NULL,
+            	[LastId] int NOT NULL
+            );
+            
+            CREATE UNIQUE INDEX  [PK_IdStore] ON [IdStore] ([TableName] ASC) WITH PRIMARY;
+            .
+             </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.UnknownDataTypeForCsv">
+            <summary>
+              Looks up a localized string similar to Unknown data type for CSV file. Data type: {0}, value: {1}.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.UnsupportedBulkInsertDataType">
+            <summary>
+              Looks up a localized string similar to Unsupported data type for Microsoft Access bulk insert: OleDbType.{0}.
+            </summary>
+        </member>
+        <member name="P:Kros.MsAccess.Properties.Resources.UnsupportedConnectionType">
+            <summary>
+              Looks up a localized string similar to Connection type is not supported. The connection must be of type OleDbConnection and must have correct provider, Microsoft.ACE.OLEDB or Microsoft.Jet.OLEDB..
+            </summary>
+        </member>
+        <member name="T:Kros.UnitTests.MsAccessTestHelper">
+            <summary>
+            Helper class for unit tests, if there is a need for real database in tests. It creates temporary empty database
+            for testing. This database is automatically deleted after finishing the work.
+            </summary>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType)">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as an empty database
+            with random name in temporary folder.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as an empty database
+            with random name in temporary folder and is initialized with scripts in <paramref name="initDatabaseScripts"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="initDatabaseScripts">List of scripts, which are used for database initialization.
+            For example, they can be scripts for creating and filling necessary tables.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String)">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabasePath"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabasePath">Source database. New temporary database is created as a copy of this.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String,System.String)">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabasePath"/> and initialized with script <paramref name="initDatabaseScript"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabasePath">Source database. New temporary database is created as a copy of this.</param>
+            <param name="initDatabaseScript">A script, which is used for database initialization.
+            For example, it can be script for creating some table.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabasePath"/> and initialized with scripts in <paramref name="initDatabaseScripts"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabasePath">Source database. New temporary database is created as a copy of this.</param>
+            <param name="initDatabaseScripts">List of scripts, which are used for database initialization.
+            For example, they can be scripts for creating and filling necessary tables.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream)">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabaseStream"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabaseStream">Source database. New temporary database is created as a copy of this.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream,System.String)">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabaseStream"/> and initialized with script <paramref name="initDatabaseScript"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabaseStream">Source database. New temporary database is created as a copy of this.</param>
+            <param name="initDatabaseScript">A script, which is used for database initialization.
+            For example, it can be script for creating some table.</param>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates an instance of helper with specified parameters. New database file is created as a copy of
+            <paramref name="sourceDatabaseStream"/> and initialized with scripts in <paramref name="initDatabaseScripts"/>.
+            </summary>
+            <param name="provider">Microsoft Access provider type.</param>
+            <param name="sourceDatabaseStream">Source database. New temporary database is created as a copy of this.</param>
+            <param name="initDatabaseScripts">List of scripts, which are used for database initialization.
+            For example, they can be scripts for creating and filling necessary tables.</param>
+        </member>
+        <member name="P:Kros.UnitTests.MsAccessTestHelper.DatabasePath">
+            <summary>
+            Path to created temporary database.
+            </summary>
+        </member>
+        <member name="P:Kros.UnitTests.MsAccessTestHelper.Connection">
+            <summary>
+            Connection to created temporary database.
+            </summary>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.GenerateDatabaseName">
+            <summary>
+            Generates path to the file where database will be created. Default is random filename in system's temp folder.
+            </summary>
+            <returns>Path to the database file.</returns>
+        </member>
+        <member name="M:Kros.UnitTests.MsAccessTestHelper.InitDatabase">
+            <summary>
+            Initializes new empty database. Method is called after empty temporary database is created and it executes
+            initialization scripts (specified in constructor). method is called only once.
+            </summary>
+        </member>
+    </members>
+</doc>

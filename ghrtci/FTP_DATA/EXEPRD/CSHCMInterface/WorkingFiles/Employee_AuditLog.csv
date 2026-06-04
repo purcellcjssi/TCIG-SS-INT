@@ -1,0 +1,683 @@
+Employee,Employee_CreateStamp.TimeStamp,Employee_CreateStamp.Actor,Employee_UpdateStamp.TimeStamp,Employee_UpdateStamp.Actor,Employee_AuditLog,Name.GivenName,Name.MiddleName,Name.FamilyName,StartDate,RelationshipToOrganization,RelationshipStatus,ID.IssuingAuthority,ID.DocumentNumber,PositionShortDescriptionForSort,OrganizationUnitShortDescriptionForSort
+3004,2023072020411425,estephens,2024042519450571,rprado,|<entry timestamp="2023072020411425" actor="estephens" ip="[10.178.188.179]" rip="10.145.245.253" effective="20230701" action="Create" type="create" s="HCMActionRequestHire" id="db6f801a-9180-8000-0005-557e64b22d8e">
+<field name="HROrganization" t="0" s="4" d="0">
+<nv><![CDATA[BANK]]></nv>
+</field>
+<field name="Employee" t="1" s="13" d="0">
+<nv><![CDATA[3004]]></nv>
+</field>
+<field name="Name" t="100"/>
+<field name="Name.FormOfAddress" t="30" s="50" d="0"/>
+<field name="Name.GivenName" t="30" s="50" d="0">
+<nv><![CDATA[Rose]]></nv>
+</field>
+<field name="Name.PreferredGivenName" t="30" s="50" d="0">
+<nv><![CDATA[Rose]]></nv>
+</field>
+<field name="Name.MiddleName" t="30" s="50" d="0">
+<nv><![CDATA[A]]></nv>
+</field>
+<field name="Name.FamilyNamePrefix" t="30" s="20" d="0"/>
+<field name="Name.FamilyName" t="30" s="50" d="0">
+<nv><![CDATA[Barr]]></nv>
+</field>
+<field name="Name.PreferredFamilyName" t="30" s="50" d="0">
+<nv><![CDATA[Barr]]></nv>
+</field>
+<field name="Name.Affix" t="30" s="50" d="0"/>
+<field name="Name.Qualification" t="30" s="50" d="0"/>
+<field name="Name.MaidenName" t="30" s="50" d="0"/>
+<field name="Name.FormerName" t="30" s="50" d="0"/>
+<field name="Name.Alias" t="30" s="60" d="0"/>
+<field name="PresentationNameSnapshot" t="30" s="230" d="0">
+<nv><![CDATA[Barr, Rose A.]]></nv>
+</field>
+<field name="FormerName" t="100"/>
+<field name="FormerName.FamilyName" t="30" s="50" d="0"/>
+<field name="FormerName.GivenName" t="30" s="50" d="0"/>
+<field name="FormerName.MiddleInitial" t="0" s="1" d="0"/>
+<field name="HomeCountry" t="0" s="3" d="0">
+<nv><![CDATA[USA]]></nv>
+</field>
+<field name="PrimaryWorkAssignment" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="StartDate" t="5">
+<nv><![CDATA[20230701]]></nv>
+</field>
+<field name="AdjustedStartDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ContinuousEmploymentDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="Source" t="0" s="20" d="0"/>
+<field name="SpecificSource" t="0" s="20" d="0"/>
+<field name="ReferringSource" t="30" s="30" d="0"/>
+<field name="EligibleForRehire" t="41">
+<nv><![CDATA[true]]></nv>
+</field>
+<field name="AnniversaryDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="TerminationNoticeDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="TerminationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="RetirementDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="SeniorityDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FirstDateWorked" t="5">
+<nv><![CDATA[20230701]]></nv>
+</field>
+<field name="LastDateWorked" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="LastDatePaid" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="RelationshipToOrganization" t="0" s="20" d="0">
+<nv><![CDATA[EMPLOYEE]]></nv>
+</field>
+<field name="RelationshipStatus" t="0" s="20" d="0">
+<nv><![CDATA[ACTIVE]]></nv>
+</field>
+<field name="WorkType" t="0" s="20" d="0">
+<nv><![CDATA[HOURLY]]></nv>
+</field>
+<field name="IsAMentor" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="WorkingRemotely" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="Gender" t="1" s="1" d="0">
+<nv><![CDATA[2]]></nv>
+</field>
+<field name="VeteranCode" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranStatus" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="DischargeDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ProtectedVeteranMultiSelect" o="1" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="2" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="3" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="4" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="5" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="6" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="7" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="8" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="9" t="102"/>
+<field name="ProtectedVeteranMultiSelect" o="10" t="102"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="1" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="2" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="3" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="4" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="5" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="6" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="7" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="8" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="9" t="0" s="20" d="0"/>
+<field name="ProtectedVeteranMultiSelect.ProtectedVeteranMultiSelect" o="10" t="0" s="20" d="0"/>
+<field name="Birthdate" t="5">
+<nv><![CDATA[19900517]]></nv>
+</field>
+<field name="Deceased" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="DeathDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="Language" t="30" s="2" d="0"/>
+<field name="Locale" t="100"/>
+<field name="Locale.IsoLanguage" t="30" s="2" d="0"/>
+<field name="Locale.IsoCountry" t="0" s="2" d="0"/>
+<field name="Locale.Variant" t="30" s="96" d="0"/>
+<field name="Religion" t="0" s="20" d="0"/>
+<field name="Nationality" t="0" s="20" d="0"/>
+<field name="BirthCity" t="30" s="60" d="0"/>
+<field name="BirthCountry" t="0" s="3" d="0"/>
+<field name="Disability" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="DisabilityType" t="0" s="20" d="0"/>
+<field name="DataPrivacyConsent" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Aboriginal" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="VisibleMinorities" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Ethnicity" t="0" s="20" d="0"/>
+<field name="HispanicOrLatinoOrigin" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="Races" o="1" t="102"/>
+<field name="Races" o="2" t="102"/>
+<field name="Races" o="3" t="102"/>
+<field name="Races" o="4" t="102"/>
+<field name="Races" o="5" t="102"/>
+<field name="Races" o="6" t="102"/>
+<field name="Races" o="7" t="102"/>
+<field name="Races" o="8" t="102"/>
+<field name="Races" o="9" t="102"/>
+<field name="Races" o="10" t="102"/>
+<field name="Races.Race" o="1" t="0" s="20" d="0"/>
+<field name="Races.Race" o="2" t="0" s="20" d="0"/>
+<field name="Races.Race" o="3" t="0" s="20" d="0"/>
+<field name="Races.Race" o="4" t="0" s="20" d="0"/>
+<field name="Races.Race" o="5" t="0" s="20" d="0"/>
+<field name="Races.Race" o="6" t="0" s="20" d="0"/>
+<field name="Races.Race" o="7" t="0" s="20" d="0"/>
+<field name="Races.Race" o="8" t="0" s="20" d="0"/>
+<field name="Races.Race" o="9" t="0" s="20" d="0"/>
+<field name="Races.Race" o="10" t="0" s="20" d="0"/>
+<field name="MilitaryStatus" t="0" s="20" d="0"/>
+<field name="FederalMilitaryService" t="100"/>
+<field name="FederalMilitaryService.StartDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FederalMilitaryService.EndDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FederalMilitaryService.CreditableMilitaryServiceYears" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FederalMilitaryService.CreditableMilitaryServiceMonths" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FederalMilitaryService.CreditableMilitaryServiceDays" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FederalMilitaryService.ActiveUniformedServiceIndicator" t="0" s="4" d="0"/>
+<field name="FederalMilitaryService.CharacterOfServiceCode" t="0" s="4" d="0"/>
+<field name="FederalMilitaryService.SerialNumber" t="0" s="50" d="0"/>
+<field name="FederalMilitaryService.MilitaryBranchTypeCode" t="0" s="4" d="0"/>
+<field name="FederalMilitaryService.DischargeTypeCode" t="0" s="4" d="0"/>
+<field name="GenderIdentity" t="0" s="20" d="0"/>
+<field name="GenderPronouns" t="0" s="20" d="0"/>
+<field name="SexualOrientation" t="0" s="20" d="0"/>
+<field name="ResourcePicture" t="100"/>
+<field name="ResourceComments" t="38"/>
+<field name="OtherAmount1" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="OtherAmount2" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="OtherAmount3" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="OtherAmount4" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="OtherAmount5" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="OtherAmount1Currency" t="0" s="5" d="0"/>
+<field name="OtherAmount2Currency" t="0" s="5" d="0"/>
+<field name="OtherAmount3Currency" t="0" s="5" d="0"/>
+<field name="OtherAmount4Currency" t="0" s="5" d="0"/>
+<field name="OtherAmount5Currency" t="0" s="5" d="0"/>
+<field name="OtherDate1" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="OtherDate2" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="OtherDate3" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="OtherDate4" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="OtherDate5" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="MaritalStatus" t="0" s="20" d="0"/>
+<field name="LegacyEmploymentNumber" t="30" s="20" d="0"/>
+<field name="CandidateNumber" t="1" s="10" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="OriginatingCandidate" t="1" s="10" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="UseForMailing" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="UseForPayroll" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="UseForWorkEmail" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="UseForWorkPhone" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Preferences" t="100"/>
+<field name="Preferences.Travel" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Preferences.TravelPercent" t="18" s="5" d="4">
+<nv><![CDATA[0.0000]]></nv>
+</field>
+<field name="Preferences.Relocate" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Preferences.InternationalAssignment" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Preferences.WorkLifeBalance" t="38"/>
+<field name="Preferences.PointOfOrigin" t="0" s="20" d="0">
+<nv><![CDATA[WEEKLY]]></nv>
+</field>
+<field name="Preferences.WorkOverTime" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PreferencePositions" t="100"/>
+<field name="PreferencePositions.PreferredPosition1" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PreferencePositions.PreferredPosition2" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PreferencePositions.PreferredPosition3" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession" t="100"/>
+<field name="Succession.Sponsor" t="1" s="13" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession.Potential" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession.DateRecommended" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="Succession.KeyStrengths" t="38"/>
+<field name="Succession.AreasOfOpportunity" t="38"/>
+<field name="Succession.RetentionReason" t="0" s="20" d="0"/>
+<field name="Succession.RetentionSeverity" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession.RetentionComments" t="38"/>
+<field name="Succession.MeasureOfPotential" t="2" s="6" d="2">
+<nv><![CDATA[0.00]]></nv>
+</field>
+<field name="Succession.IndicatorOfPotential" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession.RatingScale" t="0" s="20" d="0"/>
+<field name="Succession.RatingLevel" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Succession.RatingScore" t="2" s="4" d="2">
+<nv><![CDATA[0.00]]></nv>
+</field>
+<field name="Succession.PerformanceUpdated" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="Succession.IndicatorOfPerformance" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="OptOutOfWorkingTime" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="MilitaryReserve" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="NationalityCountry" t="0" s="3" d="0"/>
+<field name="WorksCouncilRole" t="30" s="60" d="0"/>
+<field name="WorksCouncilDateRange" t="100"/>
+<field name="WorksCouncilDateRange.Begin" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="WorksCouncilDateRange.End" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="HRGrantManagement" t="100"/>
+<field name="HRGrantManagement.LaborDistribution" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="HRGrantManagement.SalaryEncumbrance" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="HRGrantManagement.EncumbranceFringeRate" t="2" s="13" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="HRGrantManagement.FringeEncumbranceAccountCategory" t="0" s="5" d="0"/>
+<field name="HRGrantManagement.GLCompany" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.FringeEncumbranceAccount" t="100"/>
+<field name="HRGrantManagement.FringeEncumbranceAccount.Account" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.FringeEncumbranceAccount.SubAccount" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.EffortReporting" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="HRGrantManagement.EffortCurrency" t="0" s="5" d="0"/>
+<field name="HRGrantManagement.PrimaryCertifier" t="1" s="13" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.SecondaryCertifier" t="1" s="13" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.PrimaryCertifierCompany" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="HRGrantManagement.SecondaryCertifierCompany" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="WorkEligibilityDocument1" t="100"/>
+<field name="WorkEligibilityDocument1.WorkEligibilityType" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument1.WorkEligibilityDescription" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument1.Number" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument1.Expiration" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="WorkEligibilityDocument2" t="100"/>
+<field name="WorkEligibilityDocument2.WorkEligibilityType" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument2.WorkEligibilityDescription" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument2.Number" t="0" s="20" d="0"/>
+<field name="WorkEligibilityDocument2.Expiration" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="WorkEligibilityStatus" t="0" s="20" d="0"/>
+<field name="AlienNumber" t="0" s="11" d="0"/>
+<field name="AlienExpiration" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="AdmissionNumber" t="0" s="13" d="0"/>
+<field name="Authorization" t="30" s="30" d="0"/>
+<field name="OnBoardStatus" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ID" t="100"/>
+<field name="ID.Type" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ID.IssuingAuthority" t="30" s="50" d="0"/>
+<field name="ID.DocumentNumber" t="30" s="50" d="0"/>
+<field name="ID.State" t="0" s="3" d="0"/>
+<field name="ID.IDClass" t="30" s="3" d="0"/>
+<field name="ID.ExpirationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="StandardHours" t="2" s="7" d="2">
+<nv><![CDATA[8.00]]></nv>
+</field>
+<field name="HealthInsuranceClaimNumber" t="30" s="11" d="0"/>
+<field name="PrimaryCarePhysician" t="0" s="20" d="0"/>
+<field name="EstablishedPatient" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PriorMonthsCoverage" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Smoker" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="ElectAfterTaxContribution" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="Owner" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="KeyEmployee" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="Officer" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="RelatedToEmployer" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="HighlyCompensatedEmployee" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="Medicare" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="TRICARE" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="FEHB" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="OtherHealthInsurance" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="OtherHealthInsuranceName" t="30" s="35" d="0"/>
+<field name="OtherHealthInsurancePolicy" t="30" s="30" d="0"/>
+<field name="BenefitsContinuation" t="100"/>
+<field name="BenefitsContinuation.TerminationInsufficientPay" t="100"/>
+<field name="BenefitsContinuation.TerminationInsufficientPay.PaymentTypeCode" t="30" s="2" d="0"/>
+<field name="BenefitsContinuation.TerminationInsufficientPay.NotificationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.TerminationInsufficientPay.ElectionDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.FEHBIndicator" t="30" s="2" d="0"/>
+<field name="BenefitsContinuation.FEHBElectionDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.FEHBNotificationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.FEGLIIndicator" t="30" s="2" d="0"/>
+<field name="BenefitsContinuation.FEGLIElectionDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.FEGLIElectionNotificationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.RetirementIndicator" t="30" s="2" d="0"/>
+<field name="BenefitsContinuation.RetirementElectionNotificationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="BenefitsContinuation.RetirementElectionDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FEGLIAssignmentIndicator" t="30" s="1" d="0"/>
+<field name="CourtOrdersForFEGLIPurposesIndicator" t="30" s="1" d="0"/>
+<field name="HypotheticalTourOfDuty" t="2" s="9" d="2">
+<nv><![CDATA[0.00]]></nv>
+</field>
+<field name="HLCoverageProof" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="HLDateVerified" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="DNCoverageProof" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="DNDateVerified" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="VisionCoverageProof" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="VisionDateVerified" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FamilyAggregateEmployee" t="100"/>
+<field name="FamilyAggregateEmployee.Employee" t="1" s="13" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="WorkPostalCode" t="30" s="10" d="0"/>
+<field name="LifestyleCredits" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="MaxLimitOverride" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="EmployeeEnrollment" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PAPersonID" t="30" s="25" d="0"/>
+<field name="SalaryPaidThroughPayroll" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="ExpensesPaidThroughPayroll" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="InterfaceHoldForCredential" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="AnnuitantIndicator" t="0" s="1" d="0"/>
+<field name="Tenure" t="0" s="1" d="0"/>
+<field name="VeteransPreference" t="0" s="1" d="0"/>
+<field name="VeteransPreferenceForRIFIndicator" t="30" s="2" d="0"/>
+<field name="PayrollOfficeNumber" t="30" s="35" d="0"/>
+<field name="ServiceComputationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="PreviousRetirementCoverage" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FrozenServiceYears" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FrozenServiceMonths" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="FederalRetirementPlan" t="0" s="2" d="0"/>
+<field name="FederalFERSCoverage" t="0" s="1" d="0"/>
+<field name="CitizenshipCountry" t="0" s="3" d="0"/>
+<field name="TypeOfAppointment" t="0" s="2" d="0"/>
+<field name="TeleworkEligible" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="LeaveWithoutPayNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ExtensionOfLeaveWithoutPayNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="FurloughNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ExtensionOfFurloughNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="SabbaticalNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="SuspensionNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ReturnFromOverseas" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="PayrollRecurringTimeRecord" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ResidentState" t="0" s="3" d="0"/>
+<field name="ResidentCityTaxAuthority" t="0" s="20" d="0"/>
+<field name="ResidentCountyTaxAuthority" t="0" s="20" d="0"/>
+<field name="ResidentSchoolDistrictTaxAuthority" t="0" s="20" d="0"/>
+<field name="ResidentTransportationTaxAuthority" t="0" s="20" d="0"/>
+<field name="WorkersCompensationState" t="0" s="3" d="0"/>
+<field name="TaxProviderGroupCode" t="30" s="11" d="0"/>
+<field name="DefaultMaritalStatus" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="DefaultExemptions" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="TaxFrequency" t="1" s="3" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ResidentCountryCode" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ReturnAllStates" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ResidentEmployeeType" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="MilitarySpouseTaxExemptCertificateState" t="0" s="3" d="0"/>
+<field name="ForeignEarnedIncomeYear" t="42">
+<nv><![CDATA[0000]]></nv>
+</field>
+<field name="ForeignEarnedIncomeExclusionIndicator" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="ForeignEarnedIncomeWageOverride" t="2" s="18" d="3">
+<nv><![CDATA[0.000]]></nv>
+</field>
+<field name="TaxFilter" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PublicSectorRetirementPlan" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="UseAdjustedHireDate" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="RailroadCode" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="DisableSelectedState" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="OverriddenUnemploymentState" t="0" s="3" d="0"/>
+<field name="DoNotApplyDefinedContributionCompensationLimit" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="MembershipRefreshTimeStamp" t="44">
+<nv><![CDATA[0000000000000000]]></nv>
+</field>
+<field name="LegalLocalName" t="100"/>
+<field name="LegalLocalName.FamilyName" t="30" s="50" d="0"/>
+<field name="LegalLocalName.GivenName" t="30" s="50" d="0"/>
+<field name="LegalLocalName.MiddleName" t="30" s="50" d="0"/>
+<field name="SecondLegalLocalName" t="100"/>
+<field name="SecondLegalLocalName.FamilyName" t="30" s="50" d="0"/>
+<field name="SecondLegalLocalName.GivenName" t="30" s="50" d="0"/>
+<field name="SecondLegalLocalName.MiddleName" t="30" s="50" d="0"/>
+<field name="DateReportedAsNewHire" t="5">
+<nv><![CDATA[20230701]]></nv>
+</field>
+<field name="AnnualAggregateLimit" t="0" s="8" d="0"/>
+<field name="AnnualPremiumLimit" t="0" s="8" d="0"/>
+<field name="BiWeeklyPremiumLimit" t="0" s="8" d="0"/>
+<field name="FacebookLink" t="30" s="256" d="0"/>
+<field name="LinkedInLink" t="30" s="256" d="0"/>
+<field name="TwitterLink" t="30" s="256" d="0"/>
+<field name="WFMCalculationGroup" t="0" s="40" d="0"/>
+<field name="AnonymizedDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+</entry>
+<entry timestamp="2023072020455536" actor="estephens" ip="[10.178.188.179]" rip="10.145.245.253" effective="20230701" iva="WorkAssignment.Create" action="SetPrimaryWorkAssignment" ia="WorkAssignment.Create" type="update" s="HCMActionRequestAddWorkAssignment" id="db6f801a-9180-8000-0005-568d64b22d8e" tid="db6f801a-9180-8000-0005-568c64b22d8e">
+<field name="PrimaryWorkAssignment" t="1" s="4" d="0">
+<ov><![CDATA[0]]></ov>
+<nv><![CDATA[1]]></nv>
+</field>
+<t><![CDATA[HRHire]]></t>
+</entry>
+<entry timestamp="2024042519450571" actor="rprado" ip="[10.178.224.84]" rip="10.145.244.103" effective="20240101" iva="WorkAssignment.null" action="SetPrimaryWorkAssignment" ia="WorkAssignment.InactivateWorkAssignment" type="update" s="HCMWorkAssignmentInactivate" id="5472e7c8-f180-8000-0001-ac1c6629f594">
+<field name="PrimaryWorkAssignment" t="1" s="4" d="0">
+<ov><![CDATA[1]]></ov>
+<nv><![CDATA[2]]></nv>
+</field>
+<t><![CDATA[HRSetPrimaryWA]]></t>
+</entry>
+|,Rose,A,Barr,20230701,EMPLOYEE,ACTIVE,,,ExecSec CEO,Corp - Executives

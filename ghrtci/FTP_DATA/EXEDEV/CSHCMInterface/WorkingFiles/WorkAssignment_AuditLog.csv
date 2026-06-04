@@ -1,0 +1,297 @@
+Employee,WorkAssignment,WorkAssignment_CreateStamp.TimeStamp,WorkAssignment_CreateStamp.Actor,WorkAssignment_UpdateStamp.TimeStamp,WorkAssignment_UpdateStamp.Actor,WorkAssignment_AuditLog,PayRate,LegalEntity
+3007,2,2024043020171785,rprado,2024043020171785,rprado,|<entry timestamp="2024043020171785" actor="rprado" authenticatedactor="lawson" ip="[10.178.229.67]" effective="20240416" iva="Employee.RehireResource" action="Create" ia="Employee.RehireResource" type="create" s="HCMActionRequestRehire" actionrequest="59e5c3b4-f180-b8b0-0000-00a666309463" id="e71ac3b4-f180-8000-0034-80c76630944f" tid="e71ac3b4-f180-8000-0034-80c16630944f">
+<field name="HROrganization" t="0" s="4" d="0">
+<nv><![CDATA[BANK]]></nv>
+</field>
+<field name="Employee" t="1" s="13" d="0">
+<nv><![CDATA[3007]]></nv>
+</field>
+<field name="WorkAssignment" t="1" s="4" d="0">
+<nv><![CDATA[2]]></nv>
+</field>
+<field name="Position" t="1" s="9" d="0">
+<nv><![CDATA[28]]></nv>
+</field>
+<field name="HROrganizationUnit" t="1" s="6" d="0">
+<nv><![CDATA[24]]></nv>
+</field>
+<field name="Active" t="41">
+<nv><![CDATA[true]]></nv>
+</field>
+<field name="AssignmentIsSupervisor" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="DirectSupervisor" t="1" s="9" d="0">
+<nv><![CDATA[23]]></nv>
+</field>
+<field name="IndirectSupervisor" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Location" t="0" s="20" d="0">
+<nv><![CDATA[CORPORATE OFFICE]]></nv>
+</field>
+<field name="Job" t="1" s="9" d="0">
+<nv><![CDATA[15]]></nv>
+</field>
+<field name="PreferredJobTitle" t="30" s="60" d="0">
+<nv><![CDATA[US Finance Clerks]]></nv>
+</field>
+<field name="WorkSchedule" t="0" s="20" d="0"/>
+<field name="Shift" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="AssignmentType" t="0" s="20" d="0"/>
+<field name="BargainingUnit" t="0" s="20" d="0"/>
+<field name="Union" t="0" s="20" d="0"/>
+<field name="ExemptFromOvertime" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PayRateType" t="0" s="1" d="0">
+<nv><![CDATA[2]]></nv>
+</field>
+<field name="PayFrequency" t="1" s="1" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PayRateCurrency" t="0" s="5" d="0">
+<nv><![CDATA[USD]]></nv>
+</field>
+<field name="PayRate" t="2" s="18" d="6">
+<nv><![CDATA[250000.000000]]></nv>
+</field>
+<field name="AnnualHoursPer1FTE" t="2" s="8" d="4">
+<nv><![CDATA[0.0000]]></nv>
+</field>
+<field name="FTE" t="2" s="7" d="6">
+<nv><![CDATA[1.000000]]></nv>
+</field>
+<field name="NotionalSalaryCurrencyCode" t="0" s="5" d="0"/>
+<field name="NotionalSalary" t="2" s="18" d="6">
+<nv><![CDATA[0.000000]]></nv>
+</field>
+<field name="WorkAssignmentComments" t="38"/>
+<field name="TrialPeriod" t="0" s="20" d="0"/>
+<field name="TrialPeriodEndDateOverride" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="NoticePeriodDuringTrialPeriod" t="0" s="20" d="0"/>
+<field name="NoticePeriodAfterTrialPeriod" t="0" s="20" d="0"/>
+<field name="ProfessionalCategory" t="0" s="20" d="0"/>
+<field name="LegalEntity" t="0" s="20" d="0">
+<nv><![CDATA[BANK]]></nv>
+</field>
+<field name="LegalEstablishment" t="0" s="20" d="0"/>
+<field name="Name" t="100"/>
+<field name="Name.FormOfAddress" t="30" s="50" d="0"/>
+<field name="Name.GivenName" t="30" s="50" d="0">
+<nv><![CDATA[Thomas]]></nv>
+</field>
+<field name="Name.PreferredGivenName" t="30" s="50" d="0">
+<nv><![CDATA[Thomas]]></nv>
+</field>
+<field name="Name.MiddleName" t="30" s="50" d="0"/>
+<field name="Name.FamilyNamePrefix" t="30" s="20" d="0"/>
+<field name="Name.FamilyName" t="30" s="50" d="0">
+<nv><![CDATA[Jordan]]></nv>
+</field>
+<field name="Name.PreferredFamilyName" t="30" s="50" d="0">
+<nv><![CDATA[Jordan]]></nv>
+</field>
+<field name="Name.Affix" t="30" s="50" d="0">
+<nv><![CDATA[JR]]></nv>
+</field>
+<field name="Name.Qualification" t="30" s="50" d="0"/>
+<field name="Name.MaidenName" t="30" s="50" d="0"/>
+<field name="Name.FormerName" t="30" s="50" d="0"/>
+<field name="Name.Alias" t="30" s="60" d="0"/>
+<field name="PresentationNameSnapshot" t="30" s="230" d="0">
+<nv><![CDATA[Jordan, Thomas]]></nv>
+</field>
+<field name="CostCenter" t="0" s="30" d="0"/>
+<field name="Project" t="0" s="30" d="0"/>
+<field name="ExpenseAccount" t="100"/>
+<field name="ExpenseAccount.Ledger" t="0" s="20" d="0"/>
+<field name="ExpenseAccount.ToAccountingEntity" t="0" s="12" d="0"/>
+<field name="ExpenseAccount.AccountingUnit" t="0" s="25" d="0"/>
+<field name="ExpenseAccount.GeneralLedgerChartAccount" t="0" s="26" d="0"/>
+<field name="ExpenseAccount.Project" t="0" s="25" d="0"/>
+<field name="ExpenseAccount.FinanceDimension1" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension2" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension3" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension4" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension5" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension6" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension7" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension8" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension9" t="0" s="15" d="0"/>
+<field name="ExpenseAccount.FinanceDimension10" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup" t="100"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceEnterpriseGroup" t="0" s="4" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.Ledger" t="0" s="20" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.ToAccountingEntity" t="0" s="12" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.AccountingUnit" t="0" s="25" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.GeneralLedgerChartAccount" t="0" s="26" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.Project" t="0" s="25" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension1" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension2" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension3" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension4" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension5" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension6" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension7" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension8" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension9" t="0" s="15" d="0"/>
+<field name="GHRFinanceEnterpriseGroup.FinanceDimension10" t="0" s="15" d="0"/>
+<field name="AppointmentEndDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="NotToExceedNotice" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="LastEquivalentIncrease" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="PayRateDeterminant" t="0" s="1" d="0"/>
+<field name="GradeRetentionExpiration" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="GLCompany" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="AccountingUnit" t="0" s="15" d="0"/>
+<field name="ChartAccount" t="100"/>
+<field name="ChartAccount.Account" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="ChartAccount.SubAccount" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="Activity" t="0" s="15" d="0"/>
+<field name="AcctCategory" t="0" s="5" d="0"/>
+<field name="StepAndGradeSchedule" t="0" s="20" d="0"/>
+<field name="PayGrade" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PayStep" t="1" s="6" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="SalaryStructure" t="0" s="20" d="0"/>
+<field name="SalaryStructureGrade" t="1" s="3" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="GeographicDifferentialCode" t="0" s="20" d="0"/>
+<field name="CollectiveAgreement" t="0" s="20" d="0"/>
+<field name="CollectiveAgreementCategory" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="CollectiveAgreementPosition" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PaymentSchedule" t="0" s="20" d="0"/>
+<field name="PercentFit" t="18" s="5" d="4">
+<nv><![CDATA[0.0000]]></nv>
+</field>
+<field name="PercentFitWithTolerance" t="18" s="5" d="4">
+<nv><![CDATA[0.0000]]></nv>
+</field>
+<field name="LastCalculationDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="NumberOfMonths" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="EEO4Function" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="PAAssessmentDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="PAAssessmentScore" t="30" s="3" d="0"/>
+<field name="PAAssessmentBand" t="30" s="3" d="0"/>
+<field name="QualificationLevel" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="BehavioralLevel" t="1" s="2" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="SupervisorFitAnalysisCounted" t="41">
+<nv><![CDATA[true]]></nv>
+</field>
+<field name="HolidayScheduleOverride" t="0" s="20" d="0"/>
+<field name="FederalAlternateWorkSchedule" t="0" s="3" d="0"/>
+<field name="FederalPayPlan" t="0" s="2" d="0"/>
+<field name="FederalDutyStation" t="0" s="9" d="0"/>
+<field name="AdditionalServiceObligationTypes" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="ServiceObligationGroup" t="100"/>
+<field name="ServiceObligationGroup.ServiceObligationType1" t="0" s="2" d="0"/>
+<field name="ServiceObligationGroup.ServiceObligationEndDate1" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationNotice1" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationType2" t="0" s="2" d="0"/>
+<field name="ServiceObligationGroup.ServiceObligationEndDate2" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationNotice2" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationType3" t="0" s="2" d="0"/>
+<field name="ServiceObligationGroup.ServiceObligationEndDate3" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationNotice3" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationType4" t="0" s="2" d="0"/>
+<field name="ServiceObligationGroup.ServiceObligationEndDate4" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ServiceObligationGroup.ServiceObligationNotice4" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="EligibleForIncrease" t="0" s="1" d="0"/>
+<field name="DenialDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ProjectedIncreaseDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="PromotionNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="ExtensionOfPromotionNotToExceed" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="TemporaryPromotionPlannedEndDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="TemporaryPayPlannedEndDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="RIFDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<field name="Tippable" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="TipCredit" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="JobApplication" t="1" s="4" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="JobRequisition" t="1" s="9" d="0">
+<nv><![CDATA[0]]></nv>
+</field>
+<field name="OregonPFMLReplacementIndicator" t="41">
+<nv><![CDATA[false]]></nv>
+</field>
+<field name="WorkAssignmentEndDate" t="5">
+<nv><![CDATA[00000000]]></nv>
+</field>
+<t><![CDATA[HRRehire]]></t>
+</entry>
+|,250000.000000,BANK

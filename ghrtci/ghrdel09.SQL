@@ -1,0 +1,2 @@
+DELETE [DBSpscb].[dbo].[psc_program_alias_version]  WHERE [psc_key] in ('AUDITBNK','AUDITRPT','DOWNLOAD','EVENT','EVENT2','INTEBANK','INTERFACE','SENDFILE','UPDBANK','UPLOAD','SENDAUDIT')
+GO

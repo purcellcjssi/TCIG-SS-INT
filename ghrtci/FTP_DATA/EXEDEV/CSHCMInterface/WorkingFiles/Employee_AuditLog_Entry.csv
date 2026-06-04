@@ -1,0 +1,10 @@
+Employee, TimeStamp, Actor, Effective, Action, Type, Name, OV, NV
+3007, 2023072015120510, estephens, 20230701, Create, create, Name.GivenName, , Thomas
+3007, 2023072015120510, estephens, 20230701, Create, create, Name.MiddleName, , 
+3007, 2023072015120510, estephens, 20230701, Create, create, Name.FamilyName, , Jordan
+3007, 2023072015120510, estephens, 20230701, Create, create, PrimaryWorkAssignment, , 0
+3007, 2023072015120510, estephens, 20230701, Create, create, RelationshipStatus, , ACTIVE
+3007, 2023072015152128, estephens, 20230701, SetPrimaryWorkAssignment, update, PrimaryWorkAssignment, 0, 1
+3007, 2024043020081646, rprado, 20240415, Terminate, update, RelationshipStatus, ACTIVE, TERMINATED
+3007, 2024043020171723, rprado, 20240416, RehireResource, update, PrimaryWorkAssignment, 1, 2
+3007, 2024043020184720, rprado, 20240416, Update, update, RelationshipStatus, TERMINATED, ACTIVE

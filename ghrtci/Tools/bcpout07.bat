@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\bcp.exe" [DBSosxp].[dbo].[piq_storedproc]  out C:\SSFAWS2\DBMS\ghrInt\Data\bcp0007.bcp -e C:\SSFAWS2\DBMS\ghrInt\Log\log007.txt -U DBS -P password -S SSSERVER\SQLSRV2 -c 

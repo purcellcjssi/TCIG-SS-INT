@@ -1,0 +1,2 @@
+02	3004	20240101	ROSE	A	BARR	BANK			5	GOG-HR	Corp - Executives	01	Executive Secretary to CEO	MON	50000			1	WEEKLY	WEEKLY	1										
+03	3004	20240101	ROSE	A	BARR	BANK			5	GOG-HR	Corp - Executives	01	Executive Secretary to CEO	MON	50000			1	WEEKLY	WEEKLY	1	TRAN									

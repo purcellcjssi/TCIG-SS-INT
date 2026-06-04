@@ -1,0 +1,6 @@
+usfi0001+*	gsp_sel_employee_events+*	2023-07-25 19:37:26.497       +*	DBSBULK-Insert interface info+*	10   +*	N+!
+usfi0002+*	gsp_cleanup_tbl+*	2023-07-25 19:44:55.520       +*	DBSBULK-Insert interface info+*	10   +*	N+!
+usfi0003+*	gsp_bank_cleanup_tbl+*	2024-01-22 11:07:08.003       +*	DBSBULK-Insert interface info+*	10   +*	N+!
+usfi0004+*	usp_sel_employee_events+*	2024-06-07 19:37:26.497       +*	DBSBULK-Insert interface info+*	10   +*	N+!
+usfi0005+*	usp_cleanup_tbl+*	2024-06-07 00:00:00.000       +*	DBSBULK-Insert interface info+*	10   +*	N+!
+usfi0006+*	usp_bank_cleanup_tbl+*	2024-06-07 00:00:00.000       +*	DBSBULK-Insert interface info+*	10   +*	N+!

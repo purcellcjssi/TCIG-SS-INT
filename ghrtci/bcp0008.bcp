@@ -1,0 +1,11 @@
+AUDITBNK                      +*	C:\FTP_DATA\EXEDEV\Batch\AUDITBANK.BAT+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	0    +!
+AUDITRPT                      +*	C:\FTP_DATA\EXEDEV\Batch\AUDITRPT.BAT+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	9    +!
+DOWNLOAD                      +*	C:\FTP_DATA\EXEDEV\CSHCMInterface\Interface.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	1    +!
+EVENT                         +*	C:\FTP_DATA\EXEDEV\Batch\EVENT.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	1    +!
+EVENT2                        +*	C:\FTP_DATA\EXEDEV\Batch\EVENT2.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	1    +!
+INTEBANK                      +*	C:\FTP_DATA\EXEDEV\Batch\INTEBANK.BAT+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	0    +!
+INTERFACE                     +*	C:\FTP_DATA\EXEDEV\Batch\INTERFACE.BAT+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	2    +!
+SENDAUDIT                     +*	C:\FTP_DATA\EXEDEV\Batch\SendAudit.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	1    +!
+SENDFILE                      +*	C:\FTP_DATA\EXEDEV\Batch\SENDFILE.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	1    +!
+UPDBANK                       +*	C:\FTP_DATA\EXEDEV\BATCH\UPDBANK.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	0    +!
+UPLOAD                        +*	C:\FTP_DATA\EXEDEV\BATCH\UPLOAD.bat+*	 +*	 +*	0                             +*	DBS                           +*	PUBLIC                        +*	2    +!

@@ -1,0 +1,3 @@
+PayRate,WorkAssignment,LegalEntity,Position,PayRateType,Active,HROrganizationUnit,Employee,HROrganization,Location
+25000.000000,1,BANK,68,2,false,64,3004,BANK,CORPORATE OFFICE
+50000.000000,2,BANK,79,2,true,8,3004,BANK,CORPORATE OFFICE
