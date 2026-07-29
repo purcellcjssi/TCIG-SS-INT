@@ -1,8 +1,8 @@
-USE DBSCOMMON
+USE DBSCOMMON;
 GO
 
 DELETE FROM dbo.message_master
-WHERE (msg_id LIKE 'U%')
+WHERE (msg_id LIKE 'U%');
 GO
 
 
@@ -98,11 +98,10 @@ VALUES
 
 , (N'U00126', 1, 0, N'New hire update failed for employee, @1.', N'', N'', 0, N'', 0, 0)
 
-, (N'U00127', 1, 0, N'New employer, @1, does not have an associated tax entity. Employee @2 cannot be transferred.', N'', N'', 0, N'', 0, 0)
-
+, (N'U00127', 1, 0, N'New employer, @1, does not have an associated tax entity. Employee @2 cannot be transferred.', N'', N'', 0, N'', 0, 0);
 GO
 
 select *
 from DBSCOMMON.dbo.message_master
-WHERE (msg_id LIKE 'U%')
+WHERE (msg_id LIKE 'U%');
 GO

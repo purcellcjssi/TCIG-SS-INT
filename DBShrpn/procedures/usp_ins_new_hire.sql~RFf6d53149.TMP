@@ -1,4 +1,4 @@
-USE DBShrpn
+FUSE DBShrpn
 GO
 
 SET ANSI_NULLS ON
@@ -45,16 +45,9 @@ GO
                                                     1) Updated employer id validation to skip record if invalid
                                                         - default setting handled in usp_sel_employee_events
             06/18/2026  CJP                         3) Added logic if pay group id is invalid, default to '99999'
-    2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
-                                                    1) Removed variable @emp_calculation as it was not being set and was causing errors in validation U00126 and U00102
-                                                    2) Updated Display Name Format code to TCIG's value - needed to generate new individual id
-                                                    3) TCIG Country Code - 'TC' - @w_employer_taxing_ctry_code
-                                                    4) Currency Code - 'USD'
-                                                        - @w_curr_code
-                                                        - @w_user_monetary_curr_code
-                                                    5) Employment Type Code Validation
-                                                        - Set variable @w_conv_employment_type_code to '' when SS value not found
-
+    2.0.00  07/23/2026  CJP                     - TCIG Changes
+                                                    1) Removed emp_calculation variable as it was not being set and was causing errors in validation U00126 and U00102
+                                                    2) Updated Display Name Format to be unique to TCIG - needed to generate inidivual id
 
 ************************************************************************************/
 
@@ -132,7 +125,7 @@ BEGIN
     DECLARE @w_pd_salary_tm_pd_id                   char(05)        = 'MONTH'
     DECLARE @w_annual_salary_amt                    money           = 0.00
     DECLARE @w_pay_basis_code                       char(01)        = '9'
-    DECLARE @w_curr_code                            char(03)        = 'USD'     --'XCD'
+    DECLARE @w_curr_code                            char(03)        = 'XCD'
     DECLARE @w_work_tm_code                         char(01)        = 'F'
     DECLARE @w_standard_daily_work_hrs              float           = 8
     DECLARE @w_standard_work_hrs                    float           = 40
@@ -170,7 +163,7 @@ BEGIN
     DECLARE @w_user_ind_2                           char(01)        = @v_EMPTY_SPACE
     DECLARE @w_user_monetary_amt_1                  money           = 0
     DECLARE @w_user_monetary_amt_2                  money           = 0
-    DECLARE @w_user_monetary_curr_code              char(03)        = 'USD'--'XCD'
+    DECLARE @w_user_monetary_curr_code              char(03)        = 'XCD'
     DECLARE @w_user_text_1                          char(50)        = @v_EMPTY_SPACE
     DECLARE @w_user_text_2                          char(50)        = @v_EMPTY_SPACE
     DECLARE @w_inc_tax_calc_method                  char(02)        = '2'
@@ -182,7 +175,7 @@ BEGIN
     DECLARE @w_pit_stat_code                        char(01)        = '1'
     DECLARE @w_pay_element_ctrl_grp                 char(10)        = @v_EMPTY_SPACE
     DECLARE @w_emp_workers_comp_class               char(01)        = @v_EMPTY_SPACE
-    DECLARE @w_empl_addr_fmt_code                   char(06)        = 'GN4'
+    DECLARE @w_empl_addr_fmt_code                   char(06)        = 'GN2'
     DECLARE @w_empl_phone_fmt_code                  char(06)        = 'L34'
     DECLARE @w_empl_phone_delimiter                 char(01)        = '-'
     DECLARE @w_empl_recruitment_zone_code           char(05)        = @v_EMPTY_SPACE
@@ -198,7 +191,7 @@ BEGIN
     DECLARE @w_pay_grade_code                       char(06)        = 'E40'
     DECLARE @w_job_evaluation_points_nbr            smallint        = 0
     DECLARE @w_salary_step_nbr                      smallint        = 0
-    DECLARE @w_employer_taxing_ctry_code            char(02)        = 'TC'      --'LC'
+    DECLARE @w_employer_taxing_ctry_code            char(02)        = 'LC'--'Gd'
     DECLARE @w_wage_plan_code                       char(02)        = @v_EMPTY_SPACE
     DECLARE @w_emp_health_insurance_cvg_cd          char(02)        = @v_EMPTY_SPACE
     DECLARE @w_tax_auth_type_code                   char(01)        = @v_EMPTY_SPACE
@@ -208,7 +201,7 @@ BEGIN
     DECLARE @w_tax_auth_type_code_5                 char(01)        = @v_EMPTY_SPACE
     DECLARE @w_reg_reporting_unit_code              char(10)        = @v_EMPTY_SPACE
     DECLARE @w_emp_workers_comp_cvg_cd              char(01)        = @v_EMPTY_SPACE
-    DECLARE @w_conv_employment_type_code            char(05)        = @v_EMPTY_SPACE
+    DECLARE @w_conv_employment_type_code            char(05)
 
 
     -- This section declares the interface column variables
@@ -596,16 +589,12 @@ BEGIN
                 WHERE (code_tbl_id = '50001')
                 AND (short_descp = @employment_type_code)
 
-                IF (@@ROWCOUNT = 0) OR (@w_conv_employment_type_code = @v_EMPTY_SPACE)
+                IF (@@ROWCOUNT = 0)
                     BEGIN
 
                         -- Warning only - no record found - Will not skip record
                         SET @msg_id = 'U00100'
                         SET @v_step_position = 'Begin ' + RTRIM(@msg_id)
-
-                        -- Populate converted employment type code with empty space to avoid null value in insert statement
-                        SET @w_conv_employment_type_code = @v_EMPTY_SPACE
-
 
                         -- Use default employee type value
                         --SET @w_conv_employment_type_code = 'XXXXX'
@@ -616,8 +605,7 @@ BEGIN
                         FROM DBSCOMMON.dbo.message_master t     --#tbl_msg_master t
                         WHERE (t.msg_id = @msg_id)
 
-                        SET @w_msg_text = 'HCM Code: ' + RTRIM(@employment_type_code) + '; SmartStream: ' + RTRIM(@w_conv_employment_type_code)
-
+                        SET @w_msg_text = RTRIM(@employment_type_code) + ' (' + RTRIM(@w_conv_employment_type_code) + ')'
 
                         -- Historical Message for reporting purpose
                         EXEC DBShrpn.dbo.usp_ins_ghr_historical_message
@@ -870,7 +858,7 @@ BEGIN
                             , @p_emp_id             = @emp_id
                             , @p_eff_date           = @eff_date
                             , @p_pay_element_id     = @v_EMPTY_SPACE
-                            , @p_msg_p1             = 'Birth date value was not able to be converted to a valid date.'
+                            , @p_msg_p1             = 'Birth date value was able to be converted to a valid date.'
                             , @p_msg_p2             = ''
                             , @p_msg_desc           = 'Invalid Birth Date'
                             , @p_activity_status    = @v_ACTIVITY_STATUS_BAD

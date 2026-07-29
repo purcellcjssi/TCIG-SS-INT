@@ -892,7 +892,7 @@ BEGIN
                 -- Execute Transfer
                 ---------------------------------------------------------------------------
 
-/*
+
                 -- Debug
                 SET @v_step_position = 'Execute DBShrpn.dbo.usp_upd_hrpn_02_trn DEBUG'
 
@@ -903,7 +903,7 @@ BEGIN
                 , (', @p_transfer_date '                 + '= ' + @v_single_quote + CONVERT(char(8), @eff_date, 112)                           + @v_single_quote)
                 , (', @p_assign_to '                     + '= ' + @v_single_quote + RTRIM(@cur_emp_asgn_assigned_to_code)                        + @v_single_quote)
                 , (', @p_job_or_pos_id '                 + '= ' + @v_single_quote + RTRIM(@job_or_pos_id)                                        + @v_single_quote)
-                , (', @p_org_grp_id '                    + '= ' + @v_single_quote + RTRIM(@organization_group_id))                               + @v_single_quote)
+                , (', @p_org_grp_id '                    + '= ' + @v_single_quote + RTRIM(@organization_group_id)                                + @v_single_quote)
                 , (', @p_org_chart_name '                + '= ' + @v_single_quote + RTRIM(@organization_chart_name)                              + @v_single_quote)
                 , (', @p_org_unit_name '                 + '= ' + @v_single_quote + RTRIM(@organization_unit_name)                               + @v_single_quote)
                 , (', @p_location '                      + '= ' + @v_single_quote + RTRIM(@emp_location_code)                                    + @v_single_quote)
@@ -919,7 +919,7 @@ BEGIN
                 , (', @p_new_empl_curr_code '            + '= ' + @v_single_quote + RTRIM(@new_curr_code)                                        + @v_single_quote)
                 , (', @p_use_policy_xfer_options '       + '= ' + @v_single_quote + 'Y'                                                          + @v_single_quote)
                 , (' ');
-*/
+
 
                 SET @v_step_position = 'Execute DBShrpn.dbo.usp_upd_hrpn_02_trn'
 

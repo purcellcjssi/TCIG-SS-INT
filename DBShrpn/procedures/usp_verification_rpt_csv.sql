@@ -110,6 +110,7 @@ BEGIN
     , proc_flag                             varchar(255)            NOT NULL
     , msg_id                                varchar(255)            NOT NULL
     , msg_desc                              varchar(255)            NOT NULL
+    , msg_p1                                varchar(255)            NOT NULL
     )
 
     -- Table used to translate event ids and return event counts for all events
@@ -184,6 +185,7 @@ BEGIN
            , 'Process Flag'                                             -- proc_flag
            , 'Error Message ID'                                         -- msg_id
            , 'Error Message Description'                                -- msg_desc
+           , 'Error Message Parameter 1'                                -- msg_p1
            )
 
 
@@ -213,6 +215,7 @@ BEGIN
          , ''                                                           -- proc_flag
          , msg.msg_id                                                   -- msg_id
          , msg.msg_desc                                                 -- msg_desc
+         , msg.msg_p1                                                   -- msg_p1
     FROM DBShrpn.dbo.ghr_historical_message msg
     LEFT JOIN DBShrpn.dbo.ghr_employee_events_aud aud ON
             (msg.activity_date = aud.activity_date) AND
@@ -263,6 +266,7 @@ BEGIN
 		 , aud.proc_flag
          , ISNULL(msg.msg_id, '') AS msg_id
          , ISNULL(msg.msg_desc, '') AS msg_desc
+         , ISNULL(msg.msg_p1, '') AS msg_p1
     FROM DBShrpn.dbo.ghr_employee_events_aud aud
     JOIN #tbl_event evt ON
             (aud.event_id = evt.event_id)
@@ -307,6 +311,7 @@ BEGIN
             , ''                                                           -- proc_flag
             , 'U00123'                                                     -- msg_id
             , evt.event_desc + ' Import Count: ' + CONVERT(varchar, count(laud.event_id)) -- msg_desc
+            , ''                                                           -- msg_p1
     FROM #tbl_event evt
     LEFT JOIN (
                SELECT aud.event_id
@@ -346,6 +351,7 @@ BEGIN
             , ''                                                           -- proc_flag
             , 'U00123'                                                     -- msg_id
             , 'Total Records Imported: ' + CONVERT(varchar, count(*))      -- msg_desc
+            , ''                                                           -- msg_p1
     FROM DBShrpn.dbo.ghr_employee_events_aud aud
     WHERE (aud.activity_date = @w_activity_date)
 
@@ -375,6 +381,7 @@ BEGIN
          , proc_flag
          , msg_id
          , msg_desc
+         , msg_p1
     FROM #tbl_vhcmrpt
     ORDER BY row_id
 

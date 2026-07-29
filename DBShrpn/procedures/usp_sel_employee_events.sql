@@ -80,8 +80,8 @@ BEGIN
     DECLARE @v_END_OF_TIME_DATE                     datetime            = '29991231'
     DECLARE @v_BAD_DATE_INDICATOR                   datetime            = '99991231'    -- value used to populate datetime column with value from HCM that is not a valid date after conversion
     DECLARE @v_EMPTY_SPACE                          char(01)            = ''
-    DECLARE @v_DEFAULT_EMPLOYER_ID_VENUS            char(10)            = 'HCM-00001'
-    DECLARE @v_DEFAULT_EMPLOYER_ID_GANYMEDE         char(10)            = '01HCM-0001'
+    DECLARE @v_DEFAULT_EMPLOYER_ID                  varchar(10)         = '99999'
+
 
 
     DECLARE @ErrorNumber                            varchar(10)
@@ -347,23 +347,24 @@ BEGIN
                 ELSE COALESCE(TRY_CONVERT(datetime, t.birth_date), @v_BAD_DATE_INDICATOR)
               END AS birth_date
             , LEFT(t.gender, 1) AS gender
-            , LEFT(CASE t.country_code WHEN 'LCA' THEN 'EC1' ELSE 'GN4' END, 6) AS addr_fmt_code    -- derive address format code based on country code
+            , 'GN4' AS addr_fmt_code    -- Assign all associates to GN4 address format code
             , LEFT(t.country_code, 2) AS country_code
             , LEFT(t.addr_line_1, 35) AS addr_line_1
             , LEFT(t.addr_line_2, 35) AS addr_line_2
-            , LEFT(CASE t.country_code WHEN 'LCA' THEN LTRIM(RTRIM(t.addr_line_3 + ' ' + t.addr_line_4)) ELSE t.addr_line_3 END, 35) AS addr_line_3        -- combine line 3 and 4 if St Lucia
-            , LEFT(CASE t.country_code WHEN 'LCA' THEN @v_EMPTY_SPACE ELSE t.addr_line_4 END, 35) AS addr_line_4
+            , LEFT(t.addr_line_3, 35) AS addr_line_3
+            , LEFT(t.addr_line_4, 35) AS addr_line_4
             , LEFT(t.city_name, 35) AS city_name
             , LEFT(t.state_prov, 9) AS state_prov
             , LEFT(t.postal_code, 9) AS postal_code
             , LEFT(t.county_name, 255) AS county_name
             , LEFT(t.region_name, 255) AS region_name
-            , DBShrpn.dbo.ufn_ret_job_or_pos_id(t.file_source, t.empl_id) AS job_or_pos_id
+            , '99999' AS job_or_pos_id  -- TCIG's generic position - do I need a another position for pensioners?
+
         FROM DBShrpn.dbo.ghr_employee_events t
         --WHERE (t.event_id <> @v_EVENT_ID_SALARY_CHANGE)  -- Exclude Salary Changes
 
 
-
+/*
         ---------------------------------------------------------------------------
         -- Ganymede Employee ID - Replace leading '4' to 'D'
         ---------------------------------------------------------------------------
@@ -373,7 +374,7 @@ BEGIN
         SET emp_id = STUFF(emp_id, 1, 1, 'D')
         WHERE (file_source = 'SS GANYMEDE')
           AND (CHARINDEX('4', emp_id, 1) = 1)
-
+*/
 
         ---------------------------------------------------------------------------
         -- Log Records with Blank Employer ID defaulting for records with missing employer id
@@ -388,7 +389,7 @@ BEGIN
             , t.pay_element_id
             , @v_EMPTY_SPACE AS msg_p1
             , @v_EMPTY_SPACE AS msg_p2
-            , 'Employer ID is blank - defaulting to employer ' + CASE t.file_source WHEN 'SS VENUS' THEN @v_DEFAULT_EMPLOYER_ID_VENUS ELSE @v_DEFAULT_EMPLOYER_ID_GANYMEDE END AS msg_desc
+            , 'Employer ID is blank - defaulting to employer ''' + @v_DEFAULT_EMPLOYER_ID + '''' AS msg_desc
             , @v_ACTIVITY_STATUS_WARNING AS activity_status
             , @w_activity_date AS activity_date
             , t.aud_id
@@ -397,10 +398,7 @@ BEGIN
 
         -- Update the blank employer id to default value based on file source
         UPDATE #ghr_employee_events_temp
-        SET empl_id = CASE file_source
-                         WHEN 'SS VENUS' THEN @v_DEFAULT_EMPLOYER_ID_VENUS
-                         ELSE @v_DEFAULT_EMPLOYER_ID_GANYMEDE
-                       END
+        SET empl_id = @v_DEFAULT_EMPLOYER_ID
         WHERE (LEN(RTRIM(empl_id)) = 0)
 
 
