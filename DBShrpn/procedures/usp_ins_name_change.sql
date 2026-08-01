@@ -48,10 +48,12 @@ GO
                       , @p_qualifier       = @w_PSC_QUALIFIER
                       , @p_activity_date   = @w_activity_date
 
-   Revision history:
-   version  date        developer   SCR         description
-   -------  ----------  ---------   -----       ------------------------------------
-   1.0.00   08/27/2025  CJP                     - Cloned from GOG version
+    Revision    history:
+    version     date        developer   SCR         description
+    -------     ----------  ---------   -----       ------------------------------------
+    1.0.00      08/27/2025  CJP                     - Cloned from GOG version
+    2.0.00      07/23/2026  CJP                     - Phase I TCIG Changes
+                                                        1) Disabled GOSL userdefined fields update
 
 ************************************************************************************/
 
@@ -146,9 +148,9 @@ BEGIN
              , t.first_middle_name
              , t.last_name
              , t.empl_id
-             , t.tax_flag
-             , t.nic_flag
-             , t.tax_ceiling_amt
+             --, t.tax_flag
+             --, t.nic_flag
+             --, t.tax_ceiling_amt
              , t.file_source
         FROM #ghr_employee_events_temp t
         WHERE (event_id = @v_EVENT_ID_NAME_CHANGE)
@@ -165,9 +167,9 @@ BEGIN
             , @first_middle_name
             , @last_name
             , @empl_id  -- need?
-            , @tax_flag
-            , @nic_flag
-            , @tax_ceiling_amt
+            --, @tax_flag
+            --, @nic_flag
+            --, @tax_ceiling_amt
             , @file_source
 
 
@@ -292,21 +294,21 @@ BEGIN
 
                 UPDATE DBShrpn.dbo.employee
                 SET emp_display_name = RTRIM(@last_name) + ', ' + RTRIM(@first_name) + RTRIM(' ' + RTRIM(@first_middle_name))
-                , user_monetary_amt_1 = @tax_ceiling_amt
+                --CJP 7/30/26 , user_monetary_amt_1 = @tax_ceiling_amt
                 WHERE (emp_id = @emp_id)
 
 
                 ---------------------------------------------------------------------------
                 -- GOSL update NIC and Tax Code
                 ---------------------------------------------------------------------------
-                -- CJP 7/7/2025
+                /*
                 SET @v_step_position = 'Update NIC/Tax Code'
 
                 UPDATE DBShrpn.dbo.individual_personal
                 SET user_ind_1 = @nic_flag
                   , user_ind_2 = @tax_flag
                 WHERE (individual_id = @individual_id)
-
+                */
 
                 ---------------------------------------------------------------------------
                 -- Update Audit Table Processed Flag after successful update
@@ -361,9 +363,9 @@ BYPASS_EMPLOYEE:
                 , @first_middle_name
                 , @last_name
                 , @empl_id
-                , @tax_flag
-                , @nic_flag
-                , @tax_ceiling_amt
+                --, @tax_flag
+                --, @nic_flag
+                --, @tax_ceiling_amt
                 , @file_source
 
 

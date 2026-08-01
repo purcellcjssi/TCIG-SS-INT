@@ -50,7 +50,8 @@ GO
                                                         - Changed where clause to use current emp_ployment effective date instead of new effective date
                                                     2) Added SmartStream audit table inserts for pay group change
             06/10/2026                              3) Added procedure usp_upd_emp_employment call to update SmartStream Employee Employment table
-
+    2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
+                                                    1) Removed default 'x' from variable @v_EMPTY_SPACE
 ************************************************************************************/
 
 CREATE PROCEDURE dbo.usp_ins_pay_group
@@ -71,7 +72,7 @@ BEGIN
 
     DECLARE @v_END_OF_TIME_DATE             datetime            = '29991231'
     DECLARE @v_BAD_DATE_INDICATOR           datetime            = '99991231'    -- value used to populate datetime column with value from HCM that is not a valid date after conversion
-    DECLARE @v_EMPTY_SPACE                  char(01)            = 'x'
+    DECLARE @v_EMPTY_SPACE                  char(01)            = ''
 
     DECLARE @v_EVENT_ID_NEW_HIRE            char(2)             = '01'
     DECLARE @v_EVENT_ID_SALARY_CHANGE       char(2)             = '02'

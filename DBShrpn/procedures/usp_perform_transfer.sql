@@ -47,6 +47,10 @@ GO
             06/18/2026  CJP                         2) Fixed emp_assignment update to use valid variables in where clause
                                                     3) Added logic if pay group id is invalid, default to '99999'
                                                     4) Added logic to update tax ceiling amount to DBShrpn..employee.user_monetary_amt_1
+    2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
+                                                    1) Removed labor group code update
+                                                    2) Removed userdefined field updates
+                                                        - tax ceiling, tax flag, nic flag
 
 ************************************************************************************/
 
@@ -181,7 +185,7 @@ BEGIN
     DECLARE @tax_flag                                   char(1)         -- individual_personal.ind_2
     DECLARE @nic_flag                                   char(1)         -- individual_personal.ind_1
     DECLARE @tax_ceiling_amt                            money        -- employee.user_monetary_amt_1
-    DECLARE @labor_grp_code                             char(5)         -- DBShrpn..emp_employment.labor_grp_code
+    --DECLARE @labor_grp_code                             char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                                char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
     DECLARE @w_annual_salary_amt                        money           = 0.00
     DECLARE @w_annual_hrs_per_fte                       money           = 0.00
@@ -275,7 +279,7 @@ BEGIN
             , @tax_flag
             , @nic_flag
             , @tax_ceiling_amt
-            , @labor_grp_code
+            --, @labor_grp_code
             , @file_source
             , @job_or_pos_id
 
@@ -838,6 +842,7 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- Is Labor Group Code Valid
                 ---------------------------------------------------------------------------
+                /*
                 -- cjp 6/18/2026
                 SET @msg_id = 'U00111'
                 SET @v_step_position = 'Begin ' + RTRIM(@msg_id)
@@ -874,7 +879,7 @@ BEGIN
                         SET  @w_fatal_error = 1
 
                     END
-
+                */
 
 
 
@@ -1005,16 +1010,18 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- Update Labor Group Code
                 ---------------------------------------------------------------------------
+                /*
                 -- update latest emp employment record with labor group code
                 UPDATE DBShrpn.dbo.emp_employment
                 SET labor_grp_code = @labor_grp_code
                 WHERE (emp_id        = @emp_id)     -- cjp 6/18/2026 - missing emp_id in where clause
                   AND (next_eff_date = @v_END_OF_TIME_DATE)
-
+                */
 
                 ---------------------------------------------------------------------------
                 -- GOSL update NIC and Tax Code
                 ---------------------------------------------------------------------------
+                /*
                 -- CJP 7/7/2025
                 SET @v_step_position = 'Update NIC/Tax Code'
 
@@ -1035,7 +1042,7 @@ BEGIN
                 UPDATE DBShrpn.dbo.employee
                 SET user_monetary_amt_1 = @tax_ceiling_amt
                 WHERE (emp_id = @emp_id)
-
+                */
 
                 ---------------------------------------------------------------------------
                 -- Update Processed Flag after successful update
@@ -1097,7 +1104,7 @@ BYPASS_EMPLOYEE:
                 , @tax_flag
                 , @nic_flag
                 , @tax_ceiling_amt
-                , @labor_grp_code
+                --, @labor_grp_code
                 , @file_source
                 , @job_or_pos_id
 

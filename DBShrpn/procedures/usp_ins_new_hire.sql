@@ -54,7 +54,13 @@ GO
                                                         - @w_user_monetary_curr_code
                                                     5) Employment Type Code Validation
                                                         - Set variable @w_conv_employment_type_code to '' when SS value not found
-
+                                                    6) Disabled user defined field updates
+                                                        - Position Title - @w_user_text_2
+                                                        - Tax Ceiling Amount - @w_user_monetary_amt_1
+                                                        - Tax Ceiling Currency Code - @w_user_monetary_curr_code
+                                                        - NIC Status Code - @w_user_code_1
+                                                        - Tax Status Code - @w_user_code_2
+                                                    7) Remove labor group code update
 
 ************************************************************************************/
 
@@ -247,7 +253,7 @@ BEGIN
     DECLARE @tax_flag                               char(1)         -- individual_personal.ind_2
     DECLARE @nic_flag                               char(1)         -- individual_personal.ind_1
     DECLARE @tax_ceiling_amt                        money           -- employee.user_monetary_amt_1
-    DECLARE @labor_grp_code                         char(5)         -- DBShrpn..emp_employment.labor_grp_code
+    --DECLARE @labor_grp_code                         char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                            char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
 
     DECLARE @annual_hrs_per_fte                     money
@@ -304,7 +310,7 @@ BEGIN
              , t.tax_flag
              , t.nic_flag
              , t.tax_ceiling_amt
-             , LEFT(t.labor_grp_code, 5) AS labor_grp_code
+             --, LEFT(t.labor_grp_code, 5) AS labor_grp_code
              , t.file_source
              , t.annual_hrs_per_fte
              , t.annual_rate
@@ -1013,7 +1019,7 @@ BEGIN
                     , (', @p_active_reason_code '                + '= ' + @v_single_quote + RTRIM(@w_active_reason_code) + @v_single_quote)
                     , (', @p_employment_type_code '              + '= ' + @v_single_quote + RTRIM(@w_conv_employment_type_code) + @v_single_quote)
                     , (', @p_professional_cat_code '             + '= ' + @v_single_quote + RTRIM(@w_professional_cat_code) + @v_single_quote)
-                    , (', @p_labor_grp_code '                    + '= ' + @v_single_quote + RTRIM(@labor_grp_code) + @v_single_quote)
+                    , (', @p_labor_grp_code '                    + '= ' + @v_single_quote + @v_EMPTY_SPACE + @v_single_quote)                               -- RTRIM(@labor_grp_code) + @v_single_quote)
                     , (', @p_non_employee_indicator '            + '= ' + @v_single_quote + RTRIM(@w_non_employee_indicator) + @v_single_quote)
                     , (', @p_excluded_from_payroll_ind '         + '= ' + @v_single_quote + RTRIM(@w_excluded_from_payroll_ind) + @v_single_quote)
                     , (', @p_pensioner_indicator '               + '= ' + @v_single_quote + RTRIM(@w_pensioner_indicator) + @v_single_quote)
@@ -1136,19 +1142,19 @@ BEGIN
                     , @p_addr_1_street_or_pob_2            = @addr_line_4
                     , @p_addr_1_street_or_pob_3            = @v_EMPTY_SPACE
                     , @p_addr_1_city_name                  = @city_name
-                    , @p_addr_1_ctry_sub_entity_code       = @v_EMPTY_SPACE     -- @state_prov  -- Parrish Drop Down is not being used by St Lucia
+                    , @p_addr_1_ctry_sub_entity_code       = @v_EMPTY_SPACE                 -- @state_prov  -- Parrish Drop Down is not being used by St Lucia
                     , @p_addr_1_postal_code                = @postal_code
                     , @p_addr_1_country_code               = @country_code
 
                     , @p_assigned_to_code                  = @w_assigned_to_code
-                    , @p_job_or_pos_id                     = @w_job_or_pos_id       -- need real value
+                    , @p_job_or_pos_id                     = @w_job_or_pos_id               -- need real value
                     , @p_organization_chart_name           = @organization_chart_name
                     , @p_organization_unit_name            = @organization_unit_name
                     , @p_emp_status_classn_code            = @emp_status_classn_code
                     , @p_active_reason_code                = @w_active_reason_code
-                    , @p_employment_type_code              = @w_conv_employment_type_code    --@employment_type_code
+                    , @p_employment_type_code              = @w_conv_employment_type_code   -- @employment_type_code
                     , @p_professional_cat_code             = @w_professional_cat_code
-                    , @p_labor_grp_code                    = @labor_grp_code
+                    , @p_labor_grp_code                    =  @v_EMPTY_SPACE                -- @labor_grp_code
                     , @p_non_employee_indicator            = @w_non_employee_indicator
                     , @p_excluded_from_payroll_ind         = @w_excluded_from_payroll_ind
                     , @p_pensioner_indicator               = @w_pensioner_indicator
@@ -1203,7 +1209,7 @@ BEGIN
                     , @p_user_monetary_amt_2               = @w_user_monetary_amt_2
                     , @p_user_monetary_curr_code           = @w_user_monetary_curr_code
                     , @p_user_text_1                       = @w_user_text_1
-                    , @p_user_text_2                       = @position_title     -- CJP 7/8/2025 DBShrpn..emp_assignment.user_text_2     @w_user_text_2
+                    , @p_user_text_2                       = @position_title
                     , @p_inc_tax_calc_method               = @w_inc_tax_calc_method
                     , @p_ei_status_code                    = @w_ei_status_code
                     , @p_ppip_status_code                  = @w_ppip_status_code
@@ -1301,7 +1307,8 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- GOSL update NIC and Tax Code
                 ---------------------------------------------------------------------------
-                -- CJP 7/7/2025
+                /* CJP 7/30/26 Disabled GOSl user defined field updates
+
                 SET @v_step_position = 'Update NIC/Tax Code'
 
                 UPDATE DBShrpn.dbo.individual_personal
@@ -1318,6 +1325,7 @@ BEGIN
                 SET user_monetary_amt_1 = @tax_ceiling_amt
                 WHERE (emp_id = @emp_id)
 
+                */
 
                 ---------------------------------------------------------------------------
                 -- Update Processed Flag after successful update
@@ -1387,7 +1395,7 @@ BYPASS_EMPLOYEE:
                 , @tax_flag
                 , @nic_flag
                 , @tax_ceiling_amt
-                , @labor_grp_code
+                --, @labor_grp_code
                 , @file_source
                 , @annual_hrs_per_fte
                 , @annual_rate

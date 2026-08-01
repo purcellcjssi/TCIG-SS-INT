@@ -144,7 +144,7 @@ BEGIN
     DECLARE @w_user_amt_2                       float                   = 0
     DECLARE @w_user_monetary_amt_1              money                   = 0
     DECLARE @w_user_monetary_amt_2              money                   = 0
-    DECLARE @w_user_monetary_curr_code          char(3)                 = ''
+    DECLARE @w_user_monetary_curr_code          char(3)                 = ''    -- Set to @p_pe_curr_code in proc dbo.usp_ins_hepy_insert
     DECLARE @w_user_code_1                      char(5)                 = ''
     DECLARE @w_user_code_2                      char(5)                 = ''
     DECLARE @w_user_date_1                      datetime                = '19000101'
@@ -198,7 +198,7 @@ BEGIN
     DECLARE @w_tpp_descp                        char(15)                = ''
     DECLARE @w_comments_flag                    char(1)                 = ''
     DECLARE @w_current_ver_eff_date             datetime                = '19000101'
-    DECLARE @w_pe_curr_code                     char(3)                 = 'XCD'
+    DECLARE @w_pe_curr_code                     char(3)                 = 'US' -- 'XCD'
     DECLARE @w_scrty_cat_code                   char(3)                 = 'NA'
     DECLARE @w_original_stop_date               datetime                = '19000101'
     DECLARE @w_pension_tot_distn_ind            char(1)                 = 'N'
@@ -221,7 +221,7 @@ BEGIN
     DECLARE @end_date                               datetime
     DECLARE @pay_element_id                         char(10)
     DECLARE @emp_calculation                        money
-    DECLARE @file_source                            char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
+    DECLARE @file_source                            char(50)        -- 'GOSL SS VENUS' or 'SS GANYMEDE'
 
     DECLARE @cur_eempl_pay_through_date             datetime
 

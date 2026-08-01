@@ -64,6 +64,8 @@ GO
                                                        - If blank then default employer id based on file source (SS VENUS vs SS GANYMEDE)
             6/10/2026   CJP                         4) Added employee employment audit table inicator lookup
                                                         - Used for labor group and pay group change events
+    2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
+                                                    1) Disabled Labor Group (Event 09)
 
 ************************************************************************************/
 
@@ -749,6 +751,7 @@ BEGIN
         ---------------------------------------------------------------------------
         -- Labor Group Update (Event 09)
         ---------------------------------------------------------------------------
+        /*
         SET @v_step_position = 'Execute DBShrpn.dbo.usp_ins_labor_group'
         SET @v_event_id = @v_EVENT_ID_LABOR_GROUP
         SET @w_status = 0   -- reset return code
@@ -787,6 +790,7 @@ BEGIN
 
 
         END
+        */
 
 
         ---------------------------------------------------------------------------
@@ -829,6 +833,8 @@ BEGIN
             END
 
         END
+
+
 
 END_EXECUTION:
 

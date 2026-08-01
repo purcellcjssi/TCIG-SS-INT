@@ -60,6 +60,10 @@ GO
                                                     2) Removed unused import fields
             06/18/2026                              3) Fixed Labor Group update - emp_id was missing in where clause
                                                     4) Added logic if pay group id is invalid, default to '99999'
+    2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
+                                                    1) Disabled GOSL userdefined fields update
+                                                        - tax ceiling, tax flag, nic flag
+                                                    2) On Error code U00043 added condition @emp_status_code = 'RH'
 
 ************************************************************************************/
 
@@ -134,7 +138,7 @@ BEGIN
     DECLARE @w_pd_salary_tm_pd_id                   char(05)        = 'MONTH'
     DECLARE @w_annual_salary_amt                    money           = 0.00
     DECLARE @w_pay_basis_code                       char(01)        = '9'
-    DECLARE @w_curr_code                            char(03)        = 'XCD'
+    DECLARE @w_curr_code                            char(03)        = @v_EMPTY_SPACE
     DECLARE @w_work_tm_code                         char(01)        = 'F'
     DECLARE @w_standard_daily_work_hrs              float           = 8
     DECLARE @w_standard_work_hrs                    float           = 40
@@ -183,9 +187,9 @@ BEGIN
     DECLARE @consider_for_rehire_ind         	    char(01)
     --DECLARE @pay_element_id                  	    char(10)
     --DECLARE @emp_calculation                 	    char(15)
-    DECLARE @tax_flag                        	    char(1)         -- individual_personal.ind_2
-    DECLARE @nic_flag                        	    char(1)         -- individual_personal.ind_1
-    DECLARE @tax_ceiling_amt                 	    money           -- employee.user_monetary_amt_1
+    -- DECLARE @tax_flag                        	    char(1)         -- individual_personal.ind_2
+    -- DECLARE @nic_flag                        	    char(1)         -- individual_personal.ind_1
+    -- DECLARE @tax_ceiling_amt                 	    money           -- employee.user_monetary_amt_1
     DECLARE @labor_grp_code                  	    char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                     	    char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
     DECLARE @annual_hrs_per_fte                     money
@@ -255,9 +259,9 @@ BEGIN
              , t.pay_through_date
              , t.emp_death_date
              , t.consider_for_rehire_ind
-             , t.tax_flag
-             , t.nic_flag
-             , t.tax_ceiling_amt
+            --  , t.tax_flag
+            --  , t.nic_flag
+            --  , t.tax_ceiling_amt
              , t.labor_grp_code
              , t.file_source
              , t.annual_hrs_per_fte
@@ -299,9 +303,9 @@ BEGIN
             , @pay_through_date
             , @emp_death_date
             , @consider_for_rehire_ind
-            , @tax_flag
-            , @nic_flag
-            , @tax_ceiling_amt
+            -- , @tax_flag
+            -- , @nic_flag
+            -- , @tax_ceiling_amt
             , @labor_grp_code
             , @file_source
             , @annual_hrs_per_fte
@@ -635,7 +639,8 @@ BEGIN
                 SET @v_step_position = 'Begin ' + RTRIM(@msg_id)
 
 
-                IF (@w_ee_eff_date >= @eff_date)
+                IF (@emp_status_code = 'RH') AND    -- CJP 7/23/2026
+                   (@w_ee_eff_date >= @eff_date)
                     BEGIN
                         -- Convert date to string for log table
                         SET @w_msg_text_2 = CONVERT(char(8), @w_ee_eff_date, 112)
@@ -718,7 +723,7 @@ BEGIN
                 SET @msg_id = 'U00032'
                 SET @v_step_position = 'Begin ' + RTRIM(@msg_id)
 
-                IF   @emp_status_code = 'RH'
+                IF (@emp_status_code = 'RH')
                     BEGIN
                         IF (@w_curr_status = 'T') AND
                            (@eff_date     <= @w_status_change_date)
@@ -1357,6 +1362,8 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- Update NIC, TAX Flag, Tax Ceiling
                 ---------------------------------------------------------------------------
+                /* DISABLE GOSL USERDEFINED UPDATES
+
                 IF (@emp_status_code IN ('RA','RH'))
                     BEGIN
 
@@ -1390,7 +1397,7 @@ BEGIN
                         WHERE (emp_id = @emp_id)
 
                     END
-
+                */
 
                 ---------------------------------------------------------------------------
                 -- Update Processed Flag after successful update
@@ -1455,9 +1462,9 @@ BYPASS_EMPLOYEE:
             , @pay_through_date
             , @emp_death_date
             , @consider_for_rehire_ind
-            , @tax_flag
-            , @nic_flag
-            , @tax_ceiling_amt
+            -- , @tax_flag
+            -- , @nic_flag
+            -- , @tax_ceiling_amt
             , @labor_grp_code
             , @file_source
             , @annual_hrs_per_fte

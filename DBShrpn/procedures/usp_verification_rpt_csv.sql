@@ -56,6 +56,8 @@ GO
    version  date        developer   SCR         description
    -------  ----------  ---------   -----       ------------------------------------
    1.0.00   08/27/2025  CJP                     - Created 10/10/2025
+   2.0.00   07/23/2026  CJP                     - Phase I TCIG Changes
+                                                    1) Added fields msg_p1 and msg_p2 to report output
 
 ************************************************************************************/
 CREATE procedure dbo.usp_verification_rpt_csv
@@ -111,6 +113,7 @@ BEGIN
     , msg_id                                varchar(255)            NOT NULL
     , msg_desc                              varchar(255)            NOT NULL
     , msg_p1                                varchar(255)            NOT NULL
+    , msg_p2                                varchar(255)            NOT NULL
     )
 
     -- Table used to translate event ids and return event counts for all events
@@ -186,8 +189,8 @@ BEGIN
            , 'Error Message ID'                                         -- msg_id
            , 'Error Message Description'                                -- msg_desc
            , 'Error Message Parameter 1'                                -- msg_p1
+           , 'Error Message Parameter 2'                                -- msg_p2
            )
-
 
     ---------------------------------------------------------------------------
     -- Retrieve records from error log that do not have a matching record in audit table
@@ -216,6 +219,7 @@ BEGIN
          , msg.msg_id                                                   -- msg_id
          , msg.msg_desc                                                 -- msg_desc
          , msg.msg_p1                                                   -- msg_p1
+         , msg.msg_p2                                                   -- msg_p2
     FROM DBShrpn.dbo.ghr_historical_message msg
     LEFT JOIN DBShrpn.dbo.ghr_employee_events_aud aud ON
             (msg.activity_date = aud.activity_date) AND
@@ -267,6 +271,7 @@ BEGIN
          , ISNULL(msg.msg_id, '') AS msg_id
          , ISNULL(msg.msg_desc, '') AS msg_desc
          , ISNULL(msg.msg_p1, '') AS msg_p1
+         , ISNULL(msg.msg_p2, '') AS msg_p2
     FROM DBShrpn.dbo.ghr_employee_events_aud aud
     JOIN #tbl_event evt ON
             (aud.event_id = evt.event_id)
@@ -312,6 +317,7 @@ BEGIN
             , 'U00123'                                                     -- msg_id
             , evt.event_desc + ' Import Count: ' + CONVERT(varchar, count(laud.event_id)) -- msg_desc
             , ''                                                           -- msg_p1
+            , ''                                                           -- msg_p2
     FROM #tbl_event evt
     LEFT JOIN (
                SELECT aud.event_id
@@ -352,6 +358,7 @@ BEGIN
             , 'U00123'                                                     -- msg_id
             , 'Total Records Imported: ' + CONVERT(varchar, count(*))      -- msg_desc
             , ''                                                           -- msg_p1
+            , ''                                                           -- msg_p2
     FROM DBShrpn.dbo.ghr_employee_events_aud aud
     WHERE (aud.activity_date = @w_activity_date)
 
@@ -382,6 +389,7 @@ BEGIN
          , msg_id
          , msg_desc
          , msg_p1
+         , msg_p2
     FROM #tbl_vhcmrpt
     ORDER BY row_id
 
