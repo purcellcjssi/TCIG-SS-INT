@@ -187,10 +187,10 @@ BEGIN
     DECLARE @consider_for_rehire_ind         	    char(01)
     --DECLARE @pay_element_id                  	    char(10)
     --DECLARE @emp_calculation                 	    char(15)
-    -- DECLARE @tax_flag                        	    char(1)         -- individual_personal.ind_2
-    -- DECLARE @nic_flag                        	    char(1)         -- individual_personal.ind_1
-    -- DECLARE @tax_ceiling_amt                 	    money           -- employee.user_monetary_amt_1
-    DECLARE @labor_grp_code                  	    char(5)         -- DBShrpn..emp_employment.labor_grp_code
+    -- CJP 07/23/2026 DECLARE @tax_flag                        	    char(1)         -- individual_personal.ind_2
+    -- CJP 07/23/2026 DECLARE @nic_flag                        	    char(1)         -- individual_personal.ind_1
+    -- CJP 07/23/2026 DECLARE @tax_ceiling_amt                 	    money           -- employee.user_monetary_amt_1
+    -- CJP 07/23/2026 DECLARE @labor_grp_code                  	    char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                     	    char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
     DECLARE @annual_hrs_per_fte                     money
     DECLARE @annual_rate                            money
@@ -259,10 +259,10 @@ BEGIN
              , t.pay_through_date
              , t.emp_death_date
              , t.consider_for_rehire_ind
-            --  , t.tax_flag
-            --  , t.nic_flag
-            --  , t.tax_ceiling_amt
-             , t.labor_grp_code
+            -- CJP 07/23/2026  , t.tax_flag
+            -- CJP 07/23/2026  , t.nic_flag
+            -- CJP 07/23/2026  , t.tax_ceiling_amt
+            -- CJP 07/23/2026  , t.labor_grp_code
              , t.file_source
              , t.annual_hrs_per_fte
              , t.annual_rate
@@ -303,10 +303,10 @@ BEGIN
             , @pay_through_date
             , @emp_death_date
             , @consider_for_rehire_ind
-            -- , @tax_flag
-            -- , @nic_flag
-            -- , @tax_ceiling_amt
-            , @labor_grp_code
+            -- CJP 07/23/2026 , @tax_flag
+            -- CJP 07/23/2026 , @nic_flag
+            -- CJP 07/23/2026 , @tax_ceiling_amt
+            -- CJP 07/23/2026, @labor_grp_code
             , @file_source
             , @annual_hrs_per_fte
             , @annual_rate
@@ -565,7 +565,7 @@ BEGIN
                     BEGIN
 
                         -- Convert date to string for log table
-                        SET @w_msg_text_2 = CONVERT(char(8), @w_status_change_date, 112)
+                        SET @w_msg_text_2 = 'Status Change Date: ' + CONVERT(char(8), @w_status_change_date, 112)
 
                             INSERT INTO #tbl_ghr_msg
                             SELECT @msg_id As msg_id
@@ -605,7 +605,7 @@ BEGIN
                     BEGIN
 
                         -- Convert date to string for log table
-                        SET @w_msg_text_2 = CONVERT(char(8), @w_pos_eff_date, 112)
+                        SET @w_msg_text_2 = 'Position Effective Date: ' + CONVERT(char(8), @w_pos_eff_date, 112)
 
                         INSERT INTO #tbl_ghr_msg
                         SELECT @msg_id                   As msg_id
@@ -643,7 +643,7 @@ BEGIN
                    (@w_ee_eff_date >= @eff_date)
                     BEGIN
                         -- Convert date to string for log table
-                        SET @w_msg_text_2 = CONVERT(char(8), @w_ee_eff_date, 112)
+                        SET @w_msg_text_2 = 'Employee Employment Effective Date: ' + CONVERT(char(8), @w_ee_eff_date, 112)
 
                         INSERT INTO #tbl_ghr_msg
                         SELECT @msg_id As msg_id
@@ -1362,7 +1362,7 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- Update NIC, TAX Flag, Tax Ceiling
                 ---------------------------------------------------------------------------
-                /* DISABLE GOSL USERDEFINED UPDATES
+                /* CJP 07/23/2026 DISABLE GOSL USERDEFINED UPDATES
 
                 IF (@emp_status_code IN ('RA','RH'))
                     BEGIN
@@ -1462,10 +1462,10 @@ BYPASS_EMPLOYEE:
             , @pay_through_date
             , @emp_death_date
             , @consider_for_rehire_ind
-            -- , @tax_flag
-            -- , @nic_flag
-            -- , @tax_ceiling_amt
-            , @labor_grp_code
+            -- CJP 07/23/2026 , @tax_flag
+            -- CJP 07/23/2026 , @nic_flag
+            -- CJP 07/23/2026 , @tax_ceiling_amt
+            -- CJP 07/23/2026, @labor_grp_code
             , @file_source
             , @annual_hrs_per_fte
             , @annual_rate

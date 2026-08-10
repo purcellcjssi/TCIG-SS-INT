@@ -185,7 +185,7 @@ BEGIN
     DECLARE @tax_flag                                   char(1)         -- individual_personal.ind_2
     DECLARE @nic_flag                                   char(1)         -- individual_personal.ind_1
     DECLARE @tax_ceiling_amt                            money        -- employee.user_monetary_amt_1
-    --DECLARE @labor_grp_code                             char(5)         -- DBShrpn..emp_employment.labor_grp_code
+    -- CJP 07/23/2026 DECLARE @labor_grp_code                             char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                                char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
     DECLARE @w_annual_salary_amt                        money           = 0.00
     DECLARE @w_annual_hrs_per_fte                       money           = 0.00
@@ -253,7 +253,7 @@ BEGIN
              , t.tax_flag
              , t.nic_flag
              , t.tax_ceiling_amt
-             , t.labor_grp_code
+             -- CJP 07/23/2026, t.labor_grp_code
              , t.file_source
              , t.job_or_pos_id
         FROM #ghr_employee_events_temp t
@@ -279,7 +279,7 @@ BEGIN
             , @tax_flag
             , @nic_flag
             , @tax_ceiling_amt
-            --, @labor_grp_code
+            -- CJP 07/23/2026, @labor_grp_code
             , @file_source
             , @job_or_pos_id
 
@@ -1104,7 +1104,7 @@ BYPASS_EMPLOYEE:
                 , @tax_flag
                 , @nic_flag
                 , @tax_ceiling_amt
-                --, @labor_grp_code
+                -- CJP 07/23/2026, @labor_grp_code
                 , @file_source
                 , @job_or_pos_id
 

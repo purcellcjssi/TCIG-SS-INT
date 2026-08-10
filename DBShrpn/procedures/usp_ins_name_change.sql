@@ -122,9 +122,9 @@ BEGIN
     DECLARE @first_middle_name              char(25)
     DECLARE @last_name                      char(30)
     DECLARE @empl_id                        char(10)
-    DECLARE @tax_flag                       char(1)         -- individual_personal.ind_2
-    DECLARE @nic_flag                       char(1)         -- individual_personal.ind_1
-    DECLARE @tax_ceiling_amt                money           -- employee.user_monetary_amt_1
+    -- CJP 07/23/2026 DECLARE @tax_flag                       char(1)         -- individual_personal.ind_2
+    -- CJP 07/23/2026 DECLARE @nic_flag                       char(1)         -- individual_personal.ind_1
+    -- CJP 07/23/2026 DECLARE @tax_ceiling_amt                money           -- employee.user_monetary_amt_1
     DECLARE @file_source                    char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
 
 
@@ -148,9 +148,9 @@ BEGIN
              , t.first_middle_name
              , t.last_name
              , t.empl_id
-             --, t.tax_flag
-             --, t.nic_flag
-             --, t.tax_ceiling_amt
+             -- CJP 07/23/2026 , t.tax_flag
+             -- CJP 07/23/2026 , t.nic_flag
+             -- CJP 07/23/2026 , t.tax_ceiling_amt
              , t.file_source
         FROM #ghr_employee_events_temp t
         WHERE (event_id = @v_EVENT_ID_NAME_CHANGE)
@@ -167,9 +167,9 @@ BEGIN
             , @first_middle_name
             , @last_name
             , @empl_id  -- need?
-            --, @tax_flag
-            --, @nic_flag
-            --, @tax_ceiling_amt
+            -- CJP 07/23/2026 , @tax_flag
+            -- CJP 07/23/2026 , @nic_flag
+            -- CJP 07/23/2026 , @tax_ceiling_amt
             , @file_source
 
 
@@ -301,7 +301,7 @@ BEGIN
                 ---------------------------------------------------------------------------
                 -- GOSL update NIC and Tax Code
                 ---------------------------------------------------------------------------
-                /*
+                /*  CJP 07/23/2026
                 SET @v_step_position = 'Update NIC/Tax Code'
 
                 UPDATE DBShrpn.dbo.individual_personal
@@ -363,9 +363,9 @@ BYPASS_EMPLOYEE:
                 , @first_middle_name
                 , @last_name
                 , @empl_id
-                --, @tax_flag
-                --, @nic_flag
-                --, @tax_ceiling_amt
+                -- CJP 07/23/2026 , @tax_flag
+                -- CJP 07/23/2026 , @nic_flag
+                -- CJP 07/23/2026 , @tax_ceiling_amt
                 , @file_source
 
 

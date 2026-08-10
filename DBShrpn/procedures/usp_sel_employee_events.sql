@@ -66,6 +66,7 @@ GO
                                                         - Used for labor group and pay group change events
     2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
                                                     1) Disabled Labor Group (Event 09)
+                                                    2) Disabled GOSL Ganymede employee id translation
 
 ************************************************************************************/
 
@@ -366,7 +367,7 @@ BEGIN
         --WHERE (t.event_id <> @v_EVENT_ID_SALARY_CHANGE)  -- Exclude Salary Changes
 
 
-/*
+/*  CJP 07/23/2026
         ---------------------------------------------------------------------------
         -- Ganymede Employee ID - Replace leading '4' to 'D'
         ---------------------------------------------------------------------------
@@ -751,7 +752,7 @@ BEGIN
         ---------------------------------------------------------------------------
         -- Labor Group Update (Event 09)
         ---------------------------------------------------------------------------
-        /*
+        /*  CJP 07/23/2026
         SET @v_step_position = 'Execute DBShrpn.dbo.usp_ins_labor_group'
         SET @v_event_id = @v_EVENT_ID_LABOR_GROUP
         SET @w_status = 0   -- reset return code

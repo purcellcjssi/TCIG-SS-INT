@@ -253,7 +253,7 @@ BEGIN
     DECLARE @tax_flag                               char(1)         -- individual_personal.ind_2
     DECLARE @nic_flag                               char(1)         -- individual_personal.ind_1
     DECLARE @tax_ceiling_amt                        money           -- employee.user_monetary_amt_1
-    --DECLARE @labor_grp_code                         char(5)         -- DBShrpn..emp_employment.labor_grp_code
+    -- CJP 07/23/2026   DECLARE @labor_grp_code                         char(5)         -- DBShrpn..emp_employment.labor_grp_code
     DECLARE @file_source                            char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
 
     DECLARE @annual_hrs_per_fte                     money
@@ -359,7 +359,7 @@ BEGIN
             , @tax_flag
             , @nic_flag
             , @tax_ceiling_amt
-            , @labor_grp_code
+            -- CJP 07/23/2026 , @labor_grp_code
             , @file_source
             , @annual_hrs_per_fte
             , @annual_rate
@@ -1395,7 +1395,7 @@ BYPASS_EMPLOYEE:
                 , @tax_flag
                 , @nic_flag
                 , @tax_ceiling_amt
-                --, @labor_grp_code
+                -- CJP 07/23/2026, @labor_grp_code
                 , @file_source
                 , @annual_hrs_per_fte
                 , @annual_rate
