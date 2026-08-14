@@ -67,6 +67,7 @@ GO
     2.0.00  07/23/2026  CJP                     - Phase I TCIG Changes
                                                     1) Disabled Labor Group (Event 09)
                                                     2) Disabled GOSL Ganymede employee id translation
+            08/11/2026                              3) Added email address to interface and audit tables
 
 ************************************************************************************/
 
@@ -166,16 +167,17 @@ BEGIN
     , annual_hrs_per_fte                    money               NULL    --varchar(255)        NULL
     , annual_rate                           money               NULL    --varchar(255)        NULL
     , birth_date                            datetime            NULL    --varchar(255)        NULL
-    , gender                                char(01)        NULL
+    , gender                                char(01)            NULL
+    , email_address                         varchar(60)         NULL    -- CJP 8/11/2026s
     , addr_fmt_code                         char(06)            NULL
-    , country_code                          char(02)        NULL
-    , addr_line_1                           varchar(35)        NULL
-    , addr_line_2                           varchar(35)        NULL
-    , addr_line_3                           varchar(35)        NULL
-    , addr_line_4                           varchar(35)        NULL
-    , city_name                             varchar(35)        NULL
-    , state_prov                            char(09)        NULL
-    , postal_code                           char(09)        NULL
+    , country_code                          char(02)            NULL
+    , addr_line_1                           varchar(35)         NULL
+    , addr_line_2                           varchar(35)         NULL
+    , addr_line_3                           varchar(35)         NULL
+    , addr_line_4                           varchar(35)         NULL
+    , city_name                             varchar(35)         NULL
+    , state_prov                            char(09)            NULL
+    , postal_code                           char(09)            NULL
     , county_name                           varchar(255)        NULL
     , region_name                           varchar(255)        NULL
     , job_or_pos_id                         char(10)            NULL    -- derived value based on file_source
@@ -275,6 +277,7 @@ BEGIN
         , annual_rate
         , birth_date
         , gender
+        , email_address
         , addr_fmt_code
         , country_code
         , addr_line_1
@@ -350,6 +353,7 @@ BEGIN
                 ELSE COALESCE(TRY_CONVERT(datetime, t.birth_date), @v_BAD_DATE_INDICATOR)
               END AS birth_date
             , LEFT(t.gender, 1) AS gender
+            , LEFT(t.email_address, 60) AS email_address        -- CJP 8/11/2026
             , 'GN4' AS addr_fmt_code    -- Assign all associates to GN4 address format code
             , LEFT(t.country_code, 2) AS country_code
             , LEFT(t.addr_line_1, 35) AS addr_line_1
@@ -454,6 +458,7 @@ BEGIN
             , t.annual_rate
             , t.birth_date
             , t.gender
+            , LEFT(t.email_address, 60) AS email_address   -- CJP 8/11/2026
             , t.addr_fmt_code
             , t.country_code
             , t.addr_line_1

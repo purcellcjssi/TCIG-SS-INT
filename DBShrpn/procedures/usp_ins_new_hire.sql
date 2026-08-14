@@ -61,6 +61,7 @@ GO
                                                         - NIC Status Code - @w_user_code_1
                                                         - Tax Status Code - @w_user_code_2
                                                     7) Remove labor group code update
+            08/11/2026                              8) Added email address to interface and audit tables
 
 ************************************************************************************/
 
@@ -260,6 +261,7 @@ BEGIN
     DECLARE @annual_rate                            money
     DECLARE @birth_date                             datetime
     DECLARE @gender                                 varchar(255)
+    DECLARE @email_address                          varchar(60)    -- CJP 8/11/2026
     DECLARE @addr_fmt_code                          char(06)
     DECLARE @country_code                           char(02)
     DECLARE @addr_line_1                            varchar(35)
@@ -316,6 +318,7 @@ BEGIN
              , t.annual_rate
              , t.birth_date
              , t.gender
+             , t.email_address      -- CJP 8/11/2026
              , t.addr_fmt_code
              , t.country_code
              , t.addr_line_1
@@ -365,6 +368,7 @@ BEGIN
             , @annual_rate
             , @birth_date
             , @gender
+            , @email_address      -- CJP 8/11/2026
             , @addr_fmt_code
             , @country_code
             , @addr_line_1
@@ -1249,6 +1253,18 @@ BEGIN
 
 
                 ---------------------------------------------------------------------------
+                -- Add Email Address for Employee
+                ---------------------------------------------------------------------------
+                -- CJP 8/11/2026
+                SET @v_step_position = 'Add Email Address'
+
+                UPDATE DBShrpn.dbo.employee
+                SET electronic_mail_id = @email_address
+                WHERE (emp_id = @emp_id)
+
+
+
+                ---------------------------------------------------------------------------
                 -- Lookup Employee Employment Details
                 ---------------------------------------------------------------------------
                 SET @v_step_position = 'Lookup emp_employment'
@@ -1401,6 +1417,7 @@ BYPASS_EMPLOYEE:
                 , @annual_rate
                 , @birth_date
                 , @gender
+                , @email_address      -- CJP 8/11/2026
                 , @addr_fmt_code
                 , @country_code
                 , @addr_line_1

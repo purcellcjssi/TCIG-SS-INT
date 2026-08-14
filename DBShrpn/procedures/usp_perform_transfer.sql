@@ -51,7 +51,7 @@ GO
                                                     1) Removed labor group code update
                                                     2) Removed userdefined field updates
                                                         - tax ceiling, tax flag, nic flag
-
+            08/11/2026                              3) Added email address to interface and audit tables
 ************************************************************************************/
 
 CREATE PROCEDURE dbo.usp_perform_transfer
@@ -189,7 +189,7 @@ BEGIN
     DECLARE @file_source                                char(50)        -- 'SS VENUS' or 'SS GANYMEDE'
     DECLARE @w_annual_salary_amt                        money           = 0.00
     DECLARE @w_annual_hrs_per_fte                       money           = 0.00
-
+    DECLARE @email_address                              varchar(60)    -- CJP 8/11/2026
     DECLARE @job_or_pos_id                              char(10)        = @v_EMPTY_SPACE
 
     --DECLARE @w_eff_date                                 datetime
@@ -255,6 +255,7 @@ BEGIN
              , t.tax_ceiling_amt
              -- CJP 07/23/2026, t.labor_grp_code
              , t.file_source
+             , t.email_address
              , t.job_or_pos_id
         FROM #ghr_employee_events_temp t
         WHERE (event_id = @v_EVENT_ID_TRANSFER)
@@ -281,6 +282,7 @@ BEGIN
             , @tax_ceiling_amt
             -- CJP 07/23/2026, @labor_grp_code
             , @file_source
+            , @email_address    -- CJP 8/11/2026
             , @job_or_pos_id
 
 
@@ -1008,6 +1010,17 @@ BEGIN
 
 
                 ---------------------------------------------------------------------------
+                -- Add Email Address for Employee
+                ---------------------------------------------------------------------------
+                -- CJP 8/11/2026
+                SET @v_step_position = 'Add Email Address'
+
+                UPDATE DBShrpn.dbo.employee
+                SET electronic_mail_id = @email_address
+                WHERE (emp_id = @emp_id)
+
+
+                ---------------------------------------------------------------------------
                 -- Update Labor Group Code
                 ---------------------------------------------------------------------------
                 /*
@@ -1106,6 +1119,7 @@ BYPASS_EMPLOYEE:
                 , @tax_ceiling_amt
                 -- CJP 07/23/2026, @labor_grp_code
                 , @file_source
+                , @email_address    -- CJP 8/11/2026
                 , @job_or_pos_id
 
         END  -- While Loop

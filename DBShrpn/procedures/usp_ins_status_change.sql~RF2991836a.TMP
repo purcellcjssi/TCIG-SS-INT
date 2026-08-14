@@ -1368,7 +1368,7 @@ BEGIN
                 SET @v_step_position = 'Add Email Address'
 
                 UPDATE DBShrpn.dbo.employee
-                SET electronic_mail_id = @email_address
+                SET electronic_id = @email_address
                 WHERE (emp_id = @emp_id)
 
 
