@@ -58,6 +58,7 @@ GO
    1.0.00   08/27/2025  CJP                     - Created 10/10/2025
    2.0.00   07/23/2026  CJP                     - Phase I TCIG Changes
                                                     1) Added fields msg_p1 and msg_p2 to report output
+                                                    2) Changed activity status decription from 'Bad' to 'Failed' for clarity
 
 ************************************************************************************/
 CREATE procedure dbo.usp_verification_rpt_csv
@@ -249,7 +250,9 @@ BEGIN
                        END
              ELSE CASE msg.activity_status
                     WHEN @v_ACTIVITY_STATUS_WARNING THEN 'Warning'
-                    WHEN @v_ACTIVITY_STATUS_BAD THEN 'Bad'
+                    WHEN @v_ACTIVITY_STATUS_BAD THEN 'Failed'  -- CJP 08/27/2026 Changed from 'Bad' to 'Failed'
+                    WHEN @v_ACTIVITY_STATUS_GOOD THEN 'Good'
+                    WHEN @v_ACTIVITY_STATUS_UNPROCESSED THEN 'Unprocessed'
                     ELSE 'None'
                   END
            END activity_status_desc

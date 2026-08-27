@@ -712,11 +712,11 @@ BEGIN
                             , @p_msg_p1             = @pay_rate
                             , @p_msg_p2             = @v_EMPTY_SPACE
                             , @p_msg_desc           = 'Annual salary amount (PayRate) cannot be zero.'
-                            , @p_activity_status    = @v_ACTIVITY_STATUS_BAD
+                            , @p_activity_status    = @v_ACTIVITY_STATUS_WARNING
                             , @p_activity_date      = @p_activity_date
                             , @p_audit_id           = @aud_id
 
-                        SET @w_fatal_error = 1
+                        --SET @w_fatal_error = 1
 
                     END
 
@@ -749,11 +749,11 @@ BEGIN
                             , @p_msg_p1             = @annual_hrs_per_fte
                             , @p_msg_p2             = @v_EMPTY_SPACE
                             , @p_msg_desc           = 'Invalid annual hours per FTE.'
-                            , @p_activity_status    = @v_ACTIVITY_STATUS_BAD
+                            , @p_activity_status    = @v_ACTIVITY_STATUS_WARNING
                             , @p_activity_date      = @p_activity_date
                             , @p_audit_id           = @aud_id
 
-                        SET @w_fatal_error = 1
+                        --SET @w_fatal_error = 1
 
                     END
 
@@ -815,11 +815,11 @@ BEGIN
                             , @p_msg_p1             = @annual_rate
                             , @p_msg_p2             = @v_EMPTY_SPACE
                             , @p_msg_desc           = 'Invalid annual hours per FTE.'
-                            , @p_activity_status    = @v_ACTIVITY_STATUS_BAD
+                            , @p_activity_status    = @v_ACTIVITY_STATUS_WARNING
                             , @p_activity_date      = @p_activity_date
                             , @p_audit_id           = @aud_id
 
-                        SET @w_fatal_error = 1
+                        --SET @w_fatal_error = 1
 
                     END
 
