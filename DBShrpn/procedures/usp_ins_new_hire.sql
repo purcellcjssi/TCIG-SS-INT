@@ -61,7 +61,8 @@ GO
                                                         - NIC Status Code - @w_user_code_1
                                                         - Tax Status Code - @w_user_code_2
                                                     7) Remove labor group code update
-            08/11/2026                              8) Added email address to interface and audit tables
+            08/11/2026  CJP                         8) Added email address to interface and audit tables
+            09/01/2026  CJP                         9) Removed GOSL salary defaults
 
 ************************************************************************************/
 
@@ -954,23 +955,17 @@ BEGIN
                 ELSE
                     -- Hourly setup
                     BEGIN
-                        -- unique settings based on environment
-                        IF (@file_source = 'SS VENUS')
-                            SELECT @w_standard_work_hrs   = 188.0
-                                , @w_standard_work_pd_id = 'MONTH'
-                        ELSE
-                            -- SS GANYMEDE
-                            SELECT @w_standard_work_hrs  = 80.0
-                                , @w_standard_work_pd_id = 'BI-WK'
 
                         -- Universal hourly rate setup
-                        SELECT @w_annual_salary_amt      = @annual_rate
-                            , @w_pay_basis_code          = '9'      -- Not Applicable
-                            , @w_pd_salary_amt           = 0.00     -- ROUND((@pay_rate * @annual_hrs_per_fte) / 12, 2)
-                            , @w_pd_salary_tm_pd_id      = @v_EMPTY_SPACE
-                            , @w_hourly_pay_rate         = @pay_rate
-                            , @w_work_tm_code            = 'U'      -- Unspecified
-                            , @w_pay_on_reported_hrs_ind = 'Y'      -- Pay Based on Standard Hours Checkbox
+                        SELECT @w_standard_work_hrs   = 188.0
+                             , @w_standard_work_pd_id = 'MONTH'
+                             , @w_annual_salary_amt      = @annual_rate
+                             , @w_pay_basis_code          = '9'      -- Not Applicable
+                             , @w_pd_salary_amt           = 0.00     -- ROUND((@pay_rate * @annual_hrs_per_fte) / 12, 2)
+                             , @w_pd_salary_tm_pd_id      = @v_EMPTY_SPACE
+                             , @w_hourly_pay_rate         = @pay_rate
+                             , @w_work_tm_code            = 'U'      -- Unspecified
+                             , @w_pay_on_reported_hrs_ind = 'Y'      -- Pay Based on Standard Hours Checkbox
 
                     END
 
